@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D35EE1D-D657-4456-BF65-3BBA01D70FCD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Holding</RootNamespace>
+    <AssemblyName>Holding</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icono_Principal.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIDC">
+      <HintPath>..\UIDC.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ClsFuncionesGenerales.cs" />
+    <Compile Include="Clases\ClsScrInversion.cs" />
+    <Compile Include="Clases\ClsSegAccion.cs" />
+    <Compile Include="Clases\ClsSegAccionxRol.cs" />
+    <Compile Include="Clases\ClsSegBitacora.cs" />
+    <Compile Include="Clases\ClsSegConexion.cs" />
+    <Compile Include="Clases\ClsSegEncripta.cs" />
+    <Compile Include="Clases\ClsSegRoles.cs" />
+    <Compile Include="Clases\ClsSegUsuario.cs" />
+    <Compile Include="Clases\ClsStbError.cs" />
+    <Compile Include="Clases\ClsStbParametros.cs" />
+    <Compile Include="Clases\ClsSvnPagoInversion.cs" />
+    <Compile Include="Clases\ClsValidaCarateres.cs" />
+    <Compile Include="Clases\ClsVariablesGoblales.cs" />
+    <Compile Include="Clases\LlenaTabla.cs" />
+    <Compile Include="Clases\RZTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Clases\RZTextBox.Designer.cs">
+      <DependentUpon>RZTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmScrInversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmScrInversion.Designer.cs">
+      <DependentUpon>FrmScrInversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmScrInversionistasEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmScrInversionistasEdicion.Designer.cs">
+      <DependentUpon>FrmScrInversionistasEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmInversionistasPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmInversionistasPagos.Designer.cs">
+      <DependentUpon>FrmInversionistasPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmScrInversionistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cartera\FrmScrInversionistas.Designer.cs">
+      <DependentUpon>FrmScrInversionistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Formularios Principales\FrmMensajeError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Formularios Principales\FrmMensajeError.designer.cs">
+      <DependentUpon>FrmMensajeError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Formularios Principales\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Formularios Principales\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegAccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegAccion.Designer.cs">
+      <DependentUpon>FrmSegAccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegAccionEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegAccionEdicion.Designer.cs">
+      <DependentUpon>FrmSegAccionEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegAccionRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegAccionRol.Designer.cs">
+      <DependentUpon>FrmSegAccionRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegRolEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegRolEdicion.Designer.cs">
+      <DependentUpon>FrmSegRolEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegUsuarioEdicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegUsuarioEdicion.Designer.cs">
+      <DependentUpon>FrmSegUsuarioEdicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegLogin.Designer.cs">
+      <DependentUpon>FrmSegLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegRol.Designer.cs">
+      <DependentUpon>FrmSegRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Seguridad\FrmSegUsuario.Designer.cs">
+      <DependentUpon>FrmSegUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ventanilla\FrmSvnCalendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ventanilla\FrmSvnCalendario.Designer.cs">
+      <DependentUpon>FrmSvnCalendario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Ventanilla\FrmSvnPagoInversionistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Ventanilla\FrmSvnPagoInversionistas.Designer.cs">
+      <DependentUpon>FrmSvnPagoInversionistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Clases\RZTextBox.resx">
+      <DependentUpon>RZTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cartera\FrmScrInversion.resx">
+      <DependentUpon>FrmScrInversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cartera\FrmScrInversionistasEdicion.resx">
+      <DependentUpon>FrmScrInversionistasEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cartera\FrmInversionistasPagos.resx">
+      <DependentUpon>FrmInversionistasPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cartera\FrmScrInversionistas.resx">
+      <DependentUpon>FrmScrInversionistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Formularios Principales\FrmMensajeError.resx">
+      <DependentUpon>FrmMensajeError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Formularios Principales\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegAccion.resx">
+      <DependentUpon>FrmSegAccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegAccionEdicion.resx">
+      <DependentUpon>FrmSegAccionEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegAccionRol.resx">
+      <DependentUpon>FrmSegAccionRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegRolEdicion.resx">
+      <DependentUpon>FrmSegRolEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegUsuarioEdicion.resx">
+      <DependentUpon>FrmSegUsuarioEdicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegLogin.resx">
+      <DependentUpon>FrmSegLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegRol.resx">
+      <DependentUpon>FrmSegRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Seguridad\FrmSegUsuario.resx">
+      <DependentUpon>FrmSegUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ventanilla\FrmSvnCalendario.resx">
+      <DependentUpon>FrmSvnCalendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Ventanilla\FrmSvnPagoInversionistas.resx">
+      <DependentUpon>FrmSvnPagoInversionistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Formularios\Configuracion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\icono_error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Logotipo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\Logotipo2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\Actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\agregar_Accionxrol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\agregar_Rol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\agregar_Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\Buscador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\cancelar_Accionxrol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\editar_Accion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\editar_Rol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\editar_Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\eliminar_Accion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\eliminar_Rol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\eliminar_Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botones\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logos\Logo Accion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logos\Logo Holding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logos\Logo Roles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logos\Logo Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icono_Principal.ico" />
+    <None Include="Resources\Logos\persona.png" />
+    <None Include="Resources\Botones\agregar_persona.png" />
+    <None Include="Resources\Botones\Reportes.png" />
+    <None Include="Resources\Botones\imprimir_pagos.png" />
+    <None Include="Resources\Botones\Calendario.png" />
+    <None Include="Resources\Botones\rechazar_inversionistas.png" />
+    <None Include="Resources\Botones\pago_inversionista.png" />
+    <None Include="Resources\Botones\imprimir_inversionistas.png" />
+    <None Include="Resources\Botones\aprobar_inversionistas.png" />
+    <None Include="Resources\Botones\agregar_inversionistas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
