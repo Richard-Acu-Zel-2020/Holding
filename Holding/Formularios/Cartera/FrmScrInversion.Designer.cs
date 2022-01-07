@@ -43,6 +43,7 @@ namespace Holding
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnPagar = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInversion)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -62,6 +63,7 @@ namespace Holding
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.dgvInversion);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txtBuscar);
@@ -93,7 +95,7 @@ namespace Holding
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -226,6 +228,17 @@ namespace Holding
             this.btnPagar.UseVisualStyleBackColor = false;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(978, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 20);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "RICHARD";
+            // 
             // FrmScrInversion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -264,5 +277,6 @@ namespace Holding
         private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Label label4;
     }
 }
