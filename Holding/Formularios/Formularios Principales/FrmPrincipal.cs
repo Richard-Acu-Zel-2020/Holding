@@ -68,6 +68,7 @@ namespace Holding
             PanelCartera.Visible = false;
             PanelSeguridad.Visible = false;
             PanelConfiguracion.Visible = false;
+            PanelVentanilla.Visible = false;
         }
 
         private void OcultarSubMenus()
@@ -77,7 +78,9 @@ namespace Holding
             if (PanelSeguridad.Visible == true)
                 PanelSeguridad.Visible = false;
             if (PanelConfiguracion.Visible == true)
-                PanelConfiguracion.Visible = false;
+                PanelConfiguracion.Visible = false; 
+            if (PanelVentanilla.Visible == true)
+                PanelVentanilla.Visible = false;
         }
 
         private void MostrarSubMenu(Panel SubMenu)
@@ -220,6 +223,11 @@ namespace Holding
         private void btnAsignarPermisos_Click(object sender, EventArgs e)
         {
             AbrirFormularioHijo(new FrmSegAccionRol());
+        }
+
+        private void btnVentanilla_Click(object sender, EventArgs e)
+        {
+            MostrarSubMenu(PanelVentanilla);
         }
     }
 }
