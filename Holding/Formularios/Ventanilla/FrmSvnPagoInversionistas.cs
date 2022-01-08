@@ -13,6 +13,7 @@ namespace Holding
     public partial class FrmSvnPagoInversionistas : Form
     {
         readonly MaterialSkin.MaterialSkinManager materialSkinManager;
+
         ClsFuncionesGenerales generales = new ClsFuncionesGenerales();
 
         public FrmSvnPagoInversionistas()

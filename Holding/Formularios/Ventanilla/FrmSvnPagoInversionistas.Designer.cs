@@ -64,7 +64,7 @@ namespace Holding
             this.txtCedula = new MaterialSkin.Controls.MaterialTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtObservacion = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -104,6 +104,7 @@ namespace Holding
             // 
             // txtNombreCliente
             // 
+            this.txtNombreCliente.ReadOnly = false;
             this.txtNombreCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreCliente.Depth = 0;
             this.txtNombreCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -121,6 +122,7 @@ namespace Holding
             // 
             // txtNumero
             // 
+            this.txtNumero.ReadOnly = false;
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumero.Depth = 0;
             this.txtNumero.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -161,6 +163,7 @@ namespace Holding
             // 
             // txtMontoInversion
             // 
+            this.txtMontoInversion.ReadOnly = false;
             this.txtMontoInversion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMontoInversion.Depth = 0;
             this.txtMontoInversion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -186,13 +189,14 @@ namespace Holding
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(28, 486);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(723, 214);
+            this.groupBox2.Size = new System.Drawing.Size(723, 240);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Desglose de Pago";
             // 
             // txtTotalPagar
             // 
+            this.txtTotalPagar.ReadOnly = false;
             this.txtTotalPagar.BackColor = System.Drawing.SystemColors.Window;
             this.txtTotalPagar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotalPagar.Depth = 0;
@@ -200,7 +204,7 @@ namespace Holding
             this.txtTotalPagar.ForeColor = System.Drawing.Color.White;
             this.txtTotalPagar.Hint = "Total a Pagar";
             this.txtTotalPagar.LeadingIcon = null;
-            this.txtTotalPagar.Location = new System.Drawing.Point(256, 135);
+            this.txtTotalPagar.Location = new System.Drawing.Point(253, 161);
             this.txtTotalPagar.MaxLength = 50;
             this.txtTotalPagar.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTotalPagar.Multiline = false;
@@ -212,6 +216,7 @@ namespace Holding
             // 
             // txtInteresCorriente
             // 
+            this.txtInteresCorriente.ReadOnly = false;
             this.txtInteresCorriente.BackColor = System.Drawing.SystemColors.Window;
             this.txtInteresCorriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInteresCorriente.Depth = 0;
@@ -219,7 +224,7 @@ namespace Holding
             this.txtInteresCorriente.ForeColor = System.Drawing.Color.White;
             this.txtInteresCorriente.Hint = "Interés Corriente a Pagar";
             this.txtInteresCorriente.LeadingIcon = null;
-            this.txtInteresCorriente.Location = new System.Drawing.Point(495, 49);
+            this.txtInteresCorriente.Location = new System.Drawing.Point(495, 65);
             this.txtInteresCorriente.MaxLength = 50;
             this.txtInteresCorriente.MouseState = MaterialSkin.MouseState.OUT;
             this.txtInteresCorriente.Multiline = false;
@@ -231,6 +236,7 @@ namespace Holding
             // 
             // txtInteresMoratorio
             // 
+            this.txtInteresMoratorio.ReadOnly = false;
             this.txtInteresMoratorio.BackColor = System.Drawing.SystemColors.Window;
             this.txtInteresMoratorio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInteresMoratorio.Depth = 0;
@@ -238,7 +244,7 @@ namespace Holding
             this.txtInteresMoratorio.ForeColor = System.Drawing.Color.White;
             this.txtInteresMoratorio.Hint = "Interés Moratorio a Pagar";
             this.txtInteresMoratorio.LeadingIcon = null;
-            this.txtInteresMoratorio.Location = new System.Drawing.Point(253, 49);
+            this.txtInteresMoratorio.Location = new System.Drawing.Point(253, 65);
             this.txtInteresMoratorio.MaxLength = 50;
             this.txtInteresMoratorio.MouseState = MaterialSkin.MouseState.OUT;
             this.txtInteresMoratorio.Multiline = false;
@@ -250,6 +256,7 @@ namespace Holding
             // 
             // txtPrincipal
             // 
+            this.txtPrincipal.ReadOnly = false;
             this.txtPrincipal.BackColor = System.Drawing.SystemColors.Window;
             this.txtPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrincipal.Depth = 0;
@@ -257,7 +264,7 @@ namespace Holding
             this.txtPrincipal.ForeColor = System.Drawing.Color.White;
             this.txtPrincipal.Hint = "Principal a Pagar";
             this.txtPrincipal.LeadingIcon = null;
-            this.txtPrincipal.Location = new System.Drawing.Point(15, 49);
+            this.txtPrincipal.Location = new System.Drawing.Point(15, 65);
             this.txtPrincipal.MaxLength = 50;
             this.txtPrincipal.MouseState = MaterialSkin.MouseState.OUT;
             this.txtPrincipal.Multiline = false;
@@ -333,7 +340,7 @@ namespace Holding
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(757, 384);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(723, 316);
+            this.groupBox4.Size = new System.Drawing.Size(723, 342);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Detalle de Forma de Pago";
@@ -344,13 +351,13 @@ namespace Holding
             this.tabControl1.Location = new System.Drawing.Point(6, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(714, 288);
+            this.tabControl1.Size = new System.Drawing.Size(714, 314);
             this.tabControl1.TabIndex = 16;
             // 
             // tbDocumentos
             // 
             this.tbDocumentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.tbDocumentos.Controls.Add(this.txtDescripcion);
+            this.tbDocumentos.Controls.Add(this.txtObservacion);
             this.tbDocumentos.Controls.Add(this.txtMonto);
             this.tbDocumentos.Controls.Add(this.txtIdTransferencia);
             this.tbDocumentos.Controls.Add(this.cbxTipoMoneda);
@@ -359,29 +366,31 @@ namespace Holding
             this.tbDocumentos.Location = new System.Drawing.Point(4, 25);
             this.tbDocumentos.Name = "tbDocumentos";
             this.tbDocumentos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbDocumentos.Size = new System.Drawing.Size(706, 259);
+            this.tbDocumentos.Size = new System.Drawing.Size(706, 285);
             this.tbDocumentos.TabIndex = 0;
             this.tbDocumentos.Text = "Documentos";
             // 
             // txtMonto
             // 
+            this.txtMonto.ReadOnly = false;
             this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMonto.Depth = 0;
             this.txtMonto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtMonto.Hint = "Monto";
             this.txtMonto.LeadingIcon = null;
-            this.txtMonto.Location = new System.Drawing.Point(47, 190);
+            this.txtMonto.Location = new System.Drawing.Point(49, 190);
             this.txtMonto.MaxLength = 50;
             this.txtMonto.MouseState = MaterialSkin.MouseState.OUT;
             this.txtMonto.Multiline = false;
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(280, 50);
+            this.txtMonto.Size = new System.Drawing.Size(269, 50);
             this.txtMonto.TabIndex = 16;
             this.txtMonto.Text = "";
             this.txtMonto.TrailingIcon = null;
             // 
             // txtIdTransferencia
             // 
+            this.txtIdTransferencia.ReadOnly = false;
             this.txtIdTransferencia.BackColor = System.Drawing.SystemColors.Window;
             this.txtIdTransferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdTransferencia.Depth = 0;
@@ -389,7 +398,7 @@ namespace Holding
             this.txtIdTransferencia.ForeColor = System.Drawing.Color.White;
             this.txtIdTransferencia.Hint = "Número de Transferencia";
             this.txtIdTransferencia.LeadingIcon = null;
-            this.txtIdTransferencia.Location = new System.Drawing.Point(70, 23);
+            this.txtIdTransferencia.Location = new System.Drawing.Point(70, 25);
             this.txtIdTransferencia.MaxLength = 50;
             this.txtIdTransferencia.MouseState = MaterialSkin.MouseState.OUT;
             this.txtIdTransferencia.Multiline = false;
@@ -414,7 +423,7 @@ namespace Holding
             this.cbxTipoMoneda.Hint = "Tipo Moneda";
             this.cbxTipoMoneda.IntegralHeight = false;
             this.cbxTipoMoneda.ItemHeight = 43;
-            this.cbxTipoMoneda.Location = new System.Drawing.Point(414, 22);
+            this.cbxTipoMoneda.Location = new System.Drawing.Point(414, 24);
             this.cbxTipoMoneda.MaxDropDownItems = 4;
             this.cbxTipoMoneda.MouseState = MaterialSkin.MouseState.OUT;
             this.cbxTipoMoneda.Name = "cbxTipoMoneda";
@@ -424,6 +433,7 @@ namespace Holding
             // 
             // txtFechaPago
             // 
+            this.txtFechaPago.ReadOnly = false;
             this.txtFechaPago.BackColor = System.Drawing.SystemColors.Window;
             this.txtFechaPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaPago.Depth = 0;
@@ -466,6 +476,7 @@ namespace Holding
             // 
             // txtIdInversion
             // 
+            this.txtIdInversion.ReadOnly = false;
             this.txtIdInversion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdInversion.Depth = 0;
             this.txtIdInversion.Enabled = false;
@@ -532,6 +543,7 @@ namespace Holding
             // 
             // materialTextBox1
             // 
+            this.materialTextBox1.ReadOnly = false;
             this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox1.Depth = 0;
             this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -549,6 +561,7 @@ namespace Holding
             // 
             // txtCedula
             // 
+            this.txtCedula.ReadOnly = false;
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCedula.Depth = 0;
             this.txtCedula.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -599,22 +612,24 @@ namespace Holding
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // txtDescripcion
+            // txtObservacion
             // 
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescripcion.Depth = 0;
-            this.txtDescripcion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtDescripcion.Hint = "Descripción";
-            this.txtDescripcion.LeadingIcon = null;
-            this.txtDescripcion.Location = new System.Drawing.Point(393, 190);
-            this.txtDescripcion.MaxLength = 50;
-            this.txtDescripcion.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDescripcion.Multiline = false;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(280, 50);
-            this.txtDescripcion.TabIndex = 17;
-            this.txtDescripcion.Text = "";
-            this.txtDescripcion.TrailingIcon = null;
+            this.txtObservacion.ReadOnly = false;
+            this.txtObservacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtObservacion.Depth = 0;
+            this.txtObservacion.Font = new System.Drawing.Font("Rockwell Extra Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservacion.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.txtObservacion.Hint = "Observación";
+            this.txtObservacion.LeadingIcon = null;
+            this.txtObservacion.Location = new System.Drawing.Point(393, 190);
+            this.txtObservacion.MaxLength = 50;
+            this.txtObservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtObservacion.Multiline = false;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(269, 50);
+            this.txtObservacion.TabIndex = 17;
+            this.txtObservacion.Text = "";
+            this.txtObservacion.TrailingIcon = null;
             // 
             // FrmSvnPagoInversionistas
             // 
@@ -683,6 +698,6 @@ namespace Holding
         private MaterialSkin.Controls.MaterialTextBox txtNombreCliente;
         private System.Windows.Forms.DataGridView dgvPlanPago;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pagar;
-        private MaterialSkin.Controls.MaterialTextBox txtDescripcion;
+        private MaterialSkin.Controls.MaterialTextBox txtObservacion;
     }
 }
