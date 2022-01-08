@@ -80,6 +80,13 @@ namespace Holding
             dgvPlanPago.DataSource = clspago.PlanPagos(int.Parse(txtIdInversion.Text));
             //dgvPlanPago.Columns[0].Visible = false;
 
+            dgvPlanPago.Columns[3].ReadOnly = true;
+            dgvPlanPago.Columns[4].ReadOnly = true;
+            dgvPlanPago.Columns[5].ReadOnly = true;
+            dgvPlanPago.Columns[6].ReadOnly = true;
+            dgvPlanPago.Columns[7].ReadOnly = true;
+            dgvPlanPago.Columns[8].ReadOnly = true;
+
             dgvPlanPago.Columns[9].Visible = false;
             dgvPlanPago.Columns[10].Visible = false;
             dgvPlanPago.Columns[11].Visible = false;

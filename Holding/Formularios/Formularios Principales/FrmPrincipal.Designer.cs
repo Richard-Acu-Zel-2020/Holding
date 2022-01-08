@@ -33,6 +33,11 @@
             this.PanelMenuLateral = new System.Windows.Forms.Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnOtrasOpciones = new FontAwesome.Sharp.IconButton();
+            this.PanelVentanilla = new System.Windows.Forms.Panel();
+            this.btnReimprimirBoucher = new FontAwesome.Sharp.IconButton();
+            this.btnReporteCaja = new FontAwesome.Sharp.IconButton();
+            this.btnPagosInversion = new FontAwesome.Sharp.IconButton();
+            this.btnVentanilla = new FontAwesome.Sharp.IconButton();
             this.PanelConfiguracion = new System.Windows.Forms.Panel();
             this.btnCatalogos = new FontAwesome.Sharp.IconButton();
             this.btnProductos = new FontAwesome.Sharp.IconButton();
@@ -48,7 +53,6 @@
             this.PanelCartera = new System.Windows.Forms.Panel();
             this.btnReportería = new FontAwesome.Sharp.IconButton();
             this.btnFondoFinanciamiento = new FontAwesome.Sharp.IconButton();
-            this.btnPagosInversion = new FontAwesome.Sharp.IconButton();
             this.bnAcreedoresFondo = new FontAwesome.Sharp.IconButton();
             this.btnCartera = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -61,11 +65,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.TimerFechaHora = new System.Windows.Forms.Timer(this.components);
             this.PanelBarraInferior = new System.Windows.Forms.Panel();
-            this.btnReimprimirBoucher = new FontAwesome.Sharp.IconButton();
-            this.btnReporteCaja = new FontAwesome.Sharp.IconButton();
-            this.btnVentanilla = new FontAwesome.Sharp.IconButton();
-            this.PanelVentanilla = new System.Windows.Forms.Panel();
             this.PanelMenuLateral.SuspendLayout();
+            this.PanelVentanilla.SuspendLayout();
             this.PanelConfiguracion.SuspendLayout();
             this.PanelSeguridad.SuspendLayout();
             this.PanelCartera.SuspendLayout();
@@ -74,7 +75,6 @@
             this.PanelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarPrincipal)).BeginInit();
             this.PanelContenedor.SuspendLayout();
-            this.PanelVentanilla.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenuLateral
@@ -111,7 +111,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.White;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(0, 1070);
+            this.btnSalir.Location = new System.Drawing.Point(0, 1033);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(240, 65);
@@ -133,7 +133,7 @@
             this.btnOtrasOpciones.IconColor = System.Drawing.Color.White;
             this.btnOtrasOpciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnOtrasOpciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOtrasOpciones.Location = new System.Drawing.Point(0, 1002);
+            this.btnOtrasOpciones.Location = new System.Drawing.Point(0, 965);
             this.btnOtrasOpciones.Name = "btnOtrasOpciones";
             this.btnOtrasOpciones.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnOtrasOpciones.Size = new System.Drawing.Size(240, 68);
@@ -144,6 +144,99 @@
             this.btnOtrasOpciones.UseVisualStyleBackColor = true;
             this.btnOtrasOpciones.Click += new System.EventHandler(this.btnOtrasOpciones_Click);
             // 
+            // PanelVentanilla
+            // 
+            this.PanelVentanilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
+            this.PanelVentanilla.Controls.Add(this.btnReimprimirBoucher);
+            this.PanelVentanilla.Controls.Add(this.btnReporteCaja);
+            this.PanelVentanilla.Controls.Add(this.btnPagosInversion);
+            this.PanelVentanilla.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelVentanilla.Location = new System.Drawing.Point(0, 833);
+            this.PanelVentanilla.Name = "PanelVentanilla";
+            this.PanelVentanilla.Size = new System.Drawing.Size(240, 132);
+            this.PanelVentanilla.TabIndex = 25;
+            this.PanelVentanilla.TabStop = true;
+            // 
+            // btnReimprimirBoucher
+            // 
+            this.btnReimprimirBoucher.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReimprimirBoucher.FlatAppearance.BorderSize = 0;
+            this.btnReimprimirBoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReimprimirBoucher.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnReimprimirBoucher.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReimprimirBoucher.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnReimprimirBoucher.IconColor = System.Drawing.Color.Black;
+            this.btnReimprimirBoucher.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReimprimirBoucher.Location = new System.Drawing.Point(0, 84);
+            this.btnReimprimirBoucher.Name = "btnReimprimirBoucher";
+            this.btnReimprimirBoucher.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnReimprimirBoucher.Size = new System.Drawing.Size(240, 42);
+            this.btnReimprimirBoucher.TabIndex = 24;
+            this.btnReimprimirBoucher.Text = "Reimprimir Boucher";
+            this.btnReimprimirBoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReimprimirBoucher.UseVisualStyleBackColor = true;
+            // 
+            // btnReporteCaja
+            // 
+            this.btnReporteCaja.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporteCaja.FlatAppearance.BorderSize = 0;
+            this.btnReporteCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteCaja.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnReporteCaja.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnReporteCaja.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnReporteCaja.IconColor = System.Drawing.Color.Black;
+            this.btnReporteCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReporteCaja.Location = new System.Drawing.Point(0, 42);
+            this.btnReporteCaja.Name = "btnReporteCaja";
+            this.btnReporteCaja.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnReporteCaja.Size = new System.Drawing.Size(240, 42);
+            this.btnReporteCaja.TabIndex = 23;
+            this.btnReporteCaja.Text = "Reporte de Caja";
+            this.btnReporteCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteCaja.UseVisualStyleBackColor = true;
+            // 
+            // btnPagosInversion
+            // 
+            this.btnPagosInversion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPagosInversion.FlatAppearance.BorderSize = 0;
+            this.btnPagosInversion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPagosInversion.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.btnPagosInversion.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPagosInversion.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnPagosInversion.IconColor = System.Drawing.Color.Black;
+            this.btnPagosInversion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPagosInversion.Location = new System.Drawing.Point(0, 0);
+            this.btnPagosInversion.Name = "btnPagosInversion";
+            this.btnPagosInversion.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnPagosInversion.Size = new System.Drawing.Size(240, 42);
+            this.btnPagosInversion.TabIndex = 6;
+            this.btnPagosInversion.Text = "Pagos a Inversión";
+            this.btnPagosInversion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPagosInversion.UseVisualStyleBackColor = true;
+            this.btnPagosInversion.Click += new System.EventHandler(this.btnPagosProveedores_Click);
+            // 
+            // btnVentanilla
+            // 
+            this.btnVentanilla.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentanilla.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(152)))), ((int)(((byte)(48)))));
+            this.btnVentanilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentanilla.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btnVentanilla.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVentanilla.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
+            this.btnVentanilla.IconColor = System.Drawing.Color.White;
+            this.btnVentanilla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVentanilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentanilla.Location = new System.Drawing.Point(0, 768);
+            this.btnVentanilla.Name = "btnVentanilla";
+            this.btnVentanilla.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnVentanilla.Size = new System.Drawing.Size(240, 65);
+            this.btnVentanilla.TabIndex = 22;
+            this.btnVentanilla.Text = "Ventanilla";
+            this.btnVentanilla.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentanilla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVentanilla.UseVisualStyleBackColor = true;
+            this.btnVentanilla.Click += new System.EventHandler(this.btnVentanilla_Click);
+            // 
             // PanelConfiguracion
             // 
             this.PanelConfiguracion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
@@ -152,7 +245,7 @@
             this.PanelConfiguracion.Controls.Add(this.btnTasaCambio);
             this.PanelConfiguracion.Controls.Add(this.btnParametros);
             this.PanelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelConfiguracion.Location = new System.Drawing.Point(0, 639);
+            this.PanelConfiguracion.Location = new System.Drawing.Point(0, 602);
             this.PanelConfiguracion.Name = "PanelConfiguracion";
             this.PanelConfiguracion.Size = new System.Drawing.Size(240, 166);
             this.PanelConfiguracion.TabIndex = 15;
@@ -245,7 +338,7 @@
             this.btnConfiguración.IconColor = System.Drawing.Color.White;
             this.btnConfiguración.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConfiguración.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguración.Location = new System.Drawing.Point(0, 574);
+            this.btnConfiguración.Location = new System.Drawing.Point(0, 537);
             this.btnConfiguración.Name = "btnConfiguración";
             this.btnConfiguración.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnConfiguración.Size = new System.Drawing.Size(240, 65);
@@ -266,7 +359,7 @@
             this.PanelSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelSeguridad.Location = new System.Drawing.Point(0, 407);
             this.PanelSeguridad.Name = "PanelSeguridad";
-            this.PanelSeguridad.Size = new System.Drawing.Size(240, 167);
+            this.PanelSeguridad.Size = new System.Drawing.Size(240, 130);
             this.PanelSeguridad.TabIndex = 10;
             this.PanelSeguridad.TabStop = true;
             // 
@@ -328,6 +421,7 @@
             this.btnAcciones.Text = "Acciones";
             this.btnAcciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAcciones.UseVisualStyleBackColor = true;
+            this.btnAcciones.Visible = false;
             this.btnAcciones.Click += new System.EventHandler(this.btnAcciones_Click);
             // 
             // btnUsuarios
@@ -422,26 +516,6 @@
             this.btnFondoFinanciamiento.Text = "Fondos Fnanciamiento";
             this.btnFondoFinanciamiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFondoFinanciamiento.UseVisualStyleBackColor = true;
-            // 
-            // btnPagosInversion
-            // 
-            this.btnPagosInversion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPagosInversion.FlatAppearance.BorderSize = 0;
-            this.btnPagosInversion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPagosInversion.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnPagosInversion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnPagosInversion.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnPagosInversion.IconColor = System.Drawing.Color.Black;
-            this.btnPagosInversion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPagosInversion.Location = new System.Drawing.Point(0, 0);
-            this.btnPagosInversion.Name = "btnPagosInversion";
-            this.btnPagosInversion.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnPagosInversion.Size = new System.Drawing.Size(240, 42);
-            this.btnPagosInversion.TabIndex = 6;
-            this.btnPagosInversion.Text = "Pagos a Inversión";
-            this.btnPagosInversion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagosInversion.UseVisualStyleBackColor = true;
-            this.btnPagosInversion.Click += new System.EventHandler(this.btnPagosProveedores_Click);
             // 
             // bnAcreedoresFondo
             // 
@@ -593,79 +667,6 @@
             this.PanelBarraInferior.Size = new System.Drawing.Size(1516, 35);
             this.PanelBarraInferior.TabIndex = 5;
             // 
-            // btnReimprimirBoucher
-            // 
-            this.btnReimprimirBoucher.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReimprimirBoucher.FlatAppearance.BorderSize = 0;
-            this.btnReimprimirBoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReimprimirBoucher.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnReimprimirBoucher.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReimprimirBoucher.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnReimprimirBoucher.IconColor = System.Drawing.Color.Black;
-            this.btnReimprimirBoucher.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReimprimirBoucher.Location = new System.Drawing.Point(0, 84);
-            this.btnReimprimirBoucher.Name = "btnReimprimirBoucher";
-            this.btnReimprimirBoucher.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnReimprimirBoucher.Size = new System.Drawing.Size(240, 42);
-            this.btnReimprimirBoucher.TabIndex = 24;
-            this.btnReimprimirBoucher.Text = "Reimprimir Boucher";
-            this.btnReimprimirBoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReimprimirBoucher.UseVisualStyleBackColor = true;
-            // 
-            // btnReporteCaja
-            // 
-            this.btnReporteCaja.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporteCaja.FlatAppearance.BorderSize = 0;
-            this.btnReporteCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteCaja.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnReporteCaja.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReporteCaja.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnReporteCaja.IconColor = System.Drawing.Color.Black;
-            this.btnReporteCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReporteCaja.Location = new System.Drawing.Point(0, 42);
-            this.btnReporteCaja.Name = "btnReporteCaja";
-            this.btnReporteCaja.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnReporteCaja.Size = new System.Drawing.Size(240, 42);
-            this.btnReporteCaja.TabIndex = 23;
-            this.btnReporteCaja.Text = "Reporte de Caja";
-            this.btnReporteCaja.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteCaja.UseVisualStyleBackColor = true;
-            // 
-            // btnVentanilla
-            // 
-            this.btnVentanilla.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVentanilla.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(152)))), ((int)(((byte)(48)))));
-            this.btnVentanilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentanilla.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btnVentanilla.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnVentanilla.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckAlt;
-            this.btnVentanilla.IconColor = System.Drawing.Color.White;
-            this.btnVentanilla.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVentanilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentanilla.Location = new System.Drawing.Point(0, 805);
-            this.btnVentanilla.Name = "btnVentanilla";
-            this.btnVentanilla.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnVentanilla.Size = new System.Drawing.Size(240, 65);
-            this.btnVentanilla.TabIndex = 22;
-            this.btnVentanilla.Text = "Ventanilla";
-            this.btnVentanilla.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentanilla.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVentanilla.UseVisualStyleBackColor = true;
-            this.btnVentanilla.Click += new System.EventHandler(this.btnVentanilla_Click);
-            // 
-            // PanelVentanilla
-            // 
-            this.PanelVentanilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.PanelVentanilla.Controls.Add(this.btnReimprimirBoucher);
-            this.PanelVentanilla.Controls.Add(this.btnReporteCaja);
-            this.PanelVentanilla.Controls.Add(this.btnPagosInversion);
-            this.PanelVentanilla.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelVentanilla.Location = new System.Drawing.Point(0, 870);
-            this.PanelVentanilla.Name = "PanelVentanilla";
-            this.PanelVentanilla.Size = new System.Drawing.Size(240, 132);
-            this.PanelVentanilla.TabIndex = 25;
-            this.PanelVentanilla.TabStop = true;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -687,6 +688,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.PanelMenuLateral.ResumeLayout(false);
+            this.PanelVentanilla.ResumeLayout(false);
             this.PanelConfiguracion.ResumeLayout(false);
             this.PanelSeguridad.ResumeLayout(false);
             this.PanelCartera.ResumeLayout(false);
@@ -695,7 +697,6 @@
             this.PanelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarPrincipal)).EndInit();
             this.PanelContenedor.ResumeLayout(false);
-            this.PanelVentanilla.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

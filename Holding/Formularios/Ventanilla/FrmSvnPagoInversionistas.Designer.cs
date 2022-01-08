@@ -50,6 +50,7 @@ namespace Holding
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbDocumentos = new System.Windows.Forms.TabPage();
+            this.txtObservacion = new MaterialSkin.Controls.MaterialTextBox();
             this.txtMonto = new MaterialSkin.Controls.MaterialTextBox();
             this.txtIdTransferencia = new MaterialSkin.Controls.MaterialTextBox();
             this.cbxTipoMoneda = new MaterialSkin.Controls.MaterialComboBox();
@@ -64,7 +65,6 @@ namespace Holding
             this.txtCedula = new MaterialSkin.Controls.MaterialTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtObservacion = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -104,7 +104,6 @@ namespace Holding
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.ReadOnly = false;
             this.txtNombreCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombreCliente.Depth = 0;
             this.txtNombreCliente.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -122,7 +121,6 @@ namespace Holding
             // 
             // txtNumero
             // 
-            this.txtNumero.ReadOnly = false;
             this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNumero.Depth = 0;
             this.txtNumero.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -163,7 +161,6 @@ namespace Holding
             // 
             // txtMontoInversion
             // 
-            this.txtMontoInversion.ReadOnly = false;
             this.txtMontoInversion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMontoInversion.Depth = 0;
             this.txtMontoInversion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -196,7 +193,6 @@ namespace Holding
             // 
             // txtTotalPagar
             // 
-            this.txtTotalPagar.ReadOnly = false;
             this.txtTotalPagar.BackColor = System.Drawing.SystemColors.Window;
             this.txtTotalPagar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTotalPagar.Depth = 0;
@@ -216,7 +212,6 @@ namespace Holding
             // 
             // txtInteresCorriente
             // 
-            this.txtInteresCorriente.ReadOnly = false;
             this.txtInteresCorriente.BackColor = System.Drawing.SystemColors.Window;
             this.txtInteresCorriente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInteresCorriente.Depth = 0;
@@ -236,7 +231,6 @@ namespace Holding
             // 
             // txtInteresMoratorio
             // 
-            this.txtInteresMoratorio.ReadOnly = false;
             this.txtInteresMoratorio.BackColor = System.Drawing.SystemColors.Window;
             this.txtInteresMoratorio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtInteresMoratorio.Depth = 0;
@@ -256,7 +250,6 @@ namespace Holding
             // 
             // txtPrincipal
             // 
-            this.txtPrincipal.ReadOnly = false;
             this.txtPrincipal.BackColor = System.Drawing.SystemColors.Window;
             this.txtPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrincipal.Depth = 0;
@@ -307,8 +300,8 @@ namespace Holding
             this.Pagar});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -370,9 +363,26 @@ namespace Holding
             this.tbDocumentos.TabIndex = 0;
             this.tbDocumentos.Text = "Documentos";
             // 
+            // txtObservacion
+            // 
+            this.txtObservacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtObservacion.Depth = 0;
+            this.txtObservacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtObservacion.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.txtObservacion.Hint = "Observación";
+            this.txtObservacion.LeadingIcon = null;
+            this.txtObservacion.Location = new System.Drawing.Point(393, 190);
+            this.txtObservacion.MaxLength = 50;
+            this.txtObservacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtObservacion.Multiline = false;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(269, 50);
+            this.txtObservacion.TabIndex = 17;
+            this.txtObservacion.Text = "";
+            this.txtObservacion.TrailingIcon = null;
+            // 
             // txtMonto
             // 
-            this.txtMonto.ReadOnly = false;
             this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMonto.Depth = 0;
             this.txtMonto.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -390,7 +400,6 @@ namespace Holding
             // 
             // txtIdTransferencia
             // 
-            this.txtIdTransferencia.ReadOnly = false;
             this.txtIdTransferencia.BackColor = System.Drawing.SystemColors.Window;
             this.txtIdTransferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdTransferencia.Depth = 0;
@@ -433,7 +442,6 @@ namespace Holding
             // 
             // txtFechaPago
             // 
-            this.txtFechaPago.ReadOnly = false;
             this.txtFechaPago.BackColor = System.Drawing.SystemColors.Window;
             this.txtFechaPago.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFechaPago.Depth = 0;
@@ -476,7 +484,6 @@ namespace Holding
             // 
             // txtIdInversion
             // 
-            this.txtIdInversion.ReadOnly = false;
             this.txtIdInversion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdInversion.Depth = 0;
             this.txtIdInversion.Enabled = false;
@@ -543,7 +550,6 @@ namespace Holding
             // 
             // materialTextBox1
             // 
-            this.materialTextBox1.ReadOnly = false;
             this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialTextBox1.Depth = 0;
             this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -561,7 +567,6 @@ namespace Holding
             // 
             // txtCedula
             // 
-            this.txtCedula.ReadOnly = false;
             this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCedula.Depth = 0;
             this.txtCedula.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -611,25 +616,6 @@ namespace Holding
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.ReadOnly = false;
-            this.txtObservacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtObservacion.Depth = 0;
-            this.txtObservacion.Font = new System.Drawing.Font("Rockwell Extra Bold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObservacion.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.txtObservacion.Hint = "Observación";
-            this.txtObservacion.LeadingIcon = null;
-            this.txtObservacion.Location = new System.Drawing.Point(393, 190);
-            this.txtObservacion.MaxLength = 50;
-            this.txtObservacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtObservacion.Multiline = false;
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(269, 50);
-            this.txtObservacion.TabIndex = 17;
-            this.txtObservacion.Text = "";
-            this.txtObservacion.TrailingIcon = null;
             // 
             // FrmSvnPagoInversionistas
             // 

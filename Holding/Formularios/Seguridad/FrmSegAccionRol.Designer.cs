@@ -32,25 +32,17 @@ namespace Holding
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxRol = new MaterialSkin.Controls.MaterialComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvTodasAcciones = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Existe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvAcccionXRol = new System.Windows.Forms.DataGridView();
-            this.ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Orden2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Código2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Existe2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -73,6 +65,18 @@ namespace Holding
             this.dgvNuevasAcciones = new System.Windows.Forms.DataGridView();
             this.codigoaccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idrol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Existe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Orden2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Código2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Existe2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTodasAcciones)).BeginInit();
@@ -151,7 +155,16 @@ namespace Holding
             this.dgvTodasAcciones.AllowUserToDeleteRows = false;
             this.dgvTodasAcciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTodasAcciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvTodasAcciones.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.dgvTodasAcciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.dgvTodasAcciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTodasAcciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTodasAcciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTodasAcciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -160,65 +173,27 @@ namespace Holding
             this.Código,
             this.Descripción,
             this.Existe});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTodasAcciones.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTodasAcciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTodasAcciones.EnableHeadersVisualStyles = false;
             this.dgvTodasAcciones.Location = new System.Drawing.Point(3, 19);
             this.dgvTodasAcciones.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTodasAcciones.MultiSelect = false;
             this.dgvTodasAcciones.Name = "dgvTodasAcciones";
-            this.dgvTodasAcciones.ReadOnly = true;
             this.dgvTodasAcciones.RowHeadersVisible = false;
             this.dgvTodasAcciones.RowHeadersWidth = 51;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dgvTodasAcciones.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dgvTodasAcciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTodasAcciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTodasAcciones.Size = new System.Drawing.Size(680, 325);
             this.dgvTodasAcciones.TabIndex = 4;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Orden
-            // 
-            this.Orden.HeaderText = "Orden";
-            this.Orden.MinimumWidth = 6;
-            this.Orden.Name = "Orden";
-            this.Orden.ReadOnly = true;
-            this.Orden.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Visible = false;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código";
-            this.Código.MinimumWidth = 6;
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 6;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            // 
-            // Existe
-            // 
-            this.Existe.HeaderText = "Existe";
-            this.Existe.MinimumWidth = 6;
-            this.Existe.Name = "Existe";
-            this.Existe.ReadOnly = true;
-            this.Existe.Visible = false;
             // 
             // groupBox3
             // 
@@ -238,7 +213,16 @@ namespace Holding
             this.dgvAcccionXRol.AllowUserToDeleteRows = false;
             this.dgvAcccionXRol.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAcccionXRol.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAcccionXRol.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.dgvAcccionXRol.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.dgvAcccionXRol.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAcccionXRol.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAcccionXRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAcccionXRol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID2,
@@ -247,7 +231,16 @@ namespace Holding
             this.Código2,
             this.Descripción2,
             this.Existe2});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAcccionXRol.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAcccionXRol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAcccionXRol.EnableHeadersVisualStyles = false;
             this.dgvAcccionXRol.Location = new System.Drawing.Point(3, 19);
             this.dgvAcccionXRol.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAcccionXRol.MultiSelect = false;
@@ -255,57 +248,11 @@ namespace Holding
             this.dgvAcccionXRol.ReadOnly = true;
             this.dgvAcccionXRol.RowHeadersVisible = false;
             this.dgvAcccionXRol.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dgvAcccionXRol.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.dgvAcccionXRol.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAcccionXRol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAcccionXRol.Size = new System.Drawing.Size(651, 325);
             this.dgvAcccionXRol.TabIndex = 3;
-            // 
-            // ID2
-            // 
-            this.ID2.HeaderText = "ID2";
-            this.ID2.MinimumWidth = 6;
-            this.ID2.Name = "ID2";
-            this.ID2.ReadOnly = true;
-            this.ID2.Visible = false;
-            // 
-            // Orden2
-            // 
-            this.Orden2.HeaderText = "Orden2";
-            this.Orden2.MinimumWidth = 6;
-            this.Orden2.Name = "Orden2";
-            this.Orden2.ReadOnly = true;
-            this.Orden2.Visible = false;
-            // 
-            // Nombre2
-            // 
-            this.Nombre2.HeaderText = "Nombre2";
-            this.Nombre2.MinimumWidth = 6;
-            this.Nombre2.Name = "Nombre2";
-            this.Nombre2.ReadOnly = true;
-            this.Nombre2.Visible = false;
-            // 
-            // Código2
-            // 
-            this.Código2.HeaderText = "Código";
-            this.Código2.MinimumWidth = 6;
-            this.Código2.Name = "Código2";
-            this.Código2.ReadOnly = true;
-            // 
-            // Descripción2
-            // 
-            this.Descripción2.HeaderText = "Descripción";
-            this.Descripción2.MinimumWidth = 6;
-            this.Descripción2.Name = "Descripción2";
-            this.Descripción2.ReadOnly = true;
-            // 
-            // Existe2
-            // 
-            this.Existe2.HeaderText = "Existe2";
-            this.Existe2.MinimumWidth = 6;
-            this.Existe2.Name = "Existe2";
-            this.Existe2.ReadOnly = true;
-            this.Existe2.Visible = false;
             // 
             // groupBox4
             // 
@@ -561,7 +508,7 @@ namespace Holding
             this.dgvNuevasAcciones.AllowUserToDeleteRows = false;
             this.dgvNuevasAcciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNuevasAcciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvNuevasAcciones.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.dgvNuevasAcciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
             this.dgvNuevasAcciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNuevasAcciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoaccion,
@@ -572,8 +519,8 @@ namespace Holding
             this.dgvNuevasAcciones.ReadOnly = true;
             this.dgvNuevasAcciones.RowHeadersVisible = false;
             this.dgvNuevasAcciones.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvNuevasAcciones.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.dgvNuevasAcciones.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvNuevasAcciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNuevasAcciones.Size = new System.Drawing.Size(707, 74);
             this.dgvNuevasAcciones.TabIndex = 18;
@@ -592,6 +539,98 @@ namespace Holding
             this.idrol.MinimumWidth = 6;
             this.idrol.Name = "idrol";
             this.idrol.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // Orden
+            // 
+            this.Orden.HeaderText = "Orden";
+            this.Orden.MinimumWidth = 6;
+            this.Orden.Name = "Orden";
+            this.Orden.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Visible = false;
+            // 
+            // Código
+            // 
+            this.Código.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Código.FillWeight = 106.9519F;
+            this.Código.HeaderText = "Código";
+            this.Código.MinimumWidth = 6;
+            this.Código.Name = "Código";
+            this.Código.Width = 200;
+            // 
+            // Descripción
+            // 
+            this.Descripción.FillWeight = 93.04813F;
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.MinimumWidth = 6;
+            this.Descripción.Name = "Descripción";
+            // 
+            // Existe
+            // 
+            this.Existe.HeaderText = "Existe";
+            this.Existe.MinimumWidth = 6;
+            this.Existe.Name = "Existe";
+            this.Existe.Visible = false;
+            // 
+            // ID2
+            // 
+            this.ID2.HeaderText = "ID2";
+            this.ID2.MinimumWidth = 6;
+            this.ID2.Name = "ID2";
+            this.ID2.ReadOnly = true;
+            this.ID2.Visible = false;
+            // 
+            // Orden2
+            // 
+            this.Orden2.HeaderText = "Orden2";
+            this.Orden2.MinimumWidth = 6;
+            this.Orden2.Name = "Orden2";
+            this.Orden2.ReadOnly = true;
+            this.Orden2.Visible = false;
+            // 
+            // Nombre2
+            // 
+            this.Nombre2.HeaderText = "Nombre2";
+            this.Nombre2.MinimumWidth = 6;
+            this.Nombre2.Name = "Nombre2";
+            this.Nombre2.ReadOnly = true;
+            this.Nombre2.Visible = false;
+            // 
+            // Código2
+            // 
+            this.Código2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Código2.HeaderText = "Código";
+            this.Código2.MinimumWidth = 6;
+            this.Código2.Name = "Código2";
+            this.Código2.ReadOnly = true;
+            this.Código2.Width = 200;
+            // 
+            // Descripción2
+            // 
+            this.Descripción2.HeaderText = "Descripción";
+            this.Descripción2.MinimumWidth = 6;
+            this.Descripción2.Name = "Descripción2";
+            this.Descripción2.ReadOnly = true;
+            // 
+            // Existe2
+            // 
+            this.Existe2.HeaderText = "Existe2";
+            this.Existe2.MinimumWidth = 6;
+            this.Existe2.Name = "Existe2";
+            this.Existe2.ReadOnly = true;
+            this.Existe2.Visible = false;
             // 
             // FrmSegAccionRol
             // 
@@ -660,12 +699,6 @@ namespace Holding
         private MaterialSkin.Controls.MaterialTextBox txtBuscarAccionesRol;
         private System.Windows.Forms.DataGridView dgvTodasAcciones;
         private System.Windows.Forms.DataGridView dgvAcccionXRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Orden2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Existe2;
         private System.Windows.Forms.DataGridView dgvNuevasAcciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoaccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idrol;
@@ -675,5 +708,11 @@ namespace Holding
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Existe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Orden2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Existe2;
     }
 }
