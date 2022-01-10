@@ -794,6 +794,22 @@ namespace Holding
                     return "";
             }
 
+        public DataTable  UsuarioXLoginActivo(String Login)
+        {
+            ClsConexion con = new ClsConexion();
+            DataTable tabla = new DataTable();
+            tabla.Clear();
+            SqlConnection Conne = new SqlConnection(con.Conexion);
+            Conne.Open();
+            SqlDataAdapter result = new SqlDataAdapter(@"Select ISNULL(PrimerNombre,'') + ' ' + ISNULL(SegundoNombre,'') + ' ' + ISNULL(PrimerApellido,'') + ' ' 
+            + ISNULL(SegundoApellido,'') AS Nombres, Cedula From SegUsuario Where Login = '" + Login + "'", Conne);
+            result.Fill(tabla);
+            result.Dispose();
+            Conne.Dispose();
+            Conne.Close();
+            return tabla;
+        }
+
         #endregion
 
     }

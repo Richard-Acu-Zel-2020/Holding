@@ -29,6 +29,7 @@ namespace Holding
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,10 +62,13 @@ namespace Holding
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnActualizaTodasAcciones = new System.Windows.Forms.Button();
-            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtCedula = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtNombreEmpresa = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtRuc = new MaterialSkin.Controls.MaterialTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.Error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtPersona = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCodPersona = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,6 +78,7 @@ namespace Holding
             this.tbDocumentos.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -300,8 +305,8 @@ namespace Holding
             this.Pagar});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -505,8 +510,8 @@ namespace Holding
             this.groupBox5.Controls.Add(this.pictureBox1);
             this.groupBox5.Controls.Add(this.button1);
             this.groupBox5.Controls.Add(this.btnActualizaTodasAcciones);
-            this.groupBox5.Controls.Add(this.materialTextBox1);
-            this.groupBox5.Controls.Add(this.txtCedula);
+            this.groupBox5.Controls.Add(this.txtNombreEmpresa);
+            this.groupBox5.Controls.Add(this.txtRuc);
             this.groupBox5.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(28, 72);
@@ -548,39 +553,39 @@ namespace Holding
             this.btnActualizaTodasAcciones.TabIndex = 18;
             this.btnActualizaTodasAcciones.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox1
+            // txtNombreEmpresa
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.Hint = "Nombre";
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(204, 109);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(404, 50);
-            this.materialTextBox1.TabIndex = 17;
-            this.materialTextBox1.Text = "";
-            this.materialTextBox1.TrailingIcon = null;
+            this.txtNombreEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreEmpresa.Depth = 0;
+            this.txtNombreEmpresa.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNombreEmpresa.Hint = "Nombre Empresa";
+            this.txtNombreEmpresa.LeadingIcon = null;
+            this.txtNombreEmpresa.Location = new System.Drawing.Point(204, 40);
+            this.txtNombreEmpresa.MaxLength = 50;
+            this.txtNombreEmpresa.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtNombreEmpresa.Multiline = false;
+            this.txtNombreEmpresa.Name = "txtNombreEmpresa";
+            this.txtNombreEmpresa.Size = new System.Drawing.Size(404, 50);
+            this.txtNombreEmpresa.TabIndex = 17;
+            this.txtNombreEmpresa.Text = "";
+            this.txtNombreEmpresa.TrailingIcon = null;
             // 
-            // txtCedula
+            // txtRuc
             // 
-            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCedula.Depth = 0;
-            this.txtCedula.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCedula.Hint = "Cédula";
-            this.txtCedula.LeadingIcon = null;
-            this.txtCedula.Location = new System.Drawing.Point(204, 42);
-            this.txtCedula.MaxLength = 50;
-            this.txtCedula.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCedula.Multiline = false;
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(404, 50);
-            this.txtCedula.TabIndex = 16;
-            this.txtCedula.Text = "";
-            this.txtCedula.TrailingIcon = null;
+            this.txtRuc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRuc.Depth = 0;
+            this.txtRuc.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtRuc.Hint = "Numero RUC";
+            this.txtRuc.LeadingIcon = null;
+            this.txtRuc.Location = new System.Drawing.Point(204, 110);
+            this.txtRuc.MaxLength = 50;
+            this.txtRuc.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtRuc.Multiline = false;
+            this.txtRuc.Name = "txtRuc";
+            this.txtRuc.Size = new System.Drawing.Size(404, 50);
+            this.txtRuc.TabIndex = 16;
+            this.txtRuc.Text = "";
+            this.txtRuc.TrailingIcon = null;
             // 
             // btnCancelar
             // 
@@ -616,12 +621,53 @@ namespace Holding
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // Error
+            // 
+            this.Error.ContainerControl = this;
+            // 
+            // txtPersona
+            // 
+            this.txtPersona.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPersona.Depth = 0;
+            this.txtPersona.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPersona.Hint = "Persona que Paga";
+            this.txtPersona.LeadingIcon = null;
+            this.txtPersona.Location = new System.Drawing.Point(325, 16);
+            this.txtPersona.MaxLength = 50;
+            this.txtPersona.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPersona.Multiline = false;
+            this.txtPersona.Name = "txtPersona";
+            this.txtPersona.Size = new System.Drawing.Size(311, 50);
+            this.txtPersona.TabIndex = 18;
+            this.txtPersona.Text = "";
+            this.txtPersona.TrailingIcon = null;
+            // 
+            // txtCodPersona
+            // 
+            this.txtCodPersona.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodPersona.Depth = 0;
+            this.txtCodPersona.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCodPersona.Hint = "Código de Persona";
+            this.txtCodPersona.LeadingIcon = null;
+            this.txtCodPersona.Location = new System.Drawing.Point(713, 16);
+            this.txtCodPersona.MaxLength = 50;
+            this.txtCodPersona.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCodPersona.Multiline = false;
+            this.txtCodPersona.Name = "txtCodPersona";
+            this.txtCodPersona.Size = new System.Drawing.Size(264, 50);
+            this.txtCodPersona.TabIndex = 19;
+            this.txtCodPersona.Text = "";
+            this.txtCodPersona.TrailingIcon = null;
             // 
             // FrmSvnPagoInversionistas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
             this.ClientSize = new System.Drawing.Size(1498, 827);
+            this.Controls.Add(this.txtCodPersona);
+            this.Controls.Add(this.txtPersona);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.txtIdInversion);
             this.Controls.Add(this.groupBox4);
@@ -646,6 +692,7 @@ namespace Holding
             this.tbDocumentos.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,8 +723,8 @@ namespace Holding
         private MaterialSkin.Controls.MaterialTextBox txtMonto;
         private MaterialSkin.Controls.MaterialTextBox txtIdInversion;
         private System.Windows.Forms.GroupBox groupBox5;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
-        private MaterialSkin.Controls.MaterialTextBox txtCedula;
+        private MaterialSkin.Controls.MaterialTextBox txtNombreEmpresa;
+        private MaterialSkin.Controls.MaterialTextBox txtRuc;
         private System.Windows.Forms.Button btnActualizaTodasAcciones;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -685,5 +732,8 @@ namespace Holding
         private System.Windows.Forms.DataGridView dgvPlanPago;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pagar;
         private MaterialSkin.Controls.MaterialTextBox txtObservacion;
+        private System.Windows.Forms.ErrorProvider Error;
+        private MaterialSkin.Controls.MaterialTextBox txtCodPersona;
+        private MaterialSkin.Controls.MaterialTextBox txtPersona;
     }
 }
