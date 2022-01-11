@@ -62,8 +62,12 @@ namespace Holding
             }
             else if (TipoAccionRecibe == "MODIFICAR")
             {
+
                 if (usuarios != null)
                 {
+                    //Bitmap icono;
+                    //icono = Properties.Resources.icono_error;
+                    //this.Icon = icono;
                     this.Text = "Modificar Usuario";
                     txtPrimerNom.Text = usuarios.PrimerNombre;
                     txtSegNom.Text = usuarios.SegundoNombre;

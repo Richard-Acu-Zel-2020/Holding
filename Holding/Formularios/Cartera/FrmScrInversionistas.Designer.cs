@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScrInversionistas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.imageListInversionistas = new System.Windows.Forms.ImageList(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -40,25 +37,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.radialMenu1 = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imageListInversionistas
-            // 
-            this.imageListInversionistas.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListInversionistas.ImageStream")));
-            this.imageListInversionistas.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListInversionistas.Images.SetKeyName(0, "add.png");
-            this.imageListInversionistas.Images.SetKeyName(1, "home.png");
-            this.imageListInversionistas.Images.SetKeyName(2, "modify.png");
             // 
             // groupBox2
             // 
@@ -179,10 +166,6 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // radialMenu1
-            // 
-            this.radialMenu1.Name = "radialMenu1";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -213,7 +196,7 @@
             this.dgvSolicitudes.AllowUserToDeleteRows = false;
             this.dgvSolicitudes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSolicitudes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.dgvSolicitudes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
             this.dgvSolicitudes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Menu;
@@ -227,7 +210,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -282,7 +265,6 @@
             this.Text = "Inversionistas";
             this.Load += new System.EventHandler(this.FrmScrInversionistas_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radialMenu1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).EndInit();
@@ -292,9 +274,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ImageList imageListInversionistas;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraBars.Ribbon.RadialMenu radialMenu1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;

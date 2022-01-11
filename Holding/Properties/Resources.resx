@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logos\persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="agregar_persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Botones\agregar_persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,8 +178,8 @@
   <data name="agregar_inversionistas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Botones\agregar_inversionistas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imprimir_inversionistas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Botones\imprimir_inversionistas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="editar_Accion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botones\editar_Accion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pago_inversionista" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Botones\pago_inversionista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,13 +214,13 @@
   <data name="editar_Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Botones\editar_Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editar_Accion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Botones\editar_Accion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="imprimir_inversionistas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botones\imprimir_inversionistas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agregar_Rol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Botones\agregar_Rol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logos\persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="localizacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botones\localizacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

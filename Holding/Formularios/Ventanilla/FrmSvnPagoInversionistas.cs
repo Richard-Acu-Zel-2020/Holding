@@ -17,6 +17,7 @@ namespace Holding
         ClsFuncionesGenerales generales = new ClsFuncionesGenerales();
         ClsStbParametros parametros = new ClsStbParametros();
         ClsVariablesGoblales globales = new ClsVariablesGoblales();
+        ClsStbError RegistroError = new ClsStbError();
 
 
         public FrmSvnPagoInversionistas()
@@ -174,11 +175,35 @@ namespace Holding
                     ClsSvnPagoInversion inv = new ClsSvnPagoInversion();
                     inv.NombrePersona = txtPersona.Text;
                     inv.CodigoPersona = txtCodPersona.Text;
-
+                    inv.NumeroTransferencia = txtNumero.Text;
+                    inv.FechaPago = DateTime.Parse(txtFechaPago.Text);
+                    inv.TotalPagado = decimal.Parse(txtTotalPagar.Text);
+                    inv.Observacion = txtObservacion.Text;
+                    inv.IdMoneda = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
+                    inv.IdFormaPago = int.Parse(cbxFormaPago.SelectedValue.ToString());
              }
+                //if (inversiones.GuardaUsuario() == true)
+                //{
+                //    MessageBox.Show("Pago Realizado con Éxito!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                //    MessageBox.Show(globales.MsgRegistroExitosoInserta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    LimpiarCampos();
+                //    this.Close();
+                //}
+                //else
+                //{
+                //    MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
             }
-            catch
+            catch (Exception IO)
             {
+                RegistroError.Formulario = this.ToString();
+                RegistroError.DetalleError = IO.ToString();
+                RegistroError.GuardaError();
+                FrmError frmError = new FrmError(globales.MsgError, IO.ToString(), globales.MsgErrorFinal);
+                this.Cursor = Cursors.Default;
+                frmError.ShowDialog();
+                return;
             }
         }
     }

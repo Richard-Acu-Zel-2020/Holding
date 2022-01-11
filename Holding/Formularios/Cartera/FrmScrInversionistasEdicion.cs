@@ -7,45 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin.Controls;
+using System.Text.RegularExpressions;
 
 namespace Holding
 {
-    //public partial class FrmScrInversionistasEdicion : MetroFramework.Forms.MetroForm
-    //public partial class FrmScrInversionistasEdicion : MaterialForm
     public partial class FrmScrInversionistasEdicion : Form
     {
-        readonly MaterialSkin.MaterialSkinManager skinManager;
+        readonly MaterialSkin.MaterialSkinManager materialSkinManager;
+        FrmScrCalendario Calendario = new FrmScrCalendario();
 
         public FrmScrInversionistasEdicion()
         {
             InitializeComponent();
 
-            skinManager = MaterialSkin.MaterialSkinManager.Instance;
-            skinManager.EnforceBackcolorOnAllComponents = false;
-            //skinManager.AddFormToManage(this);
-            skinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            skinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.Pink200, MaterialSkin.TextShade.BLACK);
+            //Estilo de Controladores
+            materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FrmScrInversionistasEdicion_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void btnFechaNacimiento_Click(object sender, EventArgs e)
         {
-            MetroFramework.MetroMessageBox.Show(this, "Este mensaje es al estilo metro", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Calendario.Location = new Point(540, 325);
+            Calendario.ShowDialog();
+            txtFechaNacimiento.Text = Calendario.fechavalor.ToShortDateString();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnFechaEmisionDNI_Click(object sender, EventArgs e)
         {
-
+            Calendario.Location = new Point(1350, 325);
+            Calendario.ShowDialog();
+            txtFechaEmisionDNI.Text = Calendario.fechavalor.ToShortDateString();
         }
 
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void btnFechaVenceDNI_Click(object sender, EventArgs e)
         {
-
+            Calendario.Location = new Point(1620, 325);
+            Calendario.ShowDialog();
+            txtFechaVencimientoDNI.Text = Calendario.fechavalor.ToShortDateString();
         }
     }
 }

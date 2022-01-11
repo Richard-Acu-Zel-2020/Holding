@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Holding
 {
-    public partial class FrmSvnCalendario : Form
+    public partial class FrmScrCalendario : Form
     {
-        public FrmSvnCalendario()
+        public FrmScrCalendario()
         {
             InitializeComponent();
         }

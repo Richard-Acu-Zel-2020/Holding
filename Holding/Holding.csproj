@@ -123,6 +123,7 @@
     <Compile Include="Clases\ClsSegEncripta.cs" />
     <Compile Include="Clases\ClsSegRoles.cs" />
     <Compile Include="Clases\ClsSegUsuario.cs" />
+    <Compile Include="Clases\ClsSolicitudInversion.cs" />
     <Compile Include="Clases\ClsStbError.cs" />
     <Compile Include="Clases\ClsStbParametros.cs" />
     <Compile Include="Clases\ClsSvnPagoInversion.cs" />
@@ -219,11 +220,11 @@
     <Compile Include="Formularios\Seguridad\FrmSegUsuario.Designer.cs">
       <DependentUpon>FrmSegUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Ventanilla\FrmSvnCalendario.cs">
+    <Compile Include="Formularios\Cartera\FrmScrCalendario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Ventanilla\FrmSvnCalendario.Designer.cs">
-      <DependentUpon>FrmSvnCalendario.cs</DependentUpon>
+    <Compile Include="Formularios\Cartera\FrmScrCalendario.Designer.cs">
+      <DependentUpon>FrmScrCalendario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Ventanilla\FrmSvnPagoInversionistas.cs">
       <SubType>Form</SubType>
@@ -278,8 +279,8 @@
     <EmbeddedResource Include="Formularios\Seguridad\FrmSegUsuario.resx">
       <DependentUpon>FrmSegUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Ventanilla\FrmSvnCalendario.resx">
-      <DependentUpon>FrmSvnCalendario.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Cartera\FrmScrCalendario.resx">
+      <DependentUpon>FrmScrCalendario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Ventanilla\FrmSvnPagoInversionistas.resx">
       <DependentUpon>FrmSvnPagoInversionistas.cs</DependentUpon>
@@ -383,6 +384,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icono_Principal.ico" />
+    <None Include="Resources\Botones\localizacion.png" />
     <None Include="Resources\Logos\persona.png" />
     <None Include="Resources\Botones\agregar_persona.png" />
     <None Include="Resources\Botones\Reportes.png" />

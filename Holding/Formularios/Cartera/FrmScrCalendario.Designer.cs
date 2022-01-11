@@ -1,7 +1,7 @@
 ﻿
 namespace Holding
 {
-    partial class FrmSvnCalendario
+    partial class FrmScrCalendario
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@ namespace Holding
             this.Calendario.TabIndex = 0;
             this.Calendario.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.Calendario_DateSelected);
             // 
-            // FrmSvnCalendario
+            // FrmScrCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -47,7 +47,7 @@ namespace Holding
             this.ClientSize = new System.Drawing.Size(307, 225);
             this.Controls.Add(this.Calendario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmSvnCalendario";
+            this.Name = "FrmScrCalendario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FrmSvnCalendario";
             this.Load += new System.EventHandler(this.FrmSvnCalendario_Load);
