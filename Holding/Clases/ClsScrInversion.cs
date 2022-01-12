@@ -394,7 +394,6 @@ namespace Holding
             Conne.Close();
             return tabla;
         }
+        #endregion
     }
-    #endregion
-
 }

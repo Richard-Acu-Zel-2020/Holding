@@ -298,6 +298,7 @@ namespace Holding
         }
         #endregion
 
+        #region "Carga los Datos del Plan de Pago"
         public DataTable PlanPagos(int idInversion)
         {
             ClsConexion con = new ClsConexion();
@@ -313,6 +314,140 @@ namespace Holding
             Conne.Close();
             return tabla;
         }
-    }
+        #endregion
 
+        #region "Guarda Pago de la Inversión"
+        //Ejecuta el procedimiento almacenado para Guardar Pago
+        public bool GuardaInversion()
+        {
+            ClsConexion conne = new ClsConexion();
+            SqlConnection conex = new SqlConnection(conne.Conexion);
+            conex.Open();
+            SqlCommand Com = new SqlCommand("Spd_SvnPagosInversion_Inserta");
+            Com.Connection = conex;
+            Com.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter prmIdInv = new SqlParameter("@objInversionID", SqlDbType.Int);
+            prmIdInv.Value = _Inversion;
+            Com.Parameters.Add(prmIdInv);
+
+            SqlParameter prmRecibo = new SqlParameter("@ConsecutivoRecibo", SqlDbType.Int);
+            prmRecibo.Value = _NumeroTransferencia;
+            Com.Parameters.Add(prmRecibo);
+
+            SqlParameter prmEstadoPagoID = new SqlParameter("@objEstadoPagoID", SqlDbType.Int);
+            prmEstadoPagoID.Value = _IdEstadoPago;
+            Com.Parameters.Add(prmEstadoPagoID);
+
+            SqlParameter prmFechaPago = new SqlParameter("@FechaPago", SqlDbType.DateTime);
+            prmFechaPago.Value = _FechaPago;
+            Com.Parameters.Add(prmFechaPago);
+
+            SqlParameter prmIdFormaPago = new SqlParameter("@objFormaPagoID", SqlDbType.Int);
+            prmIdFormaPago.Value = _IdFormaPago;
+            Com.Parameters.Add(prmIdFormaPago);
+
+            SqlParameter prmMoneda = new SqlParameter("@objMonedaID", SqlDbType.Int);
+            prmMoneda.Value = _IdMoneda;
+            Com.Parameters.Add(prmMoneda);
+
+            SqlParameter prmDiasTrans = new SqlParameter("@DiasTranscurridos", SqlDbType.Int);
+            prmDiasTrans.Value = _DiasTranscurridos;
+            Com.Parameters.Add(prmDiasTrans);
+
+            SqlParameter prmDiasMora = new SqlParameter("@DiasMora", SqlDbType.Int);
+            prmDiasMora.Value = _DiasMora;
+            Com.Parameters.Add(prmDiasMora);
+
+            SqlParameter prmEstadoInv = new SqlParameter("@objEstadoInversionID", SqlDbType.Int);
+            prmEstadoInv.Value = _EstadoInversion;
+            Com.Parameters.Add(prmEstadoInv);
+
+            SqlParameter prmPrincipal = new SqlParameter("@Principal", SqlDbType.Decimal);
+            prmPrincipal.Value = _Principal;
+            Com.Parameters.Add(prmPrincipal);
+
+            SqlParameter prmInteresCorriente = new SqlParameter("@InteresCorriente", SqlDbType.Decimal);
+            prmInteresCorriente.Value = _InteresCorriente;
+            Com.Parameters.Add(prmInteresCorriente);
+
+            SqlParameter prmInteresMora = new SqlParameter("@InteresMoratorio", SqlDbType.Decimal);
+            prmInteresMora.Value = _InteresMoratorio;
+            Com.Parameters.Add(prmInteresMora);
+
+            SqlParameter prmTotalPagado = new SqlParameter("@TotalPagado", SqlDbType.Decimal);
+            prmTotalPagado.Value = _TotalPagado;
+            Com.Parameters.Add(prmTotalPagado);
+
+            SqlParameter prmPrincipalAnte = new SqlParameter("@PrincipalAnterior", SqlDbType.Decimal);
+            prmPrincipalAnte.Value = _PrincipalAnterior;
+            Com.Parameters.Add(prmPrincipalAnte);
+
+            SqlParameter prmPrincipalAct = new SqlParameter("@PrincipalActual", SqlDbType.Decimal);
+            prmPrincipalAct.Value = _PrincipalActual;
+            Com.Parameters.Add(prmPrincipalAct);
+
+            SqlParameter prmInteresAnt = new SqlParameter("@InteresAnterior", SqlDbType.Decimal);
+            prmInteresAnt.Value = _InteresAnterior;
+            Com.Parameters.Add(prmInteresAnt);
+
+            SqlParameter prmInteresAct = new SqlParameter("@InteresActual", SqlDbType.Decimal);
+            prmInteresAct.Value = _InteresActual;
+            Com.Parameters.Add(prmInteresAct);
+
+            SqlParameter prmCodPersona = new SqlParameter("@CodPersonaRealizaPago", SqlDbType.VarChar);
+            prmCodPersona.Value = _CodigoPersona;
+            Com.Parameters.Add(prmCodPersona);
+
+            SqlParameter prmObservacion = new SqlParameter("@Observacion", SqlDbType.VarChar);
+            prmObservacion.Value = _Observacion;
+            Com.Parameters.Add(prmObservacion);
+
+            SqlParameter prmUsuarioCreacion = new SqlParameter("@UsuarioCreacion", SqlDbType.VarChar);
+            prmUsuarioCreacion.Value = globales.RetornaLogin();
+            Com.Parameters.Add(prmUsuarioCreacion);
+
+            SqlParameter prmfechaCrea = new SqlParameter("@FechaCreacion", SqlDbType.DateTime);
+            prmfechaCrea.Value = DateTime.Now;
+            Com.Parameters.Add(prmfechaCrea);
+
+            SqlParameter prmMaquinaCrea = new SqlParameter("@MaquinaCreacion", SqlDbType.VarChar);
+            prmMaquinaCrea.Value = globales.RetornaIP();
+            Com.Parameters.Add(prmMaquinaCrea);
+
+            SqlParameter prmNombrePersona = new SqlParameter("@NombrePersonaTransaccion", SqlDbType.VarChar);
+            prmNombrePersona.Value = _NombrePersona;
+            Com.Parameters.Add(prmNombrePersona);
+
+            if (Com.ExecuteNonQuery() != 0)
+            {
+                Com.Dispose();
+                Com = null;
+                if (conex.State == ConnectionState.Open)
+                {
+                    conex.Close();
+                }
+
+                conex.Dispose();
+                conex = null;
+                return true;
+            }
+
+            else
+            {
+                Com.Dispose();
+                Com = null;
+                if (conex.State == ConnectionState.Open)
+                {
+                    conex.Close();
+                }
+
+                conex.Dispose();
+                conex = null;
+                return false;
+            }
+        }
+        #endregion
+
+    }
 }

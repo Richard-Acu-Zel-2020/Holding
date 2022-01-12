@@ -30,6 +30,7 @@ namespace Holding
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
         }
 
+        #region "Funciones Principales del Formulario"
         ClsScrInversion inversiones = null;
         internal ClsScrInversion inversion
         {
@@ -91,13 +92,16 @@ namespace Holding
                 Carga();
             }
         }
+        #endregion
 
+        #region "Botón de Cancelar"
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
 
-        #region Función para Cargar Datos
+        #region "Función para Cargar Datos"
         public void Carga()
         {
             ClsSvnPagoInversion clspago = new ClsSvnPagoInversion();
@@ -121,9 +125,11 @@ namespace Holding
         }
         #endregion
 
+        #region "Botón de Guardar con sus Funciones"
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Error.Clear();
+            ClsSvnPagoInversion pago = new ClsSvnPagoInversion();
 
             //Validación cuando no se Selecciona Ninguna Cuota en el Datagrid
             int filaseleccionada = 0;
@@ -172,28 +178,31 @@ namespace Holding
 
              if (Result == DialogResult.Yes)
              {
-                    ClsSvnPagoInversion inv = new ClsSvnPagoInversion();
-                    inv.NombrePersona = txtPersona.Text;
-                    inv.CodigoPersona = txtCodPersona.Text;
-                    inv.NumeroTransferencia = txtNumero.Text;
-                    inv.FechaPago = DateTime.Parse(txtFechaPago.Text);
-                    inv.TotalPagado = decimal.Parse(txtTotalPagar.Text);
-                    inv.Observacion = txtObservacion.Text;
-                    inv.IdMoneda = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
-                    inv.IdFormaPago = int.Parse(cbxFormaPago.SelectedValue.ToString());
+                    pago.NombrePersona = txtPersona.Text;
+                    pago.CodigoPersona = txtCodPersona.Text;
+                    pago.Inversion = int.Parse(txtIdInversion.Text);
+                    pago.Principal = decimal.Parse(txtPrincipal.Text);
+                    pago.InteresCorriente = decimal.Parse(txtInteresCorriente.Text);
+                    pago.InteresMoratorio = decimal.Parse(txtInteresMoratorio.Text);
+                    pago.NumeroTransferencia = txtNumero.Text;
+                    pago.FechaPago = DateTime.Parse(txtFechaPago.Text);
+                    pago.TotalPagado = decimal.Parse(txtMonto.Text);
+                    pago.Observacion = txtObservacion.Text;
+                    pago.IdMoneda = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
+                    pago.IdFormaPago = int.Parse(cbxFormaPago.SelectedValue.ToString());
              }
-                //if (inversiones.GuardaUsuario() == true)
-                //{
-                //    MessageBox.Show("Pago Realizado con Éxito!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                //    MessageBox.Show(globales.MsgRegistroExitosoInserta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    LimpiarCampos();
-                //    this.Close();
-                //}
-                //else
-                //{
-                //    MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    return;
-                //}
+                if (pago.GuardaInversion() == true)
+                {
+                    MessageBox.Show("Pago Realizado con Éxito!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show(globales.MsgRegistroExitosoInserta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
             catch (Exception IO)
             {
@@ -206,5 +215,32 @@ namespace Holding
                 return;
             }
         }
+        #endregion
+
+        #region "Función de Limpiar Campos"
+        public void LimpiarCampos()
+        {
+            txtIdInversion.Text = "";
+            txtPersona.Text = "";
+            txtCodPersona.Text = "";
+            txtNombreEmpresa.Text = "";
+            txtRuc.Text = "";
+            dgvPlanPago.ClearSelection();
+            txtNumero.Text = "";
+            cbxMoneda.ResetText();
+            txtMontoInversion.Text = "";
+            txtNombreCliente.Text = "";
+            txtPrincipal.Text = "";
+            txtInteresCorriente.Text = "";
+            txtInteresMoratorio.Text = "";
+            txtTotalPagar.Text = "";
+            txtNumRecibo.Text = "";
+            cbxTipoMoneda.ResetText();
+            txtFechaPago.Text = "";
+            cbxFormaPago.ResetText();
+            txtMonto.Text = "";
+            txtObservacion.Text = "";
+        }
+        #endregion
     }
 }

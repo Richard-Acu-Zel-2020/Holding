@@ -53,7 +53,7 @@ namespace Holding
             this.tbDocumentos = new System.Windows.Forms.TabPage();
             this.txtObservacion = new MaterialSkin.Controls.MaterialTextBox();
             this.txtMonto = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtIdTransferencia = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtNumRecibo = new MaterialSkin.Controls.MaterialTextBox();
             this.cbxTipoMoneda = new MaterialSkin.Controls.MaterialComboBox();
             this.txtFechaPago = new MaterialSkin.Controls.MaterialTextBox();
             this.cbxFormaPago = new MaterialSkin.Controls.MaterialComboBox();
@@ -357,7 +357,7 @@ namespace Holding
             this.tbDocumentos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
             this.tbDocumentos.Controls.Add(this.txtObservacion);
             this.tbDocumentos.Controls.Add(this.txtMonto);
-            this.tbDocumentos.Controls.Add(this.txtIdTransferencia);
+            this.tbDocumentos.Controls.Add(this.txtNumRecibo);
             this.tbDocumentos.Controls.Add(this.cbxTipoMoneda);
             this.tbDocumentos.Controls.Add(this.txtFechaPago);
             this.tbDocumentos.Controls.Add(this.cbxFormaPago);
@@ -403,24 +403,24 @@ namespace Holding
             this.txtMonto.Text = "";
             this.txtMonto.TrailingIcon = null;
             // 
-            // txtIdTransferencia
+            // txtNumRecibo
             // 
-            this.txtIdTransferencia.BackColor = System.Drawing.SystemColors.Window;
-            this.txtIdTransferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdTransferencia.Depth = 0;
-            this.txtIdTransferencia.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtIdTransferencia.ForeColor = System.Drawing.Color.White;
-            this.txtIdTransferencia.Hint = "Número de Transferencia";
-            this.txtIdTransferencia.LeadingIcon = null;
-            this.txtIdTransferencia.Location = new System.Drawing.Point(70, 25);
-            this.txtIdTransferencia.MaxLength = 50;
-            this.txtIdTransferencia.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtIdTransferencia.Multiline = false;
-            this.txtIdTransferencia.Name = "txtIdTransferencia";
-            this.txtIdTransferencia.Size = new System.Drawing.Size(233, 50);
-            this.txtIdTransferencia.TabIndex = 14;
-            this.txtIdTransferencia.Text = "";
-            this.txtIdTransferencia.TrailingIcon = null;
+            this.txtNumRecibo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNumRecibo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumRecibo.Depth = 0;
+            this.txtNumRecibo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNumRecibo.ForeColor = System.Drawing.Color.White;
+            this.txtNumRecibo.Hint = "Número de Transferencia";
+            this.txtNumRecibo.LeadingIcon = null;
+            this.txtNumRecibo.Location = new System.Drawing.Point(70, 25);
+            this.txtNumRecibo.MaxLength = 50;
+            this.txtNumRecibo.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtNumRecibo.Multiline = false;
+            this.txtNumRecibo.Name = "txtNumRecibo";
+            this.txtNumRecibo.Size = new System.Drawing.Size(233, 50);
+            this.txtNumRecibo.TabIndex = 14;
+            this.txtNumRecibo.Text = "";
+            this.txtNumRecibo.TrailingIcon = null;
             // 
             // cbxTipoMoneda
             // 
@@ -716,7 +716,7 @@ namespace Holding
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbDocumentos;
         private MaterialSkin.Controls.MaterialTextBox txtFechaPago;
-        private MaterialSkin.Controls.MaterialTextBox txtIdTransferencia;
+        private MaterialSkin.Controls.MaterialTextBox txtNumRecibo;
         private MaterialSkin.Controls.MaterialComboBox cbxTipoMoneda;
         private MaterialSkin.Controls.MaterialComboBox cbxFormaPago;
         private MaterialSkin.Controls.MaterialTextBox txtNumero;
