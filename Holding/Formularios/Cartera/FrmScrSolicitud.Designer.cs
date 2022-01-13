@@ -1,6 +1,6 @@
 ﻿namespace Holding
 {
-    partial class FrmScrInversionistas
+    partial class FrmScrSolicitud
     {
         /// <summary>
         /// Required designer variable.
@@ -210,7 +210,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -246,7 +246,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(283, 30);
             this.txtBuscar.TabIndex = 2;
             // 
-            // FrmScrInversionistas
+            // FrmScrSolicitud
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
@@ -258,12 +258,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmScrInversionistas";
+            this.Name = "FrmScrSolicitud";
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inversionistas";
-            this.Load += new System.EventHandler(this.FrmScrInversionistas_Load);
+            this.Load += new System.EventHandler(this.FrmScrSolicitud_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

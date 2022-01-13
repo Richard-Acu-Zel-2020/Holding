@@ -123,7 +123,7 @@
     <Compile Include="Clases\ClsSegEncripta.cs" />
     <Compile Include="Clases\ClsSegRoles.cs" />
     <Compile Include="Clases\ClsSegUsuario.cs" />
-    <Compile Include="Clases\ClsSolicitudInversion.cs" />
+    <Compile Include="Clases\ClsScrSolicitudInversion.cs" />
     <Compile Include="Clases\ClsStbError.cs" />
     <Compile Include="Clases\ClsStbParametros.cs" />
     <Compile Include="Clases\ClsSvnPagoInversion.cs" />
@@ -142,23 +142,17 @@
     <Compile Include="Formularios\Cartera\FrmScrInversion.Designer.cs">
       <DependentUpon>FrmScrInversion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cartera\FrmScrInversionistasEdicion.cs">
+    <Compile Include="Formularios\Cartera\FrmScrSolicitudEdicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cartera\FrmScrInversionistasEdicion.Designer.cs">
-      <DependentUpon>FrmScrInversionistasEdicion.cs</DependentUpon>
+    <Compile Include="Formularios\Cartera\FrmScrSolicitudEdicion.Designer.cs">
+      <DependentUpon>FrmScrSolicitudEdicion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cartera\FrmInversionistasPagos.cs">
+    <Compile Include="Formularios\Cartera\FrmScrSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cartera\FrmInversionistasPagos.Designer.cs">
-      <DependentUpon>FrmInversionistasPagos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Cartera\FrmScrInversionistas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\Cartera\FrmScrInversionistas.Designer.cs">
-      <DependentUpon>FrmScrInversionistas.cs</DependentUpon>
+    <Compile Include="Formularios\Cartera\FrmScrSolicitud.Designer.cs">
+      <DependentUpon>FrmScrSolicitud.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Formularios Principales\FrmMensajeError.cs">
       <SubType>Form</SubType>
@@ -240,14 +234,11 @@
     <EmbeddedResource Include="Formularios\Cartera\FrmScrInversion.resx">
       <DependentUpon>FrmScrInversion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Cartera\FrmScrInversionistasEdicion.resx">
-      <DependentUpon>FrmScrInversionistasEdicion.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Cartera\FrmScrSolicitudEdicion.resx">
+      <DependentUpon>FrmScrSolicitudEdicion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Cartera\FrmInversionistasPagos.resx">
-      <DependentUpon>FrmInversionistasPagos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Cartera\FrmScrInversionistas.resx">
-      <DependentUpon>FrmScrInversionistas.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Cartera\FrmScrSolicitud.resx">
+      <DependentUpon>FrmScrSolicitud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Formularios Principales\FrmMensajeError.resx">
       <DependentUpon>FrmMensajeError.cs</DependentUpon>

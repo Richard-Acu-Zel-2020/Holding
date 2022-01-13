@@ -13,22 +13,22 @@ using MaterialSkin.Controls;
 namespace Holding
 {
 
-    public partial class FrmScrInversionistas : Form
+    public partial class FrmScrSolicitud : Form
     {
 
-        public FrmScrInversionistas()
+        public FrmScrSolicitud()
         {
             InitializeComponent();
         }
 
-        private void FrmScrInversionistas_Load(object sender, EventArgs e)
+        private void FrmScrSolicitud_Load(object sender, EventArgs e)
         {
 
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            FrmScrInversionistasEdicion Solicitudes = new FrmScrInversionistasEdicion();
+            FrmScrSolicitudEdicion Solicitudes = new FrmScrSolicitudEdicion();
             Solicitudes.ShowDialog();
         }
     }

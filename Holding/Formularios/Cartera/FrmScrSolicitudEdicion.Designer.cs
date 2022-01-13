@@ -1,6 +1,6 @@
 ﻿namespace Holding
 {
-    partial class FrmScrInversionistasEdicion
+    partial class FrmScrSolicitudEdicion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScrInversionistasEdicion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScrSolicitudEdicion));
             this.materialTextBox10 = new MaterialSkin.Controls.MaterialTextBox();
             this.materialTextBox7 = new MaterialSkin.Controls.MaterialTextBox();
             this.txtSegundoApellido = new MaterialSkin.Controls.MaterialTextBox();
@@ -460,7 +460,7 @@
             this.groupBox2.Controls.Add(this.txtPrimerApellido);
             this.groupBox2.Controls.Add(this.btnUbicacion);
             this.groupBox2.Controls.Add(this.materialTextBox10);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 66);
             this.groupBox2.Name = "groupBox2";
@@ -594,7 +594,7 @@
             this.groupBox3.Controls.Add(this.cbxPropietario);
             this.groupBox3.Controls.Add(this.txtMontoInversion);
             this.groupBox3.Controls.Add(this.materialTextBox9);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 420);
             this.groupBox3.Name = "groupBox3";
@@ -614,7 +614,7 @@
             this.groupBox4.Size = new System.Drawing.Size(259, 61);
             this.groupBox4.TabIndex = 43;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Opciones";
+            this.groupBox4.Text = "Tipo de Cliente";
             // 
             // cbxPeriocidadPrincipal
             // 
@@ -765,7 +765,7 @@
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // FrmScrInversionistasEdicion
+            // FrmScrSolicitudEdicion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
@@ -779,10 +779,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmScrInversionistasEdicion";
+            this.Name = "FrmScrSolicitudEdicion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Solicitud de Inversión";
-            this.Load += new System.EventHandler(this.FrmScrInversionistasEdicion_Load);
+            this.Load += new System.EventHandler(this.FrmScrSolicitudEdicion_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

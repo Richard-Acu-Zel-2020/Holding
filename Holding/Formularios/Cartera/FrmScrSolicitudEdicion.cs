@@ -11,12 +11,12 @@ using System.Text.RegularExpressions;
 
 namespace Holding
 {
-    public partial class FrmScrInversionistasEdicion : Form
+    public partial class FrmScrSolicitudEdicion : Form
     {
         readonly MaterialSkin.MaterialSkinManager materialSkinManager;
         FrmScrCalendario Calendario = new FrmScrCalendario();
 
-        public FrmScrInversionistasEdicion()
+        public FrmScrSolicitudEdicion()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace Holding
             materialSkinManager.ColorScheme = new MaterialSkin.ColorScheme(MaterialSkin.Primary.Indigo500, MaterialSkin.Primary.Indigo700, MaterialSkin.Primary.Indigo100, MaterialSkin.Accent.LightBlue200, MaterialSkin.TextShade.WHITE);
         }
 
-        private void FrmScrInversionistasEdicion_Load(object sender, EventArgs e)
+        private void FrmScrSolicitudEdicion_Load(object sender, EventArgs e)
         {
 
         }

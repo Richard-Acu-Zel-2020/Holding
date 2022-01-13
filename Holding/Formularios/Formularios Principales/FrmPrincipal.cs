@@ -136,7 +136,7 @@ namespace Holding
 
         private void btnProveedorFondo_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FrmScrInversionistas());
+            AbrirFormularioHijo(new FrmScrSolicitud());
         }
 
         private void btnRolesAcciones_Click(object sender, EventArgs e)
