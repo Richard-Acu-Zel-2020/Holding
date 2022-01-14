@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Holding
 {
-    public partial class FrmScrInversion : Form
+    public partial class FrmSvnInversion : Form
     {
-        public FrmScrInversion()
+        public FrmSvnInversion()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace Holding
         ClsVariablesGoblales globales = new ClsVariablesGoblales();
         ClsStbError RegistroError = new ClsStbError();
 
-        private void FrmScrInversion_Load(object sender, EventArgs e)
+        private void FrmSvnInversion_Load(object sender, EventArgs e)
         {
             Carga();
         }
@@ -37,6 +37,7 @@ namespace Holding
             dgvInversion.DataSource = clsinversion.Inversiones();
             dgvInversion.Columns[0].Visible = false;
             dgvInversion.Columns[14].Visible = false;
+            dgvInversion.Columns[15].Visible = false;
             //dgvInversion.Columns[1].Width = 70;
             txtBuscar.Text = "";
             lblContador.Text = String.Format("{0:N0}", double.Parse(dgvInversion.RowCount.ToString()));
@@ -64,6 +65,7 @@ namespace Holding
                     clsInversion.NombreCliente = dgvInversion.Rows[dgvInversion.SelectedRows[0].Index].Cells[2].Value.ToString();
                     clsInversion.Monto = Decimal.Parse(dgvInversion.Rows[dgvInversion.SelectedRows[0].Index].Cells[3].Value.ToString());
                     clsInversion.IdMoneda = int.Parse(dgvInversion.Rows[dgvInversion.SelectedRows[0].Index].Cells[14].Value.ToString());
+                    clsInversion.IdEstadoInversion = int.Parse(dgvInversion.Rows[dgvInversion.SelectedRows[0].Index].Cells[15].Value.ToString());
                     PagarInversion.inversion = clsInversion;
                     PagarInversion.ShowDialog();
                     Carga();

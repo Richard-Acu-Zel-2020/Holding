@@ -177,7 +177,7 @@ namespace Holding
 
         private void btnPagosProveedores_Click(object sender, EventArgs e)
         {
-            AbrirFormularioHijo(new FrmScrInversion());
+            AbrirFormularioHijo(new FrmSvnInversion());
         }
 
         private void PanelContenedor_Paint_1(object sender, PaintEventArgs e)

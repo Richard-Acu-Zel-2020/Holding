@@ -83,8 +83,10 @@ namespace Holding
                 txtNombreCliente.Text = inversiones.NombreCliente;
                 txtMontoInversion.Text = inversiones.Monto.ToString();
                 cbxMoneda.SelectedValue = inversiones.IdMoneda;
+                txtIdEstadoInver.Text = inversiones.IdEstadoInversion.ToString();
 
                 this.txtIdInversion.Visible = false;
+                txtIdEstadoInver.Visible = false;
                 txtNumero.ReadOnly = true;
                 txtNombreCliente.ReadOnly = true;
                 cbxMoneda.Enabled = false;
@@ -133,14 +135,14 @@ namespace Holding
 
             //Validación cuando no se Selecciona Ninguna Cuota en el Datagrid
             int filaseleccionada = 0;
-            for(int fila = 0; fila < dgvPlanPago.Rows.Count; fila ++)
+            for (int fila = 0; fila < dgvPlanPago.Rows.Count; fila++)
             {
                 if (Convert.ToBoolean(dgvPlanPago.Rows[fila].Cells[0].Value) == true)
                 {
                     filaseleccionada = filaseleccionada + 1;
                 }
 
-                if(filaseleccionada == 0)
+                if (filaseleccionada == 0)
                 {
                     MessageBox.Show("Favor Seleccione las Cuotas a Pagar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -178,20 +180,29 @@ namespace Holding
 
              if (Result == DialogResult.Yes)
              {
-                    pago.NombrePersona = txtPersona.Text;
-                    pago.CodigoPersona = txtCodPersona.Text;
                     pago.Inversion = int.Parse(txtIdInversion.Text);
+                    pago.FechaPago = DateTime.Parse(txtFechaPago.Text);
+                    pago.IdFormaPago = int.Parse(cbxFormaPago.SelectedValue.ToString());
+                    pago.IdMoneda = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
+                    pago.DiasTranscurridos = 0;
+                    pago.DiasMora = 0;
+                    pago.EstadoInversion = int.Parse(txtIdEstadoInver.Text);
                     pago.Principal = decimal.Parse(txtPrincipal.Text);
                     pago.InteresCorriente = decimal.Parse(txtInteresCorriente.Text);
                     pago.InteresMoratorio = decimal.Parse(txtInteresMoratorio.Text);
-                    pago.NumeroTransferencia = txtNumero.Text;
-                    pago.FechaPago = DateTime.Parse(txtFechaPago.Text);
+                    //pago.NumeroTransferencia = int.Parse(txtNumero.Text);
+
                     pago.TotalPagado = decimal.Parse(txtMonto.Text);
+                    pago.PrincipalAnterior = 0;
+                    pago.PrincipalActual = 0;
+                    pago.InteresAnterior = 0;
+                    pago.InteresActual = 0;
+                    pago.CodigoPersona = txtCodPersona.Text;
                     pago.Observacion = txtObservacion.Text;
-                    pago.IdMoneda = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
-                    pago.IdFormaPago = int.Parse(cbxFormaPago.SelectedValue.ToString());
-             }
-                if (pago.GuardaInversion() == true)
+                    pago.NombrePersona = txtPersona.Text;
+              }
+                if (pago.GuardaInversion() != "")
+
                 {
                     MessageBox.Show("Pago Realizado con Éxito!!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //MessageBox.Show(globales.MsgRegistroExitosoInserta, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -216,6 +227,12 @@ namespace Holding
             }
         }
         #endregion
+
+        //Pendiente
+        //Forma de Pago Transferencia, Desactivar los Demás
+        //Check para Calcular las Cuotas
+        //Validacion de Cuotas por Orden
+
 
         #region "Función de Limpiar Campos"
         public void LimpiarCampos()

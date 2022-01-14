@@ -13,7 +13,7 @@ namespace Holding
 
         int _IdPago = 0;
         int _Inversion = 0;
-        String _NumeroTransferencia = "";
+        int _NumeroTransferencia = 0;
         int _IdEstadoPago = 0;
         DateTime _FechaPago;
         int _IdFormaPago = 0;
@@ -49,7 +49,7 @@ namespace Holding
         #region Constructores
         public ClsSvnPagoInversion() { }
 
-        public ClsSvnPagoInversion(int IdPago, int Inversion, String NumeroTransferencia, int IdEstadoPago, DateTime FechaPago, int IdFormaPago, int IdMoneda, int DiasTranscurridos, int DiasMora, int EstadoInversion,
+        public ClsSvnPagoInversion(int IdPago, int Inversion, int NumeroTransferencia, int IdEstadoPago, DateTime FechaPago, int IdFormaPago, int IdMoneda, int DiasTranscurridos, int DiasMora, int EstadoInversion,
         Decimal Principal, Decimal InteresCorriente, Decimal InteresMoratorio, Decimal TotalPagado, Decimal PrincipalAnterior, Decimal PrincipalActual, Decimal InteresAnterior, Decimal InteresActual, String CodigoPersona,
         String Observacion, String UsuarioCreacion, DateTime FechaCreacion, String MaquinaCreacion, String UsuarioModificacion, DateTime FechaModificacion, String MaquinaModificacion, String UsuarioAnula, DateTime FechaAnula,
         String MaquinaAnula, String MotivoAnula, int IdNotaMotivo, String Cuotas, Byte EnCuotas, String NombrePersona)
@@ -105,7 +105,7 @@ namespace Holding
             set { _Inversion = value; }
         }
 
-        public string NumeroTransferencia 
+        public int NumeroTransferencia 
         {
             get { return _NumeroTransferencia; }
             set { _NumeroTransferencia = value; }
@@ -293,7 +293,7 @@ namespace Holding
 
         public string NombrePersona 
         {
-            get { return NombrePersona; }
+            get { return _NombrePersona; }
             set { _NombrePersona = value; } 
         }
         #endregion
@@ -318,11 +318,12 @@ namespace Holding
 
         #region "Guarda Pago de la Inversión"
         //Ejecuta el procedimiento almacenado para Guardar Pago
-        public bool GuardaInversion()
+        public String GuardaInversion()
         {
             ClsConexion conne = new ClsConexion();
             SqlConnection conex = new SqlConnection(conne.Conexion);
             conex.Open();
+            string resultado = "";
             SqlCommand Com = new SqlCommand("Spd_SvnPagosInversion_Inserta");
             Com.Connection = conex;
             Com.CommandType = CommandType.StoredProcedure;
@@ -331,13 +332,13 @@ namespace Holding
             prmIdInv.Value = _Inversion;
             Com.Parameters.Add(prmIdInv);
 
-            SqlParameter prmRecibo = new SqlParameter("@ConsecutivoRecibo", SqlDbType.Int);
-            prmRecibo.Value = _NumeroTransferencia;
-            Com.Parameters.Add(prmRecibo);
+            //SqlParameter prmRecibo = new SqlParameter("@ConsecutivoRecibo", SqlDbType.Int);
+            //prmRecibo.Value = _NumeroTransferencia;
+            //Com.Parameters.Add(prmRecibo);
 
-            SqlParameter prmEstadoPagoID = new SqlParameter("@objEstadoPagoID", SqlDbType.Int);
-            prmEstadoPagoID.Value = _IdEstadoPago;
-            Com.Parameters.Add(prmEstadoPagoID);
+            //SqlParameter prmEstadoPagoID = new SqlParameter("@objEstadoPagoID", SqlDbType.Int);
+            //prmEstadoPagoID.Value = _IdEstadoPago;
+            //Com.Parameters.Add(prmEstadoPagoID);
 
             SqlParameter prmFechaPago = new SqlParameter("@FechaPago", SqlDbType.DateTime);
             prmFechaPago.Value = _FechaPago;
@@ -419,8 +420,13 @@ namespace Holding
             prmNombrePersona.Value = _NombrePersona;
             Com.Parameters.Add(prmNombrePersona);
 
+            SqlParameter prmNumeroRecibo = new SqlParameter("@NumeroRecibo", SqlDbType.VarChar, 15);
+            prmNumeroRecibo.Direction = ParameterDirection.Output;
+            Com.Parameters.Add(prmNumeroRecibo);
+
             if (Com.ExecuteNonQuery() != 0)
             {
+                string salida = Com.Parameters["@NumeroRecibo"].Value.ToString();
                 Com.Dispose();
                 Com = null;
                 if (conex.State == ConnectionState.Open)
@@ -430,7 +436,7 @@ namespace Holding
 
                 conex.Dispose();
                 conex = null;
-                return true;
+                resultado = salida;
             }
 
             else
@@ -444,8 +450,10 @@ namespace Holding
 
                 conex.Dispose();
                 conex = null;
-                return false;
+                resultado = "";
             }
+
+            return resultado;
         }
         #endregion
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Holding
 {
-    partial class FrmScrInversion
+    partial class FrmSvnInversion
     {
         /// <summary>
         /// Required designer variable.
@@ -83,7 +83,7 @@ namespace Holding
             this.dgvInversion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -226,7 +226,7 @@ namespace Holding
             this.btnPagar.UseVisualStyleBackColor = false;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
-            // FrmScrInversion
+            // FrmSvnInversion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
@@ -236,9 +236,9 @@ namespace Holding
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmScrInversion";
-            this.Text = "FrmScrInversion";
-            this.Load += new System.EventHandler(this.FrmScrInversion_Load);
+            this.Name = "FrmSvnInversion";
+            this.Text = "FrmSvnInversion";
+            this.Load += new System.EventHandler(this.FrmSvnInversion_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInversion)).EndInit();

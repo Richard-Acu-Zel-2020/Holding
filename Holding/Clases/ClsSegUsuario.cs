@@ -329,7 +329,6 @@ namespace Holding
                     conex = null;
                     return false;
                 }
-
         }
         #endregion
 

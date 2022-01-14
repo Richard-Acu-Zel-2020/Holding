@@ -136,11 +136,11 @@
     <Compile Include="Clases\RZTextBox.Designer.cs">
       <DependentUpon>RZTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Cartera\FrmScrInversion.cs">
+    <Compile Include="Formularios\Ventanilla\FrmSvnInversion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Cartera\FrmScrInversion.Designer.cs">
-      <DependentUpon>FrmScrInversion.cs</DependentUpon>
+    <Compile Include="Formularios\Ventanilla\FrmSvnInversion.Designer.cs">
+      <DependentUpon>FrmSvnInversion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Cartera\FrmScrSolicitudEdicion.cs">
       <SubType>Form</SubType>
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="Clases\RZTextBox.resx">
       <DependentUpon>RZTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Cartera\FrmScrInversion.resx">
-      <DependentUpon>FrmScrInversion.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Ventanilla\FrmSvnInversion.resx">
+      <DependentUpon>FrmSvnInversion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cartera\FrmScrSolicitudEdicion.resx">
       <DependentUpon>FrmScrSolicitudEdicion.cs</DependentUpon>

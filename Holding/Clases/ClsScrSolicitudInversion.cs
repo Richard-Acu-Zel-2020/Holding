@@ -28,7 +28,7 @@ namespace Holding
         String _CorreoElectronico = "";
         int _Telefono1 = 0;
         int _Telefono2 = 0;
-        float _Ubicacion = 0;
+        double _Ubicacion = 0;
         int _IdObligacion = 0;
         int _objPropietarioID = 0;
         int _objSectorID = 0;
@@ -51,7 +51,7 @@ namespace Holding
 
         public ClsScrSolicitudInversion(int IdSolicitud, int NumSolicitud, string Nombre1, string Nombre2, string Apellido1, string Apellido2, DateTime FechaNacimiento, int objTipoDocumentoID, 
                                         string DNI, DateTime FechaEmision, DateTime FechaVencimiento, int objTipoPersonaID, int objSexoID, int objEstadoCivil, string CorreoElectronico, int Telefono1, int Telefono2, 
-                                        float Ubicacion, int IdObligacion, int objPropietarioID, int objSectorID, int PeriocidadInt, int PeriocidadPrin, decimal Monto, string TipoCliente, String UsuarioCreacion, 
+                                        double Ubicacion, int IdObligacion, int objPropietarioID, int objSectorID, int PeriocidadInt, int PeriocidadPrin, decimal Monto, string TipoCliente, String UsuarioCreacion, 
                                         DateTime FechaCreacion, String MaquinaCreacion, String UsuarioModificacion, DateTime FechaModificacion, String MaquinaModificacion, String UsuarioAnulacion, DateTime FechaAnulacion, String MaquinaAnulacion)
         {
             IdSolicitud = _IdSolicitud;
@@ -194,7 +194,7 @@ namespace Holding
             set { _Telefono2 = value; }
         }
 
-        public float Ubicacion 
+        public double Ubicacion 
         {
             get { return _Ubicacion; }
             set { _Ubicacion = value; }

@@ -345,7 +345,8 @@ namespace Holding
             SI.SaldoPrincipal As [Saldo Principal], SI.SaldoIntereses [Saldo Interes], SI.SaldoMora [Saldo Mora], 
             --SI.SaldoComision, 
             SI.CuotaVencida [Cuota Vencida],
-            SV4.ID AS idMoneda
+            SV4.ID AS idMoneda,
+            SV1.ID AS idEstado
             FROM ScrInversion SI 
             INNER JOIN StbCliente SC ON SI.ObjClienteID=SC.ID
             INNER JOIN StbCatalogoValor SV1 ON SI.objEstadoInversionID=SV1.ID
@@ -380,7 +381,8 @@ namespace Holding
             SI.SaldoPrincipal As [Saldo Principal], SI.SaldoIntereses [Saldo Interes], SI.SaldoMora [Saldo Mora], 
             --SI.SaldoComision, 
             SI.CuotaVencida [Cuota Vencida],
-            SV4.ID AS idMoneda
+            SV4.ID AS idMoneda,
+            SV1.ID AS idEstado
             FROM ScrInversion SI 
             INNER JOIN StbCliente SC ON SI.ObjClienteID=SC.ID
             INNER JOIN StbCatalogoValor SV1 ON SI.objEstadoInversionID=SV1.ID

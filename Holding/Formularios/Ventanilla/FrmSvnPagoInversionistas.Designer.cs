@@ -69,6 +69,7 @@ namespace Holding
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.txtPersona = new MaterialSkin.Controls.MaterialTextBox();
             this.txtCodPersona = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtIdEstadoInver = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -661,11 +662,30 @@ namespace Holding
             this.txtCodPersona.Text = "";
             this.txtCodPersona.TrailingIcon = null;
             // 
+            // txtIdEstadoInver
+            // 
+            this.txtIdEstadoInver.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdEstadoInver.Depth = 0;
+            this.txtIdEstadoInver.Enabled = false;
+            this.txtIdEstadoInver.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdEstadoInver.Hint = "Id Estado Inversion";
+            this.txtIdEstadoInver.LeadingIcon = null;
+            this.txtIdEstadoInver.Location = new System.Drawing.Point(1054, 16);
+            this.txtIdEstadoInver.MaxLength = 50;
+            this.txtIdEstadoInver.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtIdEstadoInver.Multiline = false;
+            this.txtIdEstadoInver.Name = "txtIdEstadoInver";
+            this.txtIdEstadoInver.Size = new System.Drawing.Size(204, 50);
+            this.txtIdEstadoInver.TabIndex = 20;
+            this.txtIdEstadoInver.Text = "";
+            this.txtIdEstadoInver.TrailingIcon = null;
+            // 
             // FrmSvnPagoInversionistas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
             this.ClientSize = new System.Drawing.Size(1498, 827);
+            this.Controls.Add(this.txtIdEstadoInver);
             this.Controls.Add(this.txtCodPersona);
             this.Controls.Add(this.txtPersona);
             this.Controls.Add(this.groupBox5);
@@ -735,5 +755,6 @@ namespace Holding
         private System.Windows.Forms.ErrorProvider Error;
         private MaterialSkin.Controls.MaterialTextBox txtCodPersona;
         private MaterialSkin.Controls.MaterialTextBox txtPersona;
+        private MaterialSkin.Controls.MaterialTextBox txtIdEstadoInver;
     }
 }
