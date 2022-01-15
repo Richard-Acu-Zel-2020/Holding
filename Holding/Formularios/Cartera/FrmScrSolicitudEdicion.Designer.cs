@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScrSolicitudEdicion));
-            this.materialTextBox10 = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox7 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtUbicacionLat = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtCorreo = new MaterialSkin.Controls.MaterialTextBox();
             this.txtSegundoApellido = new MaterialSkin.Controls.MaterialTextBox();
             this.txtPrimerApellido = new MaterialSkin.Controls.MaterialTextBox();
             this.txtSegundoNombre = new MaterialSkin.Controls.MaterialTextBox();
             this.txtPrimerNombre = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox3 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtDNI = new MaterialSkin.Controls.MaterialTextBox();
             this.txtNumeroSolicitud = new MaterialSkin.Controls.MaterialTextBox();
             this.txtMontoInversion = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialTextBox9 = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtIdObligacion = new MaterialSkin.Controls.MaterialTextBox();
             this.rbtnSofisticado = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbtnIndividual = new MaterialSkin.Controls.MaterialRadioButton();
             this.label9 = new System.Windows.Forms.Label();
@@ -53,58 +54,63 @@
             this.txtTelefono1 = new MaterialSkin.Controls.MaterialTextBox();
             this.txtTelefono2 = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtUbicacionLon = new MaterialSkin.Controls.MaterialTextBox();
             this.cbxEstadoCivil = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxSexo = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxTipoPersona = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxPaisOrigen = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxTipoDocumentoDNI = new MaterialSkin.Controls.MaterialComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtPropietario = new MaterialSkin.Controls.MaterialTextBox();
+            this.gbxTipoCliente = new System.Windows.Forms.GroupBox();
             this.cbxPeriocidadPrincipal = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxPeriocidadInteres = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxTipoMoneda = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxSector = new MaterialSkin.Controls.MaterialComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtPropietario = new MaterialSkin.Controls.MaterialTextBox();
+            this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gbxTipoCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
-            // materialTextBox10
+            // txtUbicacionLat
             // 
-            this.materialTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox10.Depth = 0;
-            this.materialTextBox10.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox10.Hint = "Ubicación";
-            this.materialTextBox10.LeadingIcon = null;
-            this.materialTextBox10.Location = new System.Drawing.Point(715, 266);
-            this.materialTextBox10.MaxLength = 50;
-            this.materialTextBox10.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox10.Multiline = false;
-            this.materialTextBox10.Name = "materialTextBox10";
-            this.materialTextBox10.Size = new System.Drawing.Size(182, 50);
-            this.materialTextBox10.TabIndex = 25;
-            this.materialTextBox10.Text = "";
-            this.materialTextBox10.TrailingIcon = null;
+            this.txtUbicacionLat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUbicacionLat.Depth = 0;
+            this.txtUbicacionLat.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUbicacionLat.Hint = "Latitud";
+            this.txtUbicacionLat.LeadingIcon = null;
+            this.txtUbicacionLat.Location = new System.Drawing.Point(39, 20);
+            this.txtUbicacionLat.MaxLength = 50;
+            this.txtUbicacionLat.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtUbicacionLat.Multiline = false;
+            this.txtUbicacionLat.Name = "txtUbicacionLat";
+            this.txtUbicacionLat.Size = new System.Drawing.Size(182, 50);
+            this.txtUbicacionLat.TabIndex = 25;
+            this.txtUbicacionLat.Text = "";
+            this.txtUbicacionLat.TrailingIcon = null;
             // 
-            // materialTextBox7
+            // txtCorreo
             // 
-            this.materialTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox7.Depth = 0;
-            this.materialTextBox7.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox7.Hint = "Correo Electrónico";
-            this.materialTextBox7.LeadingIcon = null;
-            this.materialTextBox7.Location = new System.Drawing.Point(1100, 188);
-            this.materialTextBox7.MaxLength = 50;
-            this.materialTextBox7.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox7.Multiline = false;
-            this.materialTextBox7.Name = "materialTextBox7";
-            this.materialTextBox7.Size = new System.Drawing.Size(236, 50);
-            this.materialTextBox7.TabIndex = 18;
-            this.materialTextBox7.Text = "";
-            this.materialTextBox7.TrailingIcon = null;
+            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCorreo.Depth = 0;
+            this.txtCorreo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCorreo.Hint = "Correo Electrónico";
+            this.txtCorreo.LeadingIcon = null;
+            this.txtCorreo.Location = new System.Drawing.Point(1100, 188);
+            this.txtCorreo.MaxLength = 50;
+            this.txtCorreo.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtCorreo.Multiline = false;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(236, 50);
+            this.txtCorreo.TabIndex = 18;
+            this.txtCorreo.Text = "";
+            this.txtCorreo.TrailingIcon = null;
             // 
             // txtSegundoApellido
             // 
@@ -174,22 +180,22 @@
             this.txtPrimerNombre.Text = "";
             this.txtPrimerNombre.TrailingIcon = null;
             // 
-            // materialTextBox3
+            // txtDNI
             // 
-            this.materialTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox3.Depth = 0;
-            this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox3.Hint = "DNI";
-            this.materialTextBox3.LeadingIcon = null;
-            this.materialTextBox3.Location = new System.Drawing.Point(561, 113);
-            this.materialTextBox3.MaxLength = 50;
-            this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox3.Multiline = false;
-            this.materialTextBox3.Name = "materialTextBox3";
-            this.materialTextBox3.Size = new System.Drawing.Size(236, 50);
-            this.materialTextBox3.TabIndex = 2;
-            this.materialTextBox3.Text = "";
-            this.materialTextBox3.TrailingIcon = null;
+            this.txtDNI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDNI.Depth = 0;
+            this.txtDNI.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtDNI.Hint = "DNI";
+            this.txtDNI.LeadingIcon = null;
+            this.txtDNI.Location = new System.Drawing.Point(561, 113);
+            this.txtDNI.MaxLength = 50;
+            this.txtDNI.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtDNI.Multiline = false;
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(236, 50);
+            this.txtDNI.TabIndex = 2;
+            this.txtDNI.Text = "";
+            this.txtDNI.TrailingIcon = null;
             // 
             // txtNumeroSolicitud
             // 
@@ -225,22 +231,22 @@
             this.txtMontoInversion.Text = "";
             this.txtMontoInversion.TrailingIcon = null;
             // 
-            // materialTextBox9
+            // txtIdObligacion
             // 
-            this.materialTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox9.Depth = 0;
-            this.materialTextBox9.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox9.Hint = "ID Obligación";
-            this.materialTextBox9.LeadingIcon = null;
-            this.materialTextBox9.Location = new System.Drawing.Point(41, 40);
-            this.materialTextBox9.MaxLength = 50;
-            this.materialTextBox9.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox9.Multiline = false;
-            this.materialTextBox9.Name = "materialTextBox9";
-            this.materialTextBox9.Size = new System.Drawing.Size(236, 50);
-            this.materialTextBox9.TabIndex = 23;
-            this.materialTextBox9.Text = "";
-            this.materialTextBox9.TrailingIcon = null;
+            this.txtIdObligacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdObligacion.Depth = 0;
+            this.txtIdObligacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdObligacion.Hint = "ID Obligación";
+            this.txtIdObligacion.LeadingIcon = null;
+            this.txtIdObligacion.Location = new System.Drawing.Point(41, 40);
+            this.txtIdObligacion.MaxLength = 50;
+            this.txtIdObligacion.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtIdObligacion.Multiline = false;
+            this.txtIdObligacion.Name = "txtIdObligacion";
+            this.txtIdObligacion.Size = new System.Drawing.Size(236, 50);
+            this.txtIdObligacion.TabIndex = 23;
+            this.txtIdObligacion.Text = "";
+            this.txtIdObligacion.TrailingIcon = null;
             // 
             // rbtnSofisticado
             // 
@@ -293,7 +299,7 @@
             this.txtObservacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtObservacion.Hint = "Observación";
             this.txtObservacion.LeadingIcon = null;
-            this.txtObservacion.Location = new System.Drawing.Point(989, 266);
+            this.txtObservacion.Location = new System.Drawing.Point(561, 266);
             this.txtObservacion.MaxLength = 50;
             this.txtObservacion.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacion.Multiline = false;
@@ -308,11 +314,12 @@
             this.btnUbicacion.FlatAppearance.BorderSize = 0;
             this.btnUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUbicacion.Image = global::Holding.Properties.Resources.localizacion;
-            this.btnUbicacion.Location = new System.Drawing.Point(903, 266);
+            this.btnUbicacion.Location = new System.Drawing.Point(463, 20);
             this.btnUbicacion.Name = "btnUbicacion";
             this.btnUbicacion.Size = new System.Drawing.Size(48, 50);
             this.btnUbicacion.TabIndex = 27;
             this.btnUbicacion.UseVisualStyleBackColor = true;
+            this.btnUbicacion.Click += new System.EventHandler(this.btnUbicacion_Click);
             // 
             // btnFechaVenceDNI
             // 
@@ -408,7 +415,7 @@
             this.txtTelefono1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTelefono1.Hint = "Teléfono 1";
             this.txtTelefono1.LeadingIcon = null;
-            this.txtTelefono1.Location = new System.Drawing.Point(128, 266);
+            this.txtTelefono1.Location = new System.Drawing.Point(21, 266);
             this.txtTelefono1.MaxLength = 50;
             this.txtTelefono1.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefono1.Multiline = false;
@@ -425,7 +432,7 @@
             this.txtTelefono2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTelefono2.Hint = "Teléfono 2";
             this.txtTelefono2.LeadingIcon = null;
-            this.txtTelefono2.Location = new System.Drawing.Point(420, 266);
+            this.txtTelefono2.Location = new System.Drawing.Point(289, 266);
             this.txtTelefono2.MaxLength = 50;
             this.txtTelefono2.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTelefono2.Multiline = false;
@@ -437,6 +444,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.cbxEstadoCivil);
             this.groupBox2.Controls.Add(this.cbxSexo);
             this.groupBox2.Controls.Add(this.cbxTipoPersona);
@@ -453,21 +461,50 @@
             this.groupBox2.Controls.Add(this.txtTelefono1);
             this.groupBox2.Controls.Add(this.btnFechaVenceDNI);
             this.groupBox2.Controls.Add(this.txtPrimerNombre);
-            this.groupBox2.Controls.Add(this.materialTextBox7);
+            this.groupBox2.Controls.Add(this.txtCorreo);
             this.groupBox2.Controls.Add(this.txtSegundoApellido);
             this.groupBox2.Controls.Add(this.txtSegundoNombre);
-            this.groupBox2.Controls.Add(this.materialTextBox3);
+            this.groupBox2.Controls.Add(this.txtDNI);
             this.groupBox2.Controls.Add(this.txtPrimerApellido);
-            this.groupBox2.Controls.Add(this.btnUbicacion);
-            this.groupBox2.Controls.Add(this.materialTextBox10);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(12, 66);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1355, 335);
+            this.groupBox2.Size = new System.Drawing.Size(1355, 355);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Solicitud";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtUbicacionLat);
+            this.groupBox1.Controls.Add(this.txtUbicacionLon);
+            this.groupBox1.Controls.Add(this.btnUbicacion);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(825, 256);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(517, 81);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ubicacion";
+            // 
+            // txtUbicacionLon
+            // 
+            this.txtUbicacionLon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUbicacionLon.Depth = 0;
+            this.txtUbicacionLon.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtUbicacionLon.Hint = "Longitud";
+            this.txtUbicacionLon.LeadingIcon = null;
+            this.txtUbicacionLon.Location = new System.Drawing.Point(261, 20);
+            this.txtUbicacionLon.MaxLength = 50;
+            this.txtUbicacionLon.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtUbicacionLon.Multiline = false;
+            this.txtUbicacionLon.Name = "txtUbicacionLon";
+            this.txtUbicacionLon.Size = new System.Drawing.Size(182, 50);
+            this.txtUbicacionLon.TabIndex = 41;
+            this.txtUbicacionLon.Text = "";
+            this.txtUbicacionLon.TrailingIcon = null;
             // 
             // cbxEstadoCivil
             // 
@@ -587,34 +624,51 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtPropietario);
-            this.groupBox3.Controls.Add(this.groupBox4);
+            this.groupBox3.Controls.Add(this.gbxTipoCliente);
             this.groupBox3.Controls.Add(this.cbxPeriocidadPrincipal);
             this.groupBox3.Controls.Add(this.cbxPeriocidadInteres);
             this.groupBox3.Controls.Add(this.cbxTipoMoneda);
             this.groupBox3.Controls.Add(this.cbxSector);
             this.groupBox3.Controls.Add(this.txtMontoInversion);
-            this.groupBox3.Controls.Add(this.materialTextBox9);
+            this.groupBox3.Controls.Add(this.txtIdObligacion);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(12, 420);
+            this.groupBox3.Location = new System.Drawing.Point(12, 427);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1355, 224);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de Inversión";
             // 
-            // groupBox4
+            // txtPropietario
             // 
-            this.groupBox4.Controls.Add(this.rbtnIndividual);
-            this.groupBox4.Controls.Add(this.rbtnSofisticado);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(1068, 125);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(259, 61);
-            this.groupBox4.TabIndex = 43;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tipo de Cliente";
+            this.txtPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPropietario.Depth = 0;
+            this.txtPropietario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPropietario.Hint = "Propietario";
+            this.txtPropietario.LeadingIcon = null;
+            this.txtPropietario.Location = new System.Drawing.Point(378, 38);
+            this.txtPropietario.MaxLength = 50;
+            this.txtPropietario.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPropietario.Multiline = false;
+            this.txtPropietario.Name = "txtPropietario";
+            this.txtPropietario.Size = new System.Drawing.Size(236, 50);
+            this.txtPropietario.TabIndex = 44;
+            this.txtPropietario.Text = "";
+            this.txtPropietario.TrailingIcon = null;
+            // 
+            // gbxTipoCliente
+            // 
+            this.gbxTipoCliente.Controls.Add(this.rbtnIndividual);
+            this.gbxTipoCliente.Controls.Add(this.rbtnSofisticado);
+            this.gbxTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbxTipoCliente.ForeColor = System.Drawing.Color.White;
+            this.gbxTipoCliente.Location = new System.Drawing.Point(1068, 125);
+            this.gbxTipoCliente.Name = "gbxTipoCliente";
+            this.gbxTipoCliente.Size = new System.Drawing.Size(259, 61);
+            this.gbxTipoCliente.TabIndex = 43;
+            this.gbxTipoCliente.TabStop = false;
+            this.gbxTipoCliente.Text = "Tipo de Cliente";
             // 
             // cbxPeriocidadPrincipal
             // 
@@ -724,6 +778,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -741,23 +796,11 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // txtPropietario
+            // Error
             // 
-            this.txtPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPropietario.Depth = 0;
-            this.txtPropietario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPropietario.Hint = "Propietario";
-            this.txtPropietario.LeadingIcon = null;
-            this.txtPropietario.Location = new System.Drawing.Point(378, 38);
-            this.txtPropietario.MaxLength = 50;
-            this.txtPropietario.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPropietario.Multiline = false;
-            this.txtPropietario.Name = "txtPropietario";
-            this.txtPropietario.Size = new System.Drawing.Size(236, 50);
-            this.txtPropietario.TabIndex = 44;
-            this.txtPropietario.Text = "";
-            this.txtPropietario.TrailingIcon = null;
+            this.Error.ContainerControl = this;
             // 
             // FrmScrSolicitudEdicion
             // 
@@ -778,9 +821,11 @@
             this.Text = "Agregar Solicitud de Inversión";
             this.Load += new System.EventHandler(this.FrmScrSolicitudEdicion_Load);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbxTipoCliente.ResumeLayout(false);
+            this.gbxTipoCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -792,11 +837,11 @@
         private MaterialSkin.Controls.MaterialTextBox txtPrimerApellido;
         private MaterialSkin.Controls.MaterialTextBox txtSegundoNombre;
         private MaterialSkin.Controls.MaterialTextBox txtPrimerNombre;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox3;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox7;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox10;
+        private MaterialSkin.Controls.MaterialTextBox txtDNI;
+        private MaterialSkin.Controls.MaterialTextBox txtCorreo;
+        private MaterialSkin.Controls.MaterialTextBox txtUbicacionLat;
         private MaterialSkin.Controls.MaterialTextBox txtMontoInversion;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox9;
+        private MaterialSkin.Controls.MaterialTextBox txtIdObligacion;
         private MaterialSkin.Controls.MaterialRadioButton rbtnIndividual;
         private MaterialSkin.Controls.MaterialRadioButton rbtnSofisticado;
         private System.Windows.Forms.Label label9;
@@ -821,9 +866,12 @@
         private MaterialSkin.Controls.MaterialComboBox cbxPeriocidadInteres;
         private MaterialSkin.Controls.MaterialComboBox cbxTipoMoneda;
         private MaterialSkin.Controls.MaterialComboBox cbxSector;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbxTipoCliente;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private MaterialSkin.Controls.MaterialTextBox txtPropietario;
+        private System.Windows.Forms.ErrorProvider Error;
+        private MaterialSkin.Controls.MaterialTextBox txtUbicacionLon;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

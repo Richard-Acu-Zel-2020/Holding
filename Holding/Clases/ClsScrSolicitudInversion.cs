@@ -30,7 +30,8 @@ namespace Holding
         String _CorreoElectronico = "";
         int _Telefono1 = 0;
         int _Telefono2 = 0;
-        double _Ubicacion = 0;
+        double _UbicacionLat = 0;
+        double _UbicacionLon = 0;
         String _Observacion = "";
         int _IdObligacion = 0;
         String _Propietario = "";
@@ -55,7 +56,7 @@ namespace Holding
 
         public ClsScrSolicitudInversion(int IdSolicitud, int NumSolicitud, string Nombre1, string Nombre2, string Apellido1, string Apellido2, DateTime FechaNacimiento, int objTipoDocumentoID, 
                                         string DNI, DateTime FechaEmision, DateTime FechaVencimiento, int objTipoPersonaID, int objPaisOrigenID, int objSexoID, int objEstadoCivil, int objEstadoSolicitudID, string CorreoElectronico, int Telefono1, int Telefono2, 
-                                        double Ubicacion, string Observacion, int IdObligacion, string Propietario, int objSectorID, int objMonedaID, int PeriocidadInt, int PeriocidadPrin, decimal Monto, string TipoCliente, String UsuarioCreacion, 
+                                        double UbicacionLat, double UbicacionLon, string Observacion, int IdObligacion, string Propietario, int objSectorID, int objMonedaID, int PeriocidadInt, int PeriocidadPrin, decimal Monto, string TipoCliente, String UsuarioCreacion, 
                                         DateTime FechaCreacion, String MaquinaCreacion, String UsuarioModificacion, DateTime FechaModificacion, String MaquinaModificacion, String UsuarioAnulacion, DateTime FechaAnulacion, String MaquinaAnulacion)
         {
             IdSolicitud = _IdSolicitud;
@@ -77,7 +78,8 @@ namespace Holding
             CorreoElectronico = _CorreoElectronico;
             Telefono1 = _Telefono1;
             Telefono2 = _Telefono2;
-            Ubicacion = _Ubicacion;
+            UbicacionLat = _UbicacionLat;
+            UbicacionLon = _UbicacionLon;
             Observacion = _Observacion;
             IdObligacion = _IdObligacion;
             Propietario = _Propietario;
@@ -214,10 +216,16 @@ namespace Holding
             set { _Telefono2 = value; }
         }
 
-        public double Ubicacion 
+        public double UbicacionLat
         {
-            get { return _Ubicacion; }
-            set { _Ubicacion = value; }
+            get { return _UbicacionLat; }
+            set { _UbicacionLat = value; }
+        }
+
+        public double UbicacionLon
+        {
+            get { return _UbicacionLon; }
+            set { _UbicacionLon = value; }
         }
 
         public string Observacion
@@ -422,11 +430,11 @@ namespace Holding
             Com.Parameters.Add(prmTelefono2);
 
             SqlParameter prmUbicacionLat = new SqlParameter("@UbicacionLatitud", SqlDbType.VarChar);
-            prmUbicacionLat.Value = _Ubicacion;
+            prmUbicacionLat.Value = _UbicacionLat;
             Com.Parameters.Add(prmUbicacionLat);
 
             SqlParameter prmUbicacionLon = new SqlParameter("@UbicacionLongitud", SqlDbType.VarChar);
-            prmUbicacionLon.Value = _Ubicacion;
+            prmUbicacionLon.Value = _UbicacionLon;
             Com.Parameters.Add(prmUbicacionLon);
 
             SqlParameter prmObservacion = new SqlParameter("@Observacion", SqlDbType.VarChar);
