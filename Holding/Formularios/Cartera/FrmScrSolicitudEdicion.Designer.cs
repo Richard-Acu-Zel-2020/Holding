@@ -64,9 +64,9 @@
             this.cbxPeriocidadInteres = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxTipoMoneda = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxSector = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbxPropietario = new MaterialSkin.Controls.MaterialComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtPropietario = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -586,12 +586,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtPropietario);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.cbxPeriocidadPrincipal);
             this.groupBox3.Controls.Add(this.cbxPeriocidadInteres);
             this.groupBox3.Controls.Add(this.cbxTipoMoneda);
             this.groupBox3.Controls.Add(this.cbxSector);
-            this.groupBox3.Controls.Add(this.cbxPropietario);
             this.groupBox3.Controls.Add(this.txtMontoInversion);
             this.groupBox3.Controls.Add(this.materialTextBox9);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -708,29 +708,6 @@
             this.cbxSector.StartIndex = 0;
             this.cbxSector.TabIndex = 39;
             // 
-            // cbxPropietario
-            // 
-            this.cbxPropietario.AutoResize = false;
-            this.cbxPropietario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxPropietario.Depth = 0;
-            this.cbxPropietario.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxPropietario.DropDownHeight = 174;
-            this.cbxPropietario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPropietario.DropDownWidth = 121;
-            this.cbxPropietario.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbxPropietario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbxPropietario.FormattingEnabled = true;
-            this.cbxPropietario.Hint = "Propietario";
-            this.cbxPropietario.IntegralHeight = false;
-            this.cbxPropietario.ItemHeight = 43;
-            this.cbxPropietario.Location = new System.Drawing.Point(378, 41);
-            this.cbxPropietario.MaxDropDownItems = 4;
-            this.cbxPropietario.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbxPropietario.Name = "cbxPropietario";
-            this.cbxPropietario.Size = new System.Drawing.Size(236, 49);
-            this.cbxPropietario.StartIndex = 0;
-            this.cbxPropietario.TabIndex = 38;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
@@ -764,6 +741,23 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // txtPropietario
+            // 
+            this.txtPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPropietario.Depth = 0;
+            this.txtPropietario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPropietario.Hint = "Propietario";
+            this.txtPropietario.LeadingIcon = null;
+            this.txtPropietario.Location = new System.Drawing.Point(378, 38);
+            this.txtPropietario.MaxLength = 50;
+            this.txtPropietario.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPropietario.Multiline = false;
+            this.txtPropietario.Name = "txtPropietario";
+            this.txtPropietario.Size = new System.Drawing.Size(236, 50);
+            this.txtPropietario.TabIndex = 44;
+            this.txtPropietario.Text = "";
+            this.txtPropietario.TrailingIcon = null;
             // 
             // FrmScrSolicitudEdicion
             // 
@@ -827,9 +821,9 @@
         private MaterialSkin.Controls.MaterialComboBox cbxPeriocidadInteres;
         private MaterialSkin.Controls.MaterialComboBox cbxTipoMoneda;
         private MaterialSkin.Controls.MaterialComboBox cbxSector;
-        private MaterialSkin.Controls.MaterialComboBox cbxPropietario;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private MaterialSkin.Controls.MaterialTextBox txtPropietario;
     }
 }

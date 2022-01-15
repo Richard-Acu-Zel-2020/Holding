@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS1690: El acceso a un miembro en un campo de una clase de serialización por referencia puede causar una excepción en tiempo de ejecución.
+dotnet_diagnostic.CS1690.severity = silent
