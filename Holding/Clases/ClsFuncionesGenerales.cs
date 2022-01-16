@@ -53,6 +53,20 @@ namespace Holding
             return tabla;
         }
 
+        public DataTable TipodeUbicacionXUbicacionGeografica(String Nombre)
+        {
+            ClsConexion con = new ClsConexion();
+            DataTable tabla = new DataTable();
+            tabla.Clear();
+            SqlConnection Conne = new SqlConnection(con.Conexion);
+            SqlDataAdapter result = new SqlDataAdapter("SELECT StbUbicacionGeografica.* FROM StbTipoUbicGeografica" + " inner join StbUbicacionGeografica on StbTipoUbicGeografica.ID = StbUbicacionGeografica.objTipoUbicGeograficaID WHERE StbTipoUbicGeografica.Codigo = '" + Nombre + "' order by StbUbicacionGeografica.Nombre ASC", Conne);
+            result.Fill(tabla);
+            result.Dispose();
+            Conne.Dispose();
+            Conne.Close();
+            return tabla;
+        }
+
         public DataTable TodosCatalogoValorXCatalogoActivosCasaMatriz(String Nombre)
         {
             ClsConexion con = new ClsConexion();
