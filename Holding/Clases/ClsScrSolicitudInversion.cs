@@ -40,7 +40,7 @@ namespace Holding
         int _PeriocidadInt = 0;
         int _PeriocidadPrin = 0;
         Decimal _Monto = 0;
-        String _TipoCliente = "";
+        int _objTipoClienteID = 0;
         String _UsuarioCreacion = "";
         DateTime _FechaCreacion;
         String _MaquinaCreacion = "";
@@ -56,7 +56,7 @@ namespace Holding
 
         public ClsScrSolicitudInversion(int IdSolicitud, int NumSolicitud, string Nombre1, string Nombre2, string Apellido1, string Apellido2, DateTime FechaNacimiento, int objTipoDocumentoID, 
                                         string DNI, DateTime FechaEmision, DateTime FechaVencimiento, int objTipoPersonaID, int objPaisOrigenID, int objSexoID, int objEstadoCivil, int objEstadoSolicitudID, string CorreoElectronico, int Telefono1, int Telefono2, 
-                                        double UbicacionLat, double UbicacionLon, string Observacion, int IdObligacion, string Propietario, int objSectorID, int objMonedaID, int PeriocidadInt, int PeriocidadPrin, decimal Monto, string TipoCliente, String UsuarioCreacion, 
+                                        double UbicacionLat, double UbicacionLon, string Observacion, int IdObligacion, string Propietario, int objSectorID, int objMonedaID, int PeriocidadInt, int PeriocidadPrin, decimal Monto, int objTipoClienteID, String UsuarioCreacion, 
                                         DateTime FechaCreacion, String MaquinaCreacion, String UsuarioModificacion, DateTime FechaModificacion, String MaquinaModificacion, String UsuarioAnulacion, DateTime FechaAnulacion, String MaquinaAnulacion)
         {
             IdSolicitud = _IdSolicitud;
@@ -88,7 +88,7 @@ namespace Holding
             PeriocidadInt = _PeriocidadInt;
             PeriocidadPrin = _PeriocidadPrin;
             Monto = _Monto;
-            TipoCliente = _TipoCliente;
+            objTipoClienteID = _objTipoClienteID;
             UsuarioCreacion = _UsuarioCreacion;
             FechaCreacion = _FechaCreacion;
             MaquinaCreacion = _MaquinaCreacion;
@@ -276,10 +276,10 @@ namespace Holding
             set { _Monto = value; }
         }
 
-        public string TipoCliente 
+        public int objTipoClienteID 
         {
-            get { return _TipoCliente; }
-            set { _TipoCliente = value; }
+            get { return _objTipoClienteID; }
+            set { _objTipoClienteID = value; }
         }
 
         public string UsuarioCreacion
@@ -470,7 +470,7 @@ namespace Holding
             Com.Parameters.Add(prmMontoSolicitud);
 
             SqlParameter prmTipoCliente = new SqlParameter("@objTipoClienteID", SqlDbType.Int);
-            prmTipoCliente.Value = _TipoCliente;
+            prmTipoCliente.Value = _objTipoClienteID;
             Com.Parameters.Add(prmTipoCliente);
 
             SqlParameter prmEstadoSolicitud = new SqlParameter("@objEstadoSolicitudID", SqlDbType.Int);

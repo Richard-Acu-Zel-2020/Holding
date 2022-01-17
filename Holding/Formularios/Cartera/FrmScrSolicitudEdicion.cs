@@ -64,7 +64,7 @@ namespace Holding
             cbxEstadoCivil.SelectedIndex = -1;
 
             //Carga Datos del Tipo de Documento
-            cbxTipoDocumentoDNI.DataSource = generales.TodosCatalogoValorXCatalogoActivos("TIPODOCUMENTOCLIENTE");
+            cbxTipoDocumentoDNI.DataSource = generales.TodosCatalogoValorXCatalogoActivos("TIPODOCUMENTOPERSONA");
             cbxTipoDocumentoDNI.DisplayMember = "Valor";
             cbxTipoDocumentoDNI.ValueMember = "ID";
             cbxTipoDocumentoDNI.SelectedIndex = -1;
@@ -300,7 +300,7 @@ namespace Holding
             DialogResult Result = new System.Windows.Forms.DialogResult();
             try
             {
-                Result = MessageBox.Show("¿Está seguro que desea realizar esta Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                Result = MessageBox.Show("¿Está seguro que desea guardar la Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if(Result == DialogResult.Yes)
                 {
@@ -330,6 +330,16 @@ namespace Holding
                     solicitudes.PeriocidadInt = int.Parse(cbxPeriocidadInteres.SelectedValue.ToString());
                     solicitudes.PeriocidadPrin = int.Parse(cbxPeriocidadPrincipal.SelectedValue.ToString());
                     solicitudes.Monto = Decimal.Parse(txtMontoInversion.Text);
+
+                    if (rbtnIndividual.Checked == true)
+                    {
+                        solicitudes.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("INDIVIDUAL", "TIPOCLIENTE").ToString());
+                    }
+                    else
+                    {
+                        solicitudes.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("SOFISTICADO", "TIPOCLIENTE").ToString());
+                    }
+
                     /*
                          ====== === Pendiente === ======
                     -- Guardar Tipo de Cliente. A falta de Datos --
@@ -338,7 +348,7 @@ namespace Holding
 
                     if (solicitudes.GuardaSolicitud() == true)
                     {
-                        MessageBox.Show("Solicitud realizada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Solicitud guardada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LimpiarCampos();
                         this.Close();
                     }

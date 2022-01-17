@@ -106,6 +106,22 @@ namespace Holding
             return tabla;
         }
 
+        public int IDCatalogoValorXCodigoCatalogo(String NombreCatalogoValor, string NombreCatalogo)
+        {
+            ClsConexion con = new ClsConexion();
+            DataTable tabla = new DataTable();
+            tabla.Clear();
+            SqlConnection Conne = new SqlConnection(con.Conexion);
+            SqlDataAdapter result = new SqlDataAdapter("select StbCatalogoValor.ID from StbCatalogo inner join StbCatalogoValor" +
+                " on StbCatalogo.ID= StbCatalogoValor.objCatalogoID where StbCatalogo.Codigo='" + NombreCatalogo + "' " +
+                " and StbCatalogoValor.Codigo='" + NombreCatalogoValor + "' order by StbCatalogoValor.Valor ", Conne);
+            result.Fill(tabla);
+            result.Dispose();
+            Conne.Dispose();
+            Conne.Close();
+            return tabla;
+        }
+
         // Sucursales
         public DataTable CatalogoValorXCatalogoSucursales(String NombreCatalogoValor, string NombreCatalogo)
         {

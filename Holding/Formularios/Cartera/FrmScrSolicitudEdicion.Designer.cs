@@ -209,6 +209,7 @@
             this.txtNumeroSolicitud.MouseState = MaterialSkin.MouseState.OUT;
             this.txtNumeroSolicitud.Multiline = false;
             this.txtNumeroSolicitud.Name = "txtNumeroSolicitud";
+            this.txtNumeroSolicitud.ReadOnly = true;
             this.txtNumeroSolicitud.Size = new System.Drawing.Size(236, 50);
             this.txtNumeroSolicitud.TabIndex = 0;
             this.txtNumeroSolicitud.Text = "";
@@ -515,7 +516,7 @@
             this.cbxEstadoCivil.DropDownHeight = 174;
             this.cbxEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstadoCivil.DropDownWidth = 121;
-            this.cbxEstadoCivil.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxEstadoCivil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxEstadoCivil.FormattingEnabled = true;
             this.cbxEstadoCivil.Hint = "Estado Civil";
@@ -538,7 +539,7 @@
             this.cbxSexo.DropDownHeight = 174;
             this.cbxSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSexo.DropDownWidth = 121;
-            this.cbxSexo.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxSexo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxSexo.FormattingEnabled = true;
             this.cbxSexo.Hint = "Sexo";
@@ -561,7 +562,7 @@
             this.cbxTipoPersona.DropDownHeight = 174;
             this.cbxTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoPersona.DropDownWidth = 121;
-            this.cbxTipoPersona.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxTipoPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxTipoPersona.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxTipoPersona.FormattingEnabled = true;
             this.cbxTipoPersona.Hint = "Tipo de Persona";
@@ -584,7 +585,7 @@
             this.cbxPaisOrigen.DropDownHeight = 174;
             this.cbxPaisOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPaisOrigen.DropDownWidth = 121;
-            this.cbxPaisOrigen.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxPaisOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxPaisOrigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxPaisOrigen.FormattingEnabled = true;
             this.cbxPaisOrigen.Hint = "País de Origen";
@@ -607,7 +608,7 @@
             this.cbxTipoDocumentoDNI.DropDownHeight = 174;
             this.cbxTipoDocumentoDNI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoDocumentoDNI.DropDownWidth = 121;
-            this.cbxTipoDocumentoDNI.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxTipoDocumentoDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxTipoDocumentoDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxTipoDocumentoDNI.FormattingEnabled = true;
             this.cbxTipoDocumentoDNI.Hint = "Tipo de Documento DNI";
@@ -679,7 +680,7 @@
             this.cbxPeriocidadPrincipal.DropDownHeight = 174;
             this.cbxPeriocidadPrincipal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPeriocidadPrincipal.DropDownWidth = 121;
-            this.cbxPeriocidadPrincipal.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxPeriocidadPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxPeriocidadPrincipal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxPeriocidadPrincipal.FormattingEnabled = true;
             this.cbxPeriocidadPrincipal.Hint = "Periocidad Principal";
@@ -702,7 +703,7 @@
             this.cbxPeriocidadInteres.DropDownHeight = 174;
             this.cbxPeriocidadInteres.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPeriocidadInteres.DropDownWidth = 121;
-            this.cbxPeriocidadInteres.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxPeriocidadInteres.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxPeriocidadInteres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxPeriocidadInteres.FormattingEnabled = true;
             this.cbxPeriocidadInteres.Hint = "Periocidad Interés";
@@ -725,7 +726,7 @@
             this.cbxTipoMoneda.DropDownHeight = 174;
             this.cbxTipoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoMoneda.DropDownWidth = 121;
-            this.cbxTipoMoneda.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxTipoMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxTipoMoneda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxTipoMoneda.FormattingEnabled = true;
             this.cbxTipoMoneda.Hint = "Tipo de Moneda";
@@ -748,7 +749,7 @@
             this.cbxSector.DropDownHeight = 174;
             this.cbxSector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSector.DropDownWidth = 121;
-            this.cbxSector.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxSector.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cbxSector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cbxSector.FormattingEnabled = true;
             this.cbxSector.Hint = "Sector";
@@ -806,7 +807,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.ClientSize = new System.Drawing.Size(1379, 764);
+            this.ClientSize = new System.Drawing.Size(1367, 760);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox3);
