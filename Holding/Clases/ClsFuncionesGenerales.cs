@@ -119,7 +119,16 @@ namespace Holding
             result.Dispose();
             Conne.Dispose();
             Conne.Close();
-            return tabla;
+
+
+            if (tabla.Rows.Count > 0) 
+            {
+                return int.Parse(tabla.Rows[0][0].ToString());
+            }
+            else 
+            {
+                return 0;
+            }
         }
 
         // Sucursales

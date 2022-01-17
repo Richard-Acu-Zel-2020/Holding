@@ -135,11 +135,6 @@ namespace Holding
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Error.Clear();
-            if (string.IsNullOrWhiteSpace(txtNumeroSolicitud.Text))
-            {
-                Error.SetError(txtNumeroSolicitud, "Favor Ingrese el Número de la Solicitud");
-                return;
-            }
 
             if (string.IsNullOrWhiteSpace(txtPrimerNombre.Text))
             {
@@ -291,11 +286,11 @@ namespace Holding
                 return;
             }
 
-            if (rbtnIndividual.Checked & rbtnSofisticado.Checked == false) 
-            {
-                Error.SetError(gbxTipoCliente, "Favor Seleccione el Tipo de Cliente");
-                return;
-            }
+            //if (rbtnIndividual.Checked || rbtnSofisticado.Checked == false) 
+            //{
+            //    Error.SetError(gbxTipoCliente, "Favor Seleccione el Tipo de Cliente");
+            //    return;
+            //}
 
             DialogResult Result = new System.Windows.Forms.DialogResult();
             try
@@ -304,7 +299,7 @@ namespace Holding
 
                 if(Result == DialogResult.Yes)
                 {
-                    solicitudes.NumSolicitud = int.Parse(txtNumeroSolicitud.Text);
+                    //solicitudes.NumSolicitud = int.Parse(txtNumeroSolicitud.Text);
                     solicitudes.Nombre1 = txtPrimerNombre.Text.ToUpper();
                     solicitudes.Nombre2 = txtSegundoNombre.Text.ToUpper();
                     solicitudes.Apellido1 = txtPrimerApellido.Text.ToUpper();
@@ -330,6 +325,7 @@ namespace Holding
                     solicitudes.PeriocidadInt = int.Parse(cbxPeriocidadInteres.SelectedValue.ToString());
                     solicitudes.PeriocidadPrin = int.Parse(cbxPeriocidadPrincipal.SelectedValue.ToString());
                     solicitudes.Monto = Decimal.Parse(txtMontoInversion.Text);
+                    solicitudes.ObjEstadoSolicitudID = 223;
 
                     if (rbtnIndividual.Checked == true)
                     {
