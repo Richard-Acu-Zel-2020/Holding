@@ -136,6 +136,8 @@ namespace Holding
         {
             Error.Clear();
 
+            #region "Validaciones del boton guardar"
+
             if (string.IsNullOrWhiteSpace(txtPrimerNombre.Text))
             {
                 Error.SetError(txtPrimerNombre, "Favor Ingrese el Primer Nombre del Cliente");
@@ -292,6 +294,8 @@ namespace Holding
             //    return;
             //}
 
+            #endregion
+
             DialogResult Result = new System.Windows.Forms.DialogResult();
             try
             {
@@ -325,7 +329,7 @@ namespace Holding
                     solicitudes.PeriocidadInt = int.Parse(cbxPeriocidadInteres.SelectedValue.ToString());
                     solicitudes.PeriocidadPrin = int.Parse(cbxPeriocidadPrincipal.SelectedValue.ToString());
                     solicitudes.Monto = Decimal.Parse(txtMontoInversion.Text);
-                    solicitudes.ObjEstadoSolicitudID = 223;
+                    solicitudes.ObjEstadoSolicitudID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("REG", "ESTADOSOLICITUDINVERSION").ToString());
 
                     if (rbtnIndividual.Checked == true)
                     {

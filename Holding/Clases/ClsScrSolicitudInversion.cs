@@ -365,9 +365,9 @@ namespace Holding
             Com.Connection = conex;
             Com.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter prmIdSol = new SqlParameter("@NumeroSolicitud", SqlDbType.Int);
-            prmIdSol.Value = _NumSolicitud;
-            Com.Parameters.Add(prmIdSol);
+            //SqlParameter prmIdSol = new SqlParameter("@NumeroSolicitud", SqlDbType.Int);
+            //prmIdSol.Value = _NumSolicitud;
+            //Com.Parameters.Add(prmIdSol);
 
             SqlParameter prmPrimerNombre = new SqlParameter("@PrimerNombre", SqlDbType.VarChar);
             prmPrimerNombre.Value = _Nombre1;
