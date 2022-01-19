@@ -30,7 +30,7 @@ namespace Holding
             PagarInversion();
         }
 
-        #region Función para Cargar Datos
+        #region "Función para Cargar Datos"
         public void Carga()
         {
             ClsScrInversion clsinversion = new ClsScrInversion();
@@ -44,13 +44,7 @@ namespace Holding
         }
         #endregion
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            ClsScrInversion clsinversion = new ClsScrInversion();
-            dgvInversion.DataSource = clsinversion.BuscarXNombre(txtBuscar.Text);
-        }
-
-        #region Función para Cargar Datos al Otro Formulario
+        #region "Función para Cargar Datos al Otro Formulario"
         public void PagarInversion()
         {
             if (dgvInversion.RowCount > 0)
@@ -81,6 +75,15 @@ namespace Holding
                     return;
                 }
             }
+        }
+        #endregion
+
+        #region "Función Buscar x Nombre"
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            ClsScrInversion clsinversion = new ClsScrInversion();
+            dgvInversion.DataSource = clsinversion.BuscarXNombre(txtBuscar.Text);
+            lblContador.Text = String.Format("{0:N0}", double.Parse(dgvInversion.RowCount.ToString()));
         }
         #endregion
     }
