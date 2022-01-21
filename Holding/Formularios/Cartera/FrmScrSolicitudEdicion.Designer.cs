@@ -71,8 +71,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtIdSolicitud = new MaterialSkin.Controls.MaterialTextBox();
-            this.cbxEstadoSolicitud = new MaterialSkin.Controls.MaterialComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -805,56 +803,11 @@
             // 
             this.Error.ContainerControl = this;
             // 
-            // txtIdSolicitud
-            // 
-            this.txtIdSolicitud.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIdSolicitud.Depth = 0;
-            this.txtIdSolicitud.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtIdSolicitud.Hint = "Id";
-            this.txtIdSolicitud.LeadingIcon = null;
-            this.txtIdSolicitud.Location = new System.Drawing.Point(254, 10);
-            this.txtIdSolicitud.MaxLength = 50;
-            this.txtIdSolicitud.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtIdSolicitud.Multiline = false;
-            this.txtIdSolicitud.Name = "txtIdSolicitud";
-            this.txtIdSolicitud.ReadOnly = true;
-            this.txtIdSolicitud.Size = new System.Drawing.Size(112, 50);
-            this.txtIdSolicitud.TabIndex = 14;
-            this.txtIdSolicitud.Text = "";
-            this.txtIdSolicitud.TrailingIcon = null;
-            this.txtIdSolicitud.Visible = false;
-            // 
-            // cbxEstadoSolicitud
-            // 
-            this.cbxEstadoSolicitud.AutoResize = false;
-            this.cbxEstadoSolicitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxEstadoSolicitud.Depth = 0;
-            this.cbxEstadoSolicitud.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxEstadoSolicitud.DropDownHeight = 174;
-            this.cbxEstadoSolicitud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxEstadoSolicitud.DropDownWidth = 121;
-            this.cbxEstadoSolicitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbxEstadoSolicitud.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbxEstadoSolicitud.FormattingEnabled = true;
-            this.cbxEstadoSolicitud.Hint = "Estado Solicitud";
-            this.cbxEstadoSolicitud.IntegralHeight = false;
-            this.cbxEstadoSolicitud.ItemHeight = 43;
-            this.cbxEstadoSolicitud.Location = new System.Drawing.Point(390, 8);
-            this.cbxEstadoSolicitud.MaxDropDownItems = 4;
-            this.cbxEstadoSolicitud.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbxEstadoSolicitud.Name = "cbxEstadoSolicitud";
-            this.cbxEstadoSolicitud.Size = new System.Drawing.Size(236, 49);
-            this.cbxEstadoSolicitud.StartIndex = 0;
-            this.cbxEstadoSolicitud.TabIndex = 40;
-            this.cbxEstadoSolicitud.Visible = false;
-            // 
             // FrmScrSolicitudEdicion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.ClientSize = new System.Drawing.Size(1381, 760);
-            this.Controls.Add(this.cbxEstadoSolicitud);
-            this.Controls.Add(this.txtIdSolicitud);
+            this.ClientSize = new System.Drawing.Size(1367, 760);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox3);
@@ -921,7 +874,5 @@
         private System.Windows.Forms.ErrorProvider Error;
         private MaterialSkin.Controls.MaterialTextBox txtUbicacionLon;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialTextBox txtIdSolicitud;
-        private MaterialSkin.Controls.MaterialComboBox cbxEstadoSolicitud;
     }
 }

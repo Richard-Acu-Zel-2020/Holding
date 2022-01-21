@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace Holding
 {
@@ -396,6 +397,72 @@ namespace Holding
             Conne.Close();
             return tabla;
         }
+        #endregion
+
+        #region "Reporteria"
+
+        public void ImprimirReporte(CrystalDecisions.CrystalReports.Engine.ReportDocument Reporte, string Titulo)
+        {
+            ClsEncripta encripta = new ClsEncripta();
+
+            CrystalDecisions.Shared.ConnectionInfo crConnectionInfo = new CrystalDecisions.Shared.ConnectionInfo();
+
+            ClsFuncionesGenerales grales = new ClsFuncionesGenerales();
+            //string NameDB = grales.NombreBDCasaMatriz().ToString();
+            var _with1 = crConnectionInfo;
+            _with1.DatabaseName = encripta.Desencriptar(ConfigurationManager.AppSettings["Database"].ToString());
+            _with1.IntegratedSecurity = false;
+            _with1.UserID = encripta.Desencriptar(ConfigurationManager.AppSettings["User"].ToString());
+            _with1.Password = encripta.Desencriptar(ConfigurationManager.AppSettings["Password"].ToString());
+            _with1.ServerName = encripta.Desencriptar(ConfigurationManager.AppSettings["Server"].ToString());
+
+            foreach (CrystalDecisions.CrystalReports.Engine.Table crTable in Reporte.Database.Tables)
+            {
+                CrystalDecisions.Shared.TableLogOnInfo crTblLogInfo = new CrystalDecisions.Shared.TableLogOnInfo();
+                crTblLogInfo = crTable.LogOnInfo;
+                crTblLogInfo.ConnectionInfo = crConnectionInfo;
+                crTable.ApplyLogOnInfo(crTblLogInfo);
+            }
+
+            Reporte.ReportOptions.EnableSaveDataWithReport = false;
+            LlenaTabla tabla = new LlenaTabla();
+            DataTable Sucursal = new DataTable();
+
+            //Sucursal = tabla.Llenartabla("select * from StbSucursal where Estado = 1");
+
+            //if (Sucursal.Rows.Count <= 0)
+            //{
+            //    FrmError error = new FrmError("Favor verificar los parametros de configuración de la aplicacion", "El parametro sucursal no se encuentra registrado en la base de datos., favor verificar dichos parametros", "Información");
+            //    error.ShowDialog();
+            //    return;
+            //}
+
+            DataTable RutArchivo = new DataTable();
+
+            RutArchivo = tabla.Llenartabla("select valor from StbParametro where Nombre='ImagenReporte'");
+            if (RutArchivo.Rows.Count <= 0)
+            {
+                FrmError error = new FrmError("Ha ocurrido un error, favor notificarlo al área de informática", "El parametro ImagenReporte no se encuentra registrado en la base de datos, favor verificar dichos parametros", "Información");
+                error.ShowDialog();
+                return;
+            }
+
+            string Ruta = RutArchivo.Rows[0][0].ToString();
+            Reporte.DataDefinition.FormulaFields["imagen"].Text = "'" + Ruta + "'";
+
+            string Rpt = Reporte.GetClassName();
+            Rpt = Rpt.Split('.')[4];
+
+            FrmReportesAlll frmViewer = new FrmReportesAlll(Rpt);
+            frmViewer.crViewer.ReportSource = Reporte;
+            frmViewer.crViewer.Refresh();
+            frmViewer.Text = Titulo;
+
+            frmViewer.ShowDialog();
+            Reporte.Dispose();
+            Reporte.Close();
+        }
+
         #endregion
     }
 }

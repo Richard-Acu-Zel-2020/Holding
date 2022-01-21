@@ -30,7 +30,7 @@ namespace Holding
             PagarInversion();
         }
 
-        #region "Función para Cargar Datos"
+        #region Función para Cargar Datos
         public void Carga()
         {
             ClsScrInversion clsinversion = new ClsScrInversion();
@@ -44,7 +44,13 @@ namespace Holding
         }
         #endregion
 
-        #region "Función para Cargar Datos al Otro Formulario"
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            ClsScrInversion clsinversion = new ClsScrInversion();
+            dgvInversion.DataSource = clsinversion.BuscarXNombre(txtBuscar.Text);
+        }
+
+        #region Función para Cargar Datos al Otro Formulario
         public void PagarInversion()
         {
             if (dgvInversion.RowCount > 0)
@@ -77,6 +83,7 @@ namespace Holding
             }
         }
         #endregion
+<<<<<<< HEAD
 
         #region "Función Buscar x Nombre"
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -86,5 +93,18 @@ namespace Holding
             lblContador.Text = String.Format("{0:N0}", double.Parse(dgvInversion.RowCount.ToString()));
         }
         #endregion
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+            String NumeroInversion = dgvInversion.Rows[dgvInversion.SelectedRows[0].Index].Cells[1].Value.ToString();
+
+            Holding.Formularios.Cartera.Reportes.RptScrEstadoCuentaInversion RptEstadoCuenta = new Formularios.Cartera.Reportes.RptScrEstadoCuentaInversion();
+            ClsScrInversion ClaseInversion = new ClsScrInversion();
+            RptEstadoCuenta.SetParameterValue("@NumeroInversion", NumeroInversion);
+            ClaseInversion.ImprimirReporte(RptEstadoCuenta, "Estado de cuenta");
+        }
+=======
+>>>>>>> parent of 9736d37 (Completado Insert y Modificar FrmScrSolicitudEdicion y Carga de Datos FrmScrSolicitud)
     }
 }

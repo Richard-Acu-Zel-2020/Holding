@@ -242,7 +242,7 @@ namespace Holding
 
         public string Propietario 
         {
-            get { return _Propietario; }
+            get { return Propietario; }
             set { _Propietario = value; } 
         }
 
@@ -345,23 +345,7 @@ namespace Holding
             tabla.Clear();
             SqlConnection Conne = new SqlConnection(con.Conexion);
             Conne.Open();
-            SqlDataAdapter result = new SqlDataAdapter(@"SELECT SO.ID, SO.NumeroSolicitud AS[Número Solicitud], SO.PrimerNombre AS[Primer Nombre], SO.SegundoNombre AS[Segundo Nombre], SO.PrimerApellido AS[Primer Apellido], SO.SegundoApellido AS[Segundo Apellido], SO.FechaNacimiento AS[Fecha Nacimiento], SV1.Valor AS[Tipo Documento],
-            SO.DNI, SO.FechaEmisionDNI, SO.FechaVencimientoDNI, SV2.Valor AS[Tipo Persona], SC.Nombre AS[País Origen], SV3.Valor AS Sexo, SV4.Valor AS[Estado Cívil], SO.Correo, SO.Telefono1, SO.Telefono2, SO.Observacion, SO.UbicacionLatitud, SO.UbicacionLongitud,
-            SO.IDObligacion, SO.Propietario, SV5.Valor AS Sector, SV6.Valor AS Moneda, SV7.Valor AS[Periocidad Interes], SV8.Valor AS[Periocidad Principal], SO.MontoSolicitud AS[Monto Solicitud], SV9.Valor AS[Tipo Cliente], SV10.Valor AS[Estado Solicitud],
-            SO.objTipoDocumentoID, SO.objTipoPersonaID, SO.objPaisOrigenID, SO.objSexoID, SO.objEstadoCivilID, SO.objSectorID, SO.objMonedaID, SO.objPeriocidadInteresID, SO.objPeriocidadPrincipalID, SO.objTipoClienteID, SO.objEstadoSolicitudID
-            FROM ScrSolicitudInversion SO
-            INNER JOIN StbUbicacionGeografica SC ON SO.objPaisOrigenID = SC.ID
-            INNER JOIN StbCatalogoValor SV1 ON SO.objTipoDocumentoID = SV1.ID
-            INNER JOIN StbCatalogoValor SV2 ON SO.objTipoPersonaID = SV2.ID
-            INNER JOIN StbCatalogoValor SV3 ON SO.objSexoID = SV3.ID
-            INNER JOIN StbCatalogoValor SV4 ON SO.objEstadoCivilID = SV4.ID
-            INNER JOIN StbCatalogoValor SV5 ON SO.objSectorID = SV5.ID
-            INNER JOIN StbCatalogoValor SV6 ON SO.objMonedaID = SV6.ID
-            INNER JOIN StbCatalogoValor SV7 ON SO.objPeriocidadInteresID = SV7.ID
-            INNER JOIN StbCatalogoValor SV8 ON SO.objPeriocidadPrincipalID = SV8.ID
-            INNER JOIN StbCatalogoValor SV9 ON SO.objTipoClienteID = SV9.ID
-            INNER JOIN StbCatalogoValor SV10 ON SO.objEstadoSolicitudID = SV10.ID
-            ORDER BY SO.NumeroSolicitud asc", Conne );
+            SqlDataAdapter result = new SqlDataAdapter();
             result.Fill(tabla);
             result.Dispose();
             Conne.Dispose();
@@ -381,6 +365,10 @@ namespace Holding
             Com.Connection = conex;
             Com.CommandType = CommandType.StoredProcedure;
 
+            //SqlParameter prmIdSol = new SqlParameter("@NumeroSolicitud", SqlDbType.Int);
+            //prmIdSol.Value = _NumSolicitud;
+            //Com.Parameters.Add(prmIdSol);
+
             SqlParameter prmPrimerNombre = new SqlParameter("@PrimerNombre", SqlDbType.VarChar);
             prmPrimerNombre.Value = _Nombre1;
             Com.Parameters.Add(prmPrimerNombre);
@@ -397,13 +385,9 @@ namespace Holding
             prmSegundoApellido.Value = _Apellido2;
             Com.Parameters.Add(prmSegundoApellido);
 
-            SqlParameter prmFechaNac = new SqlParameter("@FechaNacimiento", SqlDbType.DateTime);
+            SqlParameter prmFechaNac = new SqlParameter("FechaNacimiento", SqlDbType.DateTime);
             prmFechaNac.Value = _FechaNacimiento;
             Com.Parameters.Add(prmFechaNac);
-
-            SqlParameter prmTipoDocumento = new SqlParameter("@objTipoDocumentoID", SqlDbType.Int);
-            prmTipoDocumento.Value = _objTipoDocumentoID;
-            Com.Parameters.Add(prmTipoDocumento);
 
             SqlParameter prmDNI = new SqlParameter("@DNI", SqlDbType.VarChar);
             prmDNI.Value = _DNI;
@@ -445,10 +429,6 @@ namespace Holding
             prmTelefono2.Value = _Telefono2;
             Com.Parameters.Add(prmTelefono2);
 
-            SqlParameter prmObservacion = new SqlParameter("@Observacion", SqlDbType.VarChar);
-            prmObservacion.Value = _Observacion;
-            Com.Parameters.Add(prmObservacion);
-
             SqlParameter prmUbicacionLat = new SqlParameter("@UbicacionLatitud", SqlDbType.VarChar);
             prmUbicacionLat.Value = _UbicacionLat;
             Com.Parameters.Add(prmUbicacionLat);
@@ -456,6 +436,10 @@ namespace Holding
             SqlParameter prmUbicacionLon = new SqlParameter("@UbicacionLongitud", SqlDbType.VarChar);
             prmUbicacionLon.Value = _UbicacionLon;
             Com.Parameters.Add(prmUbicacionLon);
+
+            SqlParameter prmObservacion = new SqlParameter("@Observacion", SqlDbType.VarChar);
+            prmObservacion.Value = _Observacion;
+            Com.Parameters.Add(prmObservacion);
 
             SqlParameter prmObligacion = new SqlParameter("@IDObligacion", SqlDbType.Int);
             prmObligacion.Value = _IdObligacion;
@@ -470,8 +454,8 @@ namespace Holding
             Com.Parameters.Add(prmSector);
 
             SqlParameter prmMoneda = new SqlParameter("@objMonedaID", SqlDbType.Int);
-            prmMoneda.Value = _objMonedaID;
-            Com.Parameters.Add(prmMoneda);
+            prmSector.Value = _objMonedaID;
+            Com.Parameters.Add(prmSector);
 
             SqlParameter prmPeriocidadInt = new SqlParameter("@objPeriocidadInteresID", SqlDbType.Int);
             prmPeriocidadInt.Value = _PeriocidadInt;
@@ -535,206 +519,5 @@ namespace Holding
         }
         #endregion
 
-        #region "Modificar Solicitud"
-        //Ejecuta el procedimiento almacenado para guardar la solicitud.
-        public bool ModificarSolicitud()
-        {
-            ClsConexion conne = new ClsConexion();
-            SqlConnection conex = new SqlConnection(conne.Conexion);
-            conex.Open();
-            SqlCommand Com = new SqlCommand("Spd_Scr_Solicitud_Modifica");
-            Com.Connection = conex;
-            Com.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter prmID = new SqlParameter("@ID", SqlDbType.Int);
-            prmID.Value = _IdSolicitud;
-            Com.Parameters.Add(prmID);
-
-            SqlParameter prmPrimerNombre = new SqlParameter("@PrimerNombre", SqlDbType.VarChar);
-            prmPrimerNombre.Value = _Nombre1;
-            Com.Parameters.Add(prmPrimerNombre);
-
-            SqlParameter prmSegundoNombre = new SqlParameter("@SegundoNombre", SqlDbType.VarChar);
-            prmSegundoNombre.Value = _Nombre2;
-            Com.Parameters.Add(prmSegundoNombre);
-
-            SqlParameter prmPrimerApellido = new SqlParameter("@PrimerApellido", SqlDbType.VarChar);
-            prmPrimerApellido.Value = _Apellido1;
-            Com.Parameters.Add(prmPrimerApellido);
-
-            SqlParameter prmSegundoApellido = new SqlParameter("@SegundoApellido", SqlDbType.VarChar);
-            prmSegundoApellido.Value = _Apellido2;
-            Com.Parameters.Add(prmSegundoApellido);
-
-            SqlParameter prmFechaNac = new SqlParameter("@FechaNacimiento", SqlDbType.DateTime);
-            prmFechaNac.Value = _FechaNacimiento;
-            Com.Parameters.Add(prmFechaNac);
-
-            SqlParameter prmTipoDocumento = new SqlParameter("@objTipoDocumentoID", SqlDbType.Int);
-            prmTipoDocumento.Value = _objTipoDocumentoID;
-            Com.Parameters.Add(prmTipoDocumento);
-
-            SqlParameter prmDNI = new SqlParameter("@DNI", SqlDbType.VarChar);
-            prmDNI.Value = _DNI;
-            Com.Parameters.Add(prmDNI);
-
-            SqlParameter prmFechaEmision = new SqlParameter("@FechaEmisionDNI", SqlDbType.DateTime);
-            prmFechaEmision.Value = _FechaEmision;
-            Com.Parameters.Add(prmFechaEmision);
-
-            SqlParameter prmFechaVencimiento = new SqlParameter("@FechaVencimientoDNI", SqlDbType.DateTime);
-            prmFechaVencimiento.Value = _FechaVencimiento;
-            Com.Parameters.Add(prmFechaVencimiento);
-
-            SqlParameter prmTipoPersona = new SqlParameter("@objTipoPersonaID", SqlDbType.Int);
-            prmTipoPersona.Value = _objTipoPersonaID;
-            Com.Parameters.Add(prmTipoPersona);
-
-            SqlParameter prmPaisOrigen = new SqlParameter("@objPaisOrigenID", SqlDbType.Int);
-            prmPaisOrigen.Value = _objPaisOrigenID;
-            Com.Parameters.Add(prmPaisOrigen);
-
-            SqlParameter prmSexo = new SqlParameter("@objSexoID", SqlDbType.Int);
-            prmSexo.Value = _objSexoID;
-            Com.Parameters.Add(prmSexo);
-
-            SqlParameter prmEstadoCivil = new SqlParameter("@objEstadoCivilID", SqlDbType.Int);
-            prmEstadoCivil.Value = _objEstadoCivil;
-            Com.Parameters.Add(prmEstadoCivil);
-
-            SqlParameter prmCorreo = new SqlParameter("@Correo", SqlDbType.VarChar);
-            prmCorreo.Value = _CorreoElectronico;
-            Com.Parameters.Add(prmCorreo);
-
-            SqlParameter prmTelefono1 = new SqlParameter("@Telefono1", SqlDbType.VarChar);
-            prmTelefono1.Value = _Telefono1;
-            Com.Parameters.Add(prmTelefono1);
-
-            SqlParameter prmTelefono2 = new SqlParameter("@Telefono2", SqlDbType.VarChar);
-            prmTelefono2.Value = _Telefono2;
-            Com.Parameters.Add(prmTelefono2);
-
-            SqlParameter prmObservacion = new SqlParameter("@Observacion", SqlDbType.VarChar);
-            prmObservacion.Value = _Observacion;
-            Com.Parameters.Add(prmObservacion);
-
-            SqlParameter prmUbicacionLat = new SqlParameter("@UbicacionLatitud", SqlDbType.VarChar);
-            prmUbicacionLat.Value = _UbicacionLat;
-            Com.Parameters.Add(prmUbicacionLat);
-
-            SqlParameter prmUbicacionLon = new SqlParameter("@UbicacionLongitud", SqlDbType.VarChar);
-            prmUbicacionLon.Value = _UbicacionLon;
-            Com.Parameters.Add(prmUbicacionLon);
-
-            SqlParameter prmObligacion = new SqlParameter("@IDObligacion", SqlDbType.Int);
-            prmObligacion.Value = _IdObligacion;
-            Com.Parameters.Add(prmObligacion);
-
-            SqlParameter prmPropietario = new SqlParameter("@Propietario", SqlDbType.VarChar);
-            prmPropietario.Value = _Propietario;
-            Com.Parameters.Add(prmPropietario);
-
-            SqlParameter prmSector = new SqlParameter("@objSectorID", SqlDbType.Int);
-            prmSector.Value = _objSectorID;
-            Com.Parameters.Add(prmSector);
-
-            SqlParameter prmMoneda = new SqlParameter("@objMonedaID", SqlDbType.Int);
-            prmMoneda.Value = _objMonedaID;
-            Com.Parameters.Add(prmMoneda);
-
-            SqlParameter prmPeriocidadInt = new SqlParameter("@objPeriocidadInteresID", SqlDbType.Int);
-            prmPeriocidadInt.Value = _PeriocidadInt;
-            Com.Parameters.Add(prmPeriocidadInt);
-
-            SqlParameter prmPeriocidadPrin = new SqlParameter("@objPeriocidadPrincipalID", SqlDbType.Int);
-            prmPeriocidadPrin.Value = _PeriocidadPrin;
-            Com.Parameters.Add(prmPeriocidadPrin);
-
-            SqlParameter prmMontoSolicitud = new SqlParameter("@MontoSolicitud", SqlDbType.Decimal);
-            prmMontoSolicitud.Value = _Monto;
-            Com.Parameters.Add(prmMontoSolicitud);
-
-            SqlParameter prmTipoCliente = new SqlParameter("@objTipoClienteID", SqlDbType.Int);
-            prmTipoCliente.Value = _objTipoClienteID;
-            Com.Parameters.Add(prmTipoCliente);
-
-            SqlParameter prmEstadoSolicitud = new SqlParameter("@objEstadoSolicitudID", SqlDbType.Int);
-            prmEstadoSolicitud.Value = _objEstadoSolicitudID;
-            Com.Parameters.Add(prmEstadoSolicitud);
-
-            SqlParameter prmUsuarioCrea = new SqlParameter("@UsuarioModificacion", SqlDbType.VarChar);
-            prmUsuarioCrea.Value = globales.RetornaLogin();
-            Com.Parameters.Add(prmUsuarioCrea);
-
-            SqlParameter prmfechaCrea = new SqlParameter("@FechaModificacion", SqlDbType.DateTime);
-            prmfechaCrea.Value = DateTime.Now;
-            Com.Parameters.Add(prmfechaCrea);
-
-            SqlParameter prmMaquinaCrea = new SqlParameter("@MaquinaModificacion", SqlDbType.VarChar);
-            prmMaquinaCrea.Value = globales.RetornaIP();
-            Com.Parameters.Add(prmMaquinaCrea);
-
-            if (Com.ExecuteNonQuery() != 0)
-            {
-                Com.Dispose();
-                Com = null;
-                if (conex.State == ConnectionState.Open)
-                {
-                    conex.Close();
-                }
-
-                conex.Dispose();
-                conex = null;
-                return true;
-            }
-
-            else
-            {
-                Com.Dispose();
-                Com = null;
-                if (conex.State == ConnectionState.Open)
-                {
-                    conex.Close();
-                }
-
-                conex.Dispose();
-                conex = null;
-                return false;
-            }
-        }
-        #endregion
-
-        #region "Buscar x Nombre"
-        public DataTable BuscarSolicitudInversion(String Nombre)
-        {
-            ClsConexion con = new ClsConexion();
-            DataTable tabla = new DataTable();
-            tabla.Clear();
-            SqlConnection Conne = new SqlConnection(con.Conexion);
-            Conne.Open();
-            SqlDataAdapter result = new SqlDataAdapter(@"SELECT SO.ID, SO.NumeroSolicitud AS[Número Solicitud], SO.PrimerNombre AS[Primer Nombre], SO.SegundoNombre AS[Segundo Nombre], SO.PrimerApellido AS[Primer Apellido], SO.SegundoApellido AS[Segundo Apellido], SO.FechaNacimiento AS[Fecha Nacimiento], SV1.Valor AS[Tipo Documento],
-            SO.DNI, SO.FechaEmisionDNI, SO.FechaVencimientoDNI, SV2.Valor AS[Tipo Persona], SC.Nombre AS[País Origen], SV3.Valor AS Sexo, SV4.Valor AS[Estado Cívil], SO.Correo, SO.Telefono1, SO.Telefono2, SO.Observacion, SO.UbicacionLatitud, SO.UbicacionLongitud,
-            SO.IDObligacion, SO.Propietario, SV5.Valor AS Sector, SV6.Valor AS Moneda, SV7.Valor AS[Periocidad Interes], SV8.Valor AS[Periocidad Principal], SO.MontoSolicitud AS[Monto Solicitud], SV9.Valor AS[Tipo Cliente], SV10.Valor AS[Estado Solicitud],
-            SO.objTipoDocumentoID, SO.objTipoPersonaID, SO.objPaisOrigenID, SO.objSexoID, SO.objEstadoCivilID, SO.objSectorID, SO.objMonedaID, SO.objPeriocidadInteresID, SO.objPeriocidadPrincipalID, SO.objTipoClienteID, SO.objEstadoSolicitudID
-            FROM ScrSolicitudInversion SO
-            INNER JOIN StbUbicacionGeografica SC ON SO.objPaisOrigenID = SC.ID
-            INNER JOIN StbCatalogoValor SV1 ON SO.objTipoDocumentoID = SV1.ID
-            INNER JOIN StbCatalogoValor SV2 ON SO.objTipoPersonaID = SV2.ID
-            INNER JOIN StbCatalogoValor SV3 ON SO.objSexoID = SV3.ID
-            INNER JOIN StbCatalogoValor SV4 ON SO.objEstadoCivilID = SV4.ID
-            INNER JOIN StbCatalogoValor SV5 ON SO.objSectorID = SV5.ID
-            INNER JOIN StbCatalogoValor SV6 ON SO.objMonedaID = SV6.ID
-            INNER JOIN StbCatalogoValor SV7 ON SO.objPeriocidadInteresID = SV7.ID
-            INNER JOIN StbCatalogoValor SV8 ON SO.objPeriocidadPrincipalID = SV8.ID
-            INNER JOIN StbCatalogoValor SV9 ON SO.objTipoClienteID = SV9.ID
-            INNER JOIN StbCatalogoValor SV10 ON SO.objEstadoSolicitudID = SV10.ID
-            WHERE SO.PrimerNombre like '" + Nombre + "%' ORDER BY SO.NumeroSolicitud asc", Conne);
-            result.Fill(tabla);
-            result.Dispose();
-            Conne.Dispose();
-            Conne.Close();
-            return tabla;
-        }
-        #endregion
     }
 }

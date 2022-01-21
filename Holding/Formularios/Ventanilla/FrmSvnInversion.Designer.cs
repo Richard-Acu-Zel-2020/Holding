@@ -185,10 +185,11 @@ namespace Holding
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(137, 60);
             this.btnImprimir.TabIndex = 12;
-            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.Text = "Estado cuenta";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnReportes
             // 
