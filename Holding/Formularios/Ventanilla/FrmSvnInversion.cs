@@ -44,12 +44,6 @@ namespace Holding
         }
         #endregion
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            ClsScrInversion clsinversion = new ClsScrInversion();
-            dgvInversion.DataSource = clsinversion.BuscarXNombre(txtBuscar.Text);
-        }
-
         #region Función para Cargar Datos al Otro Formulario
         public void PagarInversion()
         {
@@ -83,7 +77,6 @@ namespace Holding
             }
         }
         #endregion
-<<<<<<< HEAD
 
         #region "Función Buscar x Nombre"
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -99,12 +92,11 @@ namespace Holding
 
             String NumeroInversion = dgvInversion.Rows[dgvInversion.SelectedRows[0].Index].Cells[1].Value.ToString();
 
-            Holding.Formularios.Cartera.Reportes.RptScrEstadoCuentaInversion RptEstadoCuenta = new Formularios.Cartera.Reportes.RptScrEstadoCuentaInversion();
+            Holding.Formularios.Ventanilla.Reportes.RptEstadoCuenta RptEstadoCuenta = new Formularios.Ventanilla.Reportes.RptEstadoCuenta();
             ClsScrInversion ClaseInversion = new ClsScrInversion();
             RptEstadoCuenta.SetParameterValue("@NumeroInversion", NumeroInversion);
             ClaseInversion.ImprimirReporte(RptEstadoCuenta, "Estado de cuenta");
         }
-=======
->>>>>>> parent of 9736d37 (Completado Insert y Modificar FrmScrSolicitudEdicion y Carga de Datos FrmScrSolicitud)
+
     }
 }

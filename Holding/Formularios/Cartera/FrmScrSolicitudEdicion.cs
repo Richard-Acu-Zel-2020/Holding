@@ -19,10 +19,12 @@ namespace Holding
         ClsFuncionesGenerales generales = new ClsFuncionesGenerales();
         ClsVariablesGoblales globales = new ClsVariablesGoblales();
         ClsStbError RegistroError = new ClsStbError();
+        string TipoAccionRecibe = "";
 
-        public FrmScrSolicitudEdicion()
+        public FrmScrSolicitudEdicion(string _tipoaccion)
         {
             InitializeComponent();
+            TipoAccionRecibe = _tipoaccion;
 
             //Estilo de Controladores
             materialSkinManager = MaterialSkin.MaterialSkinManager.Instance;
@@ -98,6 +100,69 @@ namespace Holding
             txtFechaVencimientoDNI.ReadOnly = true;
             txtUbicacionLat.ReadOnly = true;
             txtUbicacionLon.ReadOnly = true;
+
+            if (TipoAccionRecibe == "AGREGAR")
+            {
+                txtIdSolicitud.Text = "0";
+            }
+            else if (TipoAccionRecibe == "MODIFICAR")
+            {
+
+                if (solicitudes != null)
+                {
+                    this.Text = "Modificar Solicitudes de Inversión";
+                    txtIdSolicitud.Text = solicitudes.IdSolicitud.ToString();
+                    txtNumeroSolicitud.Text = solicitudes.NumSolicitud.ToString();
+                    txtPrimerNombre.Text = solicitudes.Nombre1;
+                    txtSegundoNombre.Text = solicitudes.Nombre2;
+                    txtPrimerApellido.Text = solicitudes.Apellido1;
+                    txtSegundoApellido.Text = solicitudes.Apellido2;
+                    txtFechaNacimiento.Text = solicitudes.FechaNacimiento.ToShortDateString();
+                    cbxTipoDocumentoDNI.SelectedValue = solicitudes.ObjTipoDocumentoID;
+                    txtDNI.Text = solicitudes.DNI;
+                    txtFechaEmisionDNI.Text = solicitudes.FechaNacimiento.ToShortDateString();
+                    txtFechaVencimientoDNI.Text = solicitudes.FechaNacimiento.ToShortDateString();
+                    cbxTipoPersona.SelectedValue = solicitudes.ObjTipoPersonaID;
+                    cbxPaisOrigen.SelectedValue = solicitudes.ObjPaisOrigenID;
+                    cbxSexo.SelectedValue = solicitudes.ObjSexoID;
+                    cbxEstadoCivil.SelectedValue = solicitudes.ObjEstadoCivil;
+                    txtCorreo.Text = solicitudes.CorreoElectronico;
+                    txtTelefono1.Text = solicitudes.Telefono1.ToString();
+                    txtTelefono2.Text = solicitudes.Telefono2.ToString();
+                    txtObservacion.Text = solicitudes.Observacion;
+                    txtUbicacionLat.Text = solicitudes.UbicacionLat.ToString();
+                    txtUbicacionLon.Text = solicitudes.UbicacionLon.ToString();
+                    txtIdObligacion.Text = solicitudes.IdObligacion.ToString();
+                    txtPropietario.Text = solicitudes.Propietario;
+                    cbxSector.SelectedValue = solicitudes.ObjSectorID;
+                    cbxTipoMoneda.SelectedValue = solicitudes.ObjMonedaID;
+                    cbxPeriocidadInteres.SelectedValue = solicitudes.PeriocidadInt;
+                    cbxPeriocidadPrincipal.SelectedValue = solicitudes.PeriocidadPrin;
+                    txtMontoInversion.Text = solicitudes.Monto.ToString();
+
+                    if (solicitudes.objTipoClienteID == 1079)
+                    {
+                        rbtnSofisticado.Checked = true;
+                    }
+                    else
+                    {
+                        rbtnSofisticado.Checked = false;
+                    }
+
+                    if (solicitudes.objTipoClienteID == 1080)
+                    {
+                        rbtnIndividual.Checked = true;
+                    }
+                    else
+                    {
+                        rbtnIndividual.Checked = false;
+                    }
+
+                    cbxEstadoSolicitud.SelectedValue = solicitudes.ObjEstadoSolicitudID;
+
+                    txtNumeroSolicitud.ReadOnly = true;
+                }
+            }
         }
         #endregion
 
@@ -230,7 +295,7 @@ namespace Holding
 
             //if (string.IsNullOrWhiteSpace(txtTelefono2.Text))
             //{
-            //    Error.SetError(txtTelefono2, "Favor Ingrese el Teléfono 1 del Cliente");
+            //    Error.SetError(txtTelefono2, "Favor Ingrese el Teléfono 2 del Cliente");
             //    return;
             //}
 
@@ -288,77 +353,96 @@ namespace Holding
                 return;
             }
 
-            //if (rbtnIndividual.Checked || rbtnSofisticado.Checked == false) 
-            //{
-            //    Error.SetError(gbxTipoCliente, "Favor Seleccione el Tipo de Cliente");
-            //    return;
-            //}
-
+            if (rbtnIndividual.Checked == false & rbtnSofisticado.Checked == false)
+            {
+            Error.SetError(gbxTipoCliente, "Favor Seleccione el Tipo de Cliente");
+            return;
+            }
             #endregion
 
+            try 
+            { 
             DialogResult Result = new System.Windows.Forms.DialogResult();
-            try
+            if (TipoAccionRecibe == "AGREGAR")
             {
-                Result = MessageBox.Show("¿Está seguro que desea guardar la Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                Result = MessageBox.Show("¿Está seguro que desea Guardar esta Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            else if (TipoAccionRecibe == "MODIFICAR")
+            {
+                Result = MessageBox.Show("¿Está seguro que desea Actualizar esta Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            if (Result == DialogResult.Yes)
+            {
+                ClsScrSolicitudInversion solicitudes = new ClsScrSolicitudInversion();
+                solicitudes.IdSolicitud = int.Parse(txtIdSolicitud.Text);
+                solicitudes.Nombre1 = txtPrimerNombre.Text.ToUpper();
+                solicitudes.Nombre2 = txtSegundoNombre.Text.ToUpper();
 
-                if(Result == DialogResult.Yes)
+                solicitudes.Apellido1 = txtPrimerApellido.Text.ToUpper();
+                solicitudes.Apellido2 = txtSegundoApellido.Text.ToUpper();
+                solicitudes.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
+                solicitudes.ObjTipoDocumentoID = int.Parse(cbxTipoDocumentoDNI.SelectedValue.ToString());
+                solicitudes.DNI = txtDNI.Text;
+                solicitudes.FechaEmision = DateTime.Parse(txtFechaEmisionDNI.Text);
+                solicitudes.FechaVencimiento = DateTime.Parse(txtFechaVencimientoDNI.Text);
+                solicitudes.ObjTipoPersonaID = int.Parse(cbxTipoPersona.SelectedValue.ToString());
+                solicitudes.ObjPaisOrigenID = int.Parse(cbxPaisOrigen.SelectedValue.ToString());
+                solicitudes.ObjSexoID = int.Parse(cbxSexo.SelectedValue.ToString());
+                solicitudes.ObjEstadoCivil = int.Parse(cbxEstadoCivil.SelectedValue.ToString());
+                solicitudes.CorreoElectronico = txtCorreo.Text;
+                solicitudes.Telefono1 = int.Parse(txtTelefono1.Text);
+                solicitudes.Telefono2 = int.Parse(txtTelefono2.Text);
+                solicitudes.Observacion = txtObservacion.Text.ToUpper();
+                solicitudes.UbicacionLat = double.Parse(txtUbicacionLat.Text);
+                solicitudes.UbicacionLon = double.Parse(txtUbicacionLon.Text);
+                solicitudes.IdObligacion = int.Parse(txtIdObligacion.Text);
+                solicitudes.Propietario = txtPropietario.Text.ToUpper();
+                solicitudes.ObjSectorID = int.Parse(cbxSector.SelectedValue.ToString());
+                solicitudes.ObjMonedaID = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
+                solicitudes.PeriocidadInt = int.Parse(cbxPeriocidadInteres.SelectedValue.ToString());
+                solicitudes.PeriocidadPrin = int.Parse(cbxPeriocidadPrincipal.SelectedValue.ToString());
+                solicitudes.Monto = Decimal.Parse(txtMontoInversion.Text);
+                solicitudes.ObjEstadoSolicitudID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("REG", "ESTADOSOLICITUDINVERSION").ToString());
+
+                if (rbtnIndividual.Checked == true)
                 {
-                    //solicitudes.NumSolicitud = int.Parse(txtNumeroSolicitud.Text);
-                    solicitudes.Nombre1 = txtPrimerNombre.Text.ToUpper();
-                    solicitudes.Nombre2 = txtSegundoNombre.Text.ToUpper();
-                    solicitudes.Apellido1 = txtPrimerApellido.Text.ToUpper();
-                    solicitudes.Apellido2 = txtSegundoApellido.Text.ToUpper();
-                    solicitudes.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
-                    solicitudes.ObjTipoDocumentoID = int.Parse(cbxTipoDocumentoDNI.SelectedValue.ToString());
-                    solicitudes.DNI = txtDNI.Text;
-                    solicitudes.FechaEmision = DateTime.Parse(txtFechaEmisionDNI.Text);
-                    solicitudes.FechaVencimiento = DateTime.Parse(txtFechaVencimientoDNI.Text);
-                    solicitudes.ObjTipoPersonaID = int.Parse(cbxTipoPersona.SelectedValue.ToString());
-                    solicitudes.ObjPaisOrigenID = int.Parse(cbxPaisOrigen.SelectedValue.ToString());
-                    solicitudes.ObjSexoID = int.Parse(cbxSexo.SelectedValue.ToString());
-                    solicitudes.ObjEstadoCivil = int.Parse(cbxEstadoCivil.SelectedValue.ToString());
-                    solicitudes.CorreoElectronico = txtCorreo.Text;
-                    solicitudes.Telefono1 = int.Parse(txtTelefono1.Text);
-                    solicitudes.Telefono2 = int.Parse(txtTelefono2.Text);
-                    solicitudes.UbicacionLat = double.Parse(txtUbicacionLat.Text);
-                    solicitudes.UbicacionLon = double.Parse(txtUbicacionLon.Text);
-                    solicitudes.IdObligacion = int.Parse(txtIdObligacion.Text);
-                    solicitudes.Propietario = txtPropietario.Text;
-                    solicitudes.ObjSectorID = int.Parse(cbxSector.SelectedValue.ToString());
-                    solicitudes.ObjMonedaID = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
-                    solicitudes.PeriocidadInt = int.Parse(cbxPeriocidadInteres.SelectedValue.ToString());
-                    solicitudes.PeriocidadPrin = int.Parse(cbxPeriocidadPrincipal.SelectedValue.ToString());
-                    solicitudes.Monto = Decimal.Parse(txtMontoInversion.Text);
-                    solicitudes.ObjEstadoSolicitudID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("REG", "ESTADOSOLICITUDINVERSION").ToString());
+                    solicitudes.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("INDIVIDUAL", "TIPOCLIENTE").ToString());
+                }
+                else
+                {
+                    solicitudes.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("SOFISTICADO", "TIPOCLIENTE").ToString());
+                }
 
-                    if (rbtnIndividual.Checked == true)
+                if (txtIdSolicitud.Text != "0")
+                {
+                    if (solicitudes.ModificarSolicitud() == true)
                     {
-                        solicitudes.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("INDIVIDUAL", "TIPOCLIENTE").ToString());
+                      MessageBox.Show("Solicitud Actualizada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      this.Close();
+                      LimpiarCampos();
                     }
                     else
                     {
-                        solicitudes.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("SOFISTICADO", "TIPOCLIENTE").ToString());
+                      MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                      return;
                     }
-
-                    /*
-                         ====== === Pendiente === ======
-                    -- Guardar Tipo de Cliente. A falta de Datos --
-                    solicitudes.TipoCliente
-                    */
-
+                }
+                else
+                {
                     if (solicitudes.GuardaSolicitud() == true)
                     {
-                        MessageBox.Show("Solicitud guardada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LimpiarCampos();
-                        this.Close();
+                      MessageBox.Show("Solicitud Guardada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      LimpiarCampos();
+                      this.Close();
                     }
                     else
                     {
-                        MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
+                      MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                      return;
                     }
                 }
             }
+        } 
             catch(Exception IO)
             {
                 RegistroError.Formulario = this.ToString();
