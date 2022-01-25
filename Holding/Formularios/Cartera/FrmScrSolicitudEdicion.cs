@@ -460,6 +460,8 @@ namespace Holding
         //Funcion para reiniciar los Campos
         public void LimpiarCampos()
         {
+            txtIdSolicitud.Text = "";
+            cbxEstadoSolicitud.ResetText();
             txtNumeroSolicitud.Text = "";
             txtPrimerNombre.Text = "";
             txtSegundoNombre.Text = "";
@@ -477,7 +479,9 @@ namespace Holding
             txtCorreo.Text = "";
             txtTelefono1.Text = "";
             txtTelefono2.Text = "";
+            txtObservacion.Text = "";
             txtUbicacionLat.Text = "";
+            txtUbicacionLon.Text = "";
             txtIdObligacion.Text = "";
             txtPropietario.Text = "";
             cbxSector.ResetText();

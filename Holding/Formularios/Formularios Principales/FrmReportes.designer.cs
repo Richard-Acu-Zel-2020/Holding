@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportDocument1 = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
             this.crViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.reportDocument1 = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
             this.SuspendLayout();
-            // 
-            // reportDocument1
-            // 
-            this.reportDocument1.RefreshReport += new System.EventHandler(this.reportDocument1_RefreshReport);
-            this.reportDocument1.AfterFormatPage += new CrystalDecisions.CrystalReports.Engine.FormatPageEventHandler(this.reportDocument1_AfterFormatPage);
-            this.reportDocument1.FormatSection += new CrystalDecisions.CrystalReports.Engine.FormatSectionEventHandler(this.reportDocument1_FormatSection);
             // 
             // crViewer
             // 
@@ -87,6 +81,12 @@
             this.crViewer.Move += new System.EventHandler(this.crViewer_Move);
             this.crViewer.Validating += new System.ComponentModel.CancelEventHandler(this.crViewer_Validating);
             // 
+            // reportDocument1
+            // 
+            this.reportDocument1.RefreshReport += new System.EventHandler(this.reportDocument1_RefreshReport);
+            this.reportDocument1.AfterFormatPage += new CrystalDecisions.CrystalReports.Engine.FormatPageEventHandler(this.reportDocument1_AfterFormatPage);
+            this.reportDocument1.FormatSection += new CrystalDecisions.CrystalReports.Engine.FormatSectionEventHandler(this.reportDocument1_FormatSection);
+            // 
             // FrmReportesAlll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -130,8 +130,7 @@
 
 
         #endregion
-
-        private CrystalDecisions.CrystalReports.Engine.ReportDocument reportDocument1;
         public CrystalDecisions.Windows.Forms.CrystalReportViewer crViewer;
+        private CrystalDecisions.CrystalReports.Engine.ReportDocument reportDocument1;
     }
 }

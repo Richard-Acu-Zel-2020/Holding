@@ -33,8 +33,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGestion = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,8 +54,7 @@
             // 
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnGestion);
             this.groupBox2.Controls.Add(this.btnModificar);
             this.groupBox2.Controls.Add(this.btnAgregar);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,7 +73,7 @@
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Image = global::Holding.Properties.Resources.imprimir_pagos;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.Location = new System.Drawing.Point(10, 566);
+            this.button6.Location = new System.Drawing.Point(10, 538);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(137, 60);
             this.button6.TabIndex = 12;
@@ -92,7 +90,7 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::Holding.Properties.Resources.imprimir_inversionistas;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.Location = new System.Drawing.Point(10, 462);
+            this.button5.Location = new System.Drawing.Point(10, 413);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(137, 60);
             this.button5.TabIndex = 11;
@@ -101,39 +99,23 @@
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnGestion
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::Holding.Properties.Resources.aprobar_inversionistas;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button4.Location = new System.Drawing.Point(10, 350);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(137, 60);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Aprobar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::Holding.Properties.Resources.rechazar_inversionistas;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button3.Location = new System.Drawing.Point(10, 240);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 60);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Rechazar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.btnGestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestion.ForeColor = System.Drawing.Color.White;
+            this.btnGestion.Image = global::Holding.Properties.Resources.estado_solicitud;
+            this.btnGestion.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnGestion.Location = new System.Drawing.Point(10, 294);
+            this.btnGestion.Name = "btnGestion";
+            this.btnGestion.Size = new System.Drawing.Size(137, 60);
+            this.btnGestion.TabIndex = 9;
+            this.btnGestion.Text = "Gestión";
+            this.btnGestion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGestion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGestion.UseVisualStyleBackColor = false;
+            this.btnGestion.Click += new System.EventHandler(this.btnGestion_Click);
             // 
             // btnModificar
             // 
@@ -143,7 +125,7 @@
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Image = global::Holding.Properties.Resources.editar_Accion;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnModificar.Location = new System.Drawing.Point(10, 133);
+            this.btnModificar.Location = new System.Drawing.Point(10, 178);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(137, 60);
             this.btnModificar.TabIndex = 8;
@@ -161,7 +143,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = global::Holding.Properties.Resources.agregar_inversionistas;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(10, 31);
+            this.btnAgregar.Location = new System.Drawing.Point(10, 49);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(137, 60);
             this.btnAgregar.TabIndex = 7;
@@ -321,8 +303,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGestion;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvSolicitudes;
         private System.Windows.Forms.Label label2;
