@@ -17,7 +17,7 @@ namespace Holding
             InitializeComponent();
         }
 
-        public delegate void fechaPoner(DateTime valor);
+        //public delegate void fechaPoner(DateTime valor);
        // public fechaPoner fechador;
 
         public DateTime fechavalor;

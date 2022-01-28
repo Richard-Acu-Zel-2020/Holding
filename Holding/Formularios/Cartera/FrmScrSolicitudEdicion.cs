@@ -169,23 +169,66 @@ namespace Holding
         #region "Botón de Calendario con su Función"
         private void btnFechaNacimiento_Click(object sender, EventArgs e)
         {
+            txtFechaNacimiento.Text = "";
             Calendario.Location = new Point(540, 325);
             Calendario.ShowDialog();
-            txtFechaNacimiento.Text = Calendario.fechavalor.ToShortDateString();
+
+            //-- Validación de Edad - Mayor de 18 Años --//
+            DateTime Hoy = DateTime.Now;
+            if (Calendario.fechavalor.AddYears(18) <= Hoy)
+            {
+                txtFechaNacimiento.Text = Calendario.fechavalor.ToShortDateString();
+            }
+            else
+            {
+                MessageBox.Show("Tu Edad no cumple los Requisitos para dicha Solicitud", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void btnFechaEmisionDNI_Click(object sender, EventArgs e)
         {
+            txtFechaEmisionDNI.Text = "";
             Calendario.Location = new Point(1350, 325);
             Calendario.ShowDialog();
-            txtFechaEmisionDNI.Text = Calendario.fechavalor.ToShortDateString();
+
+            //-- Validación de  Fecha Emisión - Mayor a Futuro --//
+            DateTime Hoy = DateTime.Now;
+            if (Calendario.fechavalor < Hoy)
+            {
+                txtFechaEmisionDNI.Text = Calendario.fechavalor.ToShortDateString();
+            }
+            else
+            {
+                MessageBox.Show("La Fecha de Emisión no puede ser a Futuro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void btnFechaVenceDNI_Click(object sender, EventArgs e)
         {
+            txtFechaVencimientoDNI.Text = "";
             Calendario.Location = new Point(1620, 325);
             Calendario.ShowDialog();
-            txtFechaVencimientoDNI.Text = Calendario.fechavalor.ToShortDateString();
+
+          //-- Validación de  Fecha Emisión - Diferencia de 1 Año --//
+          try 
+          { 
+            if (DateTime.Parse(txtFechaEmisionDNI.Text).AddYears(1) <= Calendario.fechavalor)
+            {
+                txtFechaVencimientoDNI.Text = Calendario.fechavalor.ToShortDateString();
+            }
+            else
+            {
+                MessageBox.Show("Cuenta con menos de 1 Año para la Caducidad del DNI", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+          }
+          catch 
+          {
+                MessageBox.Show("Debe Seleccionar Primero la Fecha de Emision del DNI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+          }
         }
         #endregion
 
