@@ -75,6 +75,7 @@ namespace Holding
                 txtNombreCliente.ReadOnly = true;
                 txtPropietario.ReadOnly = true;
                 txtMontoSolicitado.ReadOnly = true;
+                txtFechaDesembolso.ReadOnly = true;
             }
         }
         #endregion
@@ -82,116 +83,149 @@ namespace Holding
         #region "Función para Aprobar Solicitud"
         private void btnAprobar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    DialogResult Result = new System.Windows.Forms.DialogResult();
-            //    Result = MessageBox.Show("¿Seguro que desea Aprobar esta Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            Error.Clear();
 
-            //    if (Result == DialogResult.Yes)
-            //    {
-            //        ClsScrSolicitudInversion gestion = new ClsScrSolicitudInversion();
-            //        gestion.IdSolicitud = int.Parse(txtIdSolicitud.Text);
-            //        gestion.Nombre1 = txtPrimerNombre.Text.ToUpper();
-            //        gestion.Nombre2 = txtSegundoNombre.Text.ToUpper();
-            //        gestion.Apellido1 = txtPrimerApellido.Text.ToUpper();
-            //        gestion.Apellido2 = txtSegundoApellido.Text.ToUpper();
-            //        gestion.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
-            //        gestion.ObjTipoDocumentoID = int.Parse(cbxTipoDocumentoDNI.SelectedValue.ToString());
-            //        gestion.DNI = txtDNI.Text;
-            //        gestion.FechaEmision = DateTime.Parse(txtFechaEmisionDNI.Text);
-            //        gestion.FechaVencimiento = DateTime.Parse(txtFechaVencimientoDNI.Text);
-            //        gestion.ObjTipoPersonaID = int.Parse(cbxTipoPersona.SelectedValue.ToString());
-            //        gestion.ObjPaisOrigenID = int.Parse(cbxPaisOrigen.SelectedValue.ToString());
-            //        gestion.ObjSexoID = int.Parse(cbxSexo.SelectedValue.ToString());
-            //        gestion.ObjEstadoCivil = int.Parse(cbxEstadoCivil.SelectedValue.ToString());
-            //        gestion.CorreoElectronico = txtCorreo.Text;
-            //        gestion.Telefono1 = int.Parse(txtTelefono1.Text);
-            //        gestion.Telefono2 = int.Parse(txtTelefono2.Text);
-            //        gestion.Observacion = txtObservacion.Text.ToUpper();
-            //        gestion.UbicacionLat = double.Parse(txtUbicacionLat.Text);
-            //        gestion.UbicacionLon = double.Parse(txtUbicacionLon.Text);
-            //        gestion.IdObligacion = int.Parse(txtIdObligacion.Text);
-            //        gestion.Propietario = txtPropietario.Text.ToUpper();
-            //        gestion.ObjSectorID = int.Parse(cbxSector.SelectedValue.ToString());
-            //        gestion.ObjMonedaID = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
-            //        gestion.PeriocidadInt = int.Parse(cbxPeriocidadInteres.SelectedValue.ToString());
-            //        gestion.PeriocidadPrin = int.Parse(cbxPeriocidadPrincipal.SelectedValue.ToString());
-            //        gestion.Monto = Decimal.Parse(txtMontoInversion.Text);
-            //        gestion.ObjEstadoSolicitudID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("AUT", "ESTADOSOLICITUDINVERSION").ToString());
+            #region "Validaciones del Botón Aprobar"
 
-            //        if (rbtnIndividual.Checked == true)
-            //        {
-            //            gestion.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("INDIVIDUAL", "TIPOCLIENTE").ToString());
-            //        }
-            //        else
-            //        {
-            //            gestion.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("SOFISTICADO", "TIPOCLIENTE").ToString());
-            //        }
+            if (string.IsNullOrWhiteSpace(txtObservacionComite.Text))
+            {
+                Error.SetError(txtObservacionComite, "Favor Ingrese la Observación del Comité");
+                return;
+            }
 
-            //        if (txtIdSolicitud.Text != "0")
-            //        {
-            //            if (gestion.ModificarSolicitud() == true)
-            //            {
-            //                MessageBox.Show("Solicitud Aprobada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                this.Close();
-            //                LimpiarCampos();
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //                return;
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception IO)
-            //{
-            //    RegistroError.Formulario = this.ToString();
-            //    RegistroError.DetalleError = IO.ToString();
-            //    RegistroError.GuardaError();
-            //    FrmError frmError = new FrmError(globales.MsgError, IO.ToString(), globales.MsgErrorFinal);
-            //    this.Cursor = Cursors.Default;
-            //    frmError.ShowDialog();
-            //    return;
-            //}
+            if (string.IsNullOrWhiteSpace(txtTasaInteresCor.Text))
+            {
+                Error.SetError(txtTasaInteresCor, "Favor Ingrese la Tasa Interés Corriente");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtTasaInteresMor.Text))
+            {
+                Error.SetError(txtTasaInteresMor, "Favor Ingrese la Tasa Interés Moratoria");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMontoApro.Text))
+            {
+                Error.SetError(txtMontoApro, "Favor Ingrese el Monto Aprobado");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMontoComision.Text))
+            {
+                Error.SetError(txtMontoComision, "Favor Ingrese el Monto Comisión");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtTasaComision.Text))
+            {
+                Error.SetError(txtTasaComision, "Favor Ingrese la Tasa Comisión");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPlazoAprobado.Text))
+            {
+                Error.SetError(txtPlazoAprobado, "Favor Ingrese el Plazo Aprobado");
+                return;
+            }
+
+            if (cbxTipoMoneda.SelectedIndex == -1)
+            {
+                Error.SetError(cbxTipoMoneda, "Favor Seleccione el Tipo de Moneda");
+                return;
+            }
+
+            if (cbxPeriocidadIntApro.SelectedIndex == -1)
+            {
+                Error.SetError(cbxPeriocidadIntApro, "Favor Seleccione la Periocidad de Interes Aprobada");
+                return;
+            }
+
+            if (cbxPeriocidadPrinApro.SelectedIndex == -1)
+            {
+                Error.SetError(cbxPeriocidadPrinApro, "Favor Seleccione la Periocidad Principal Aprobada");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtFechaDesembolso.Text))
+            {
+                Error.SetError(txtFechaDesembolso, "Favor Ingrese la Fecha de Desembolso");
+                return;
+            }
+            #endregion
+
+            try
+            {
+                DialogResult Result = new System.Windows.Forms.DialogResult();
+                Result = MessageBox.Show("¿Seguro que desea Aprobar esta Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (Result == DialogResult.Yes)
+                {
+                    ClsScrSolicitudInversion gestion = new ClsScrSolicitudInversion();
+                    gestion.IdSolicitud = int.Parse(txtIdSolicitud.Text);
+                    gestion.ObservacionComite = txtObservacionComite.Text.ToUpper();
+                    gestion.TasaInteresCorriente = Decimal.Parse(txtTasaInteresCor.Text);
+                    gestion.TasaInteresMoratorio = Decimal.Parse(txtTasaInteresMor.Text);
+                    gestion.MontoAprobado = Decimal.Parse(txtMontoApro.Text);
+                    gestion.MontoComision = Decimal.Parse(txtMontoComision.Text);
+                    gestion.TasaComision = Decimal.Parse(txtTasaComision.Text);
+                    gestion.PlazoAprobado = int.Parse(txtPlazoAprobado.Text);
+                    gestion.ObjMonedaID = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
+                    gestion.objPeriocidadInteresAproID = int.Parse(cbxPeriocidadIntApro.SelectedValue.ToString());
+                    gestion.objPeriocidadPrincipalAproID = int.Parse(cbxPeriocidadPrinApro.SelectedValue.ToString());
+                    gestion.FechaDesembolso = DateTime.Parse(txtFechaDesembolso.Text);
+                    gestion.ObjEstadoSolicitudID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("AUT", "ESTADOSOLICITUDINVERSION").ToString());
+
+                    if (txtIdSolicitud.Text != "0")
+                    {
+                        if (gestion.GestionarSolicitud() == true)
+                        {
+                            MessageBox.Show("Solicitud Aprobada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                }
+            }
+            catch (Exception IO)
+            {
+                RegistroError.Formulario = this.ToString();
+                RegistroError.DetalleError = IO.ToString();
+                RegistroError.GuardaError();
+                FrmError frmError = new FrmError(globales.MsgError, IO.ToString(), globales.MsgErrorFinal);
+                this.Cursor = Cursors.Default;
+                frmError.ShowDialog();
+                return;
+            }
         }
-#endregion
+       #endregion
 
         #region "Función para Reiniciar Campos"
         //Funcion para reiniciar los Campos
         public void LimpiarCampos()
         {
-            //txtIdSolicitud.Text = "";
-            //cbxEstadoSolicitud.ResetText();
-            //txtNumeroSolicitud.Text = "";
-            //txtPrimerNombre.Text = "";
-            //txtSegundoNombre.Text = "";
-            //txtPrimerApellido.Text = "";
-            //txtSegundoApellido.Text = "";
-            //txtFechaNacimiento.Text = "";
-            //cbxTipoDocumentoDNI.ResetText();
-            //txtDNI.Text = "";
-            //txtFechaEmisionDNI.Text = "";
-            //txtFechaVencimientoDNI.Text = "";
-            //cbxTipoPersona.ResetText();
-            //cbxPaisOrigen.ResetText();
-            //cbxSexo.ResetText();
-            //cbxEstadoCivil.ResetText();
-            //txtCorreo.Text = "";
-            //txtTelefono1.Text = "";
-            //txtTelefono2.Text = "";
-            //txtObservacion.Text = "";
-            //txtUbicacionLat.Text = "";
-            //txtUbicacionLon.Text = "";
-            //txtIdObligacion.Text = "";
-            //txtPropietario.Text = "";
-            //cbxSector.ResetText();
-            //cbxTipoMoneda.ResetText();
-            //cbxPeriocidadInteres.ResetText();
-            //cbxPeriocidadPrincipal.ResetText();
-            //txtMontoInversion.Text = "";
-            //rbtnSofisticado.Checked = false;
-            //rbtnIndividual.Checked = false;
+            txtIdSolicitud.Text = "";
+            cbxEstadoSolicitud.ResetText();
+            txtNumeroSolicitud.Text = "";
+            txtNombreCliente.Text = "";
+            txtObservacionComite.Text = "";
+            txtTasaInteresCor.Text = "";
+            txtTasaInteresMor.Text = "";
+            txtMontoSolicitado.Text = "";
+            txtMontoApro.Text = "";
+            txtMontoComision.Text = "";
+            txtTasaComision.Text = "";
+            txtPlazoAprobado.Text = "";
+            cbxTipoMoneda.ResetText();
+            cbxPeriocidadIntApro.ResetText();
+            cbxPeriocidadPrinApro.ResetText();
+            txtFechaDesembolso.Text = "";
+            chbxVencimiento.Checked = false;
         }
 
         #endregion
@@ -199,79 +233,125 @@ namespace Holding
         #region "Función para Anular la Solicitud"
         private void btnAnular_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    DialogResult Result = new System.Windows.Forms.DialogResult();
-            //    Result = MessageBox.Show("¿Seguro que desea Anular esta Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            Error.Clear();
 
-            //    if (Result == DialogResult.Yes)
-            //    {
-            //        ClsScrSolicitudInversion gestiones = new ClsScrSolicitudInversion();
-            //        gestiones.IdSolicitud = int.Parse(txtIdSolicitud.Text);
-            //        gestiones.Nombre1 = txtPrimerNombre.Text.ToUpper();
-            //        gestiones.Nombre2 = txtSegundoNombre.Text.ToUpper();
+            #region "Validaciones del Botón Anular"
 
-            //        gestiones.Apellido1 = txtPrimerApellido.Text.ToUpper();
-            //        gestiones.Apellido2 = txtSegundoApellido.Text.ToUpper();
-            //        gestiones.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
-            //        gestiones.ObjTipoDocumentoID = int.Parse(cbxTipoDocumentoDNI.SelectedValue.ToString());
-            //        gestiones.DNI = txtDNI.Text;
-            //        gestiones.FechaEmision = DateTime.Parse(txtFechaEmisionDNI.Text);
-            //        gestiones.FechaVencimiento = DateTime.Parse(txtFechaVencimientoDNI.Text);
-            //        gestiones.ObjTipoPersonaID = int.Parse(cbxTipoPersona.SelectedValue.ToString());
-            //        gestiones.ObjPaisOrigenID = int.Parse(cbxPaisOrigen.SelectedValue.ToString());
-            //        gestiones.ObjSexoID = int.Parse(cbxSexo.SelectedValue.ToString());
-            //        gestiones.ObjEstadoCivil = int.Parse(cbxEstadoCivil.SelectedValue.ToString());
-            //        gestiones.CorreoElectronico = txtCorreo.Text;
-            //        gestiones.Telefono1 = int.Parse(txtTelefono1.Text);
-            //        gestiones.Telefono2 = int.Parse(txtTelefono2.Text);
-            //        gestiones.Observacion = txtObservacion.Text.ToUpper();
-            //        gestiones.UbicacionLat = double.Parse(txtUbicacionLat.Text);
-            //        gestiones.UbicacionLon = double.Parse(txtUbicacionLon.Text);
-            //        gestiones.IdObligacion = int.Parse(txtIdObligacion.Text);
-            //        gestiones.Propietario = txtPropietario.Text.ToUpper();
-            //        gestiones.ObjSectorID = int.Parse(cbxSector.SelectedValue.ToString());
-            //        gestiones.ObjMonedaID = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
-            //        gestiones.PeriocidadInt = int.Parse(cbxPeriocidadInteres.SelectedValue.ToString());
-            //        gestiones.PeriocidadPrin = int.Parse(cbxPeriocidadPrincipal.SelectedValue.ToString());
-            //        gestiones.Monto = Decimal.Parse(txtMontoInversion.Text);
-            //        gestiones.ObjEstadoSolicitudID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("RECH", "ESTADOSOLICITUDINVERSION").ToString());
+            if (string.IsNullOrWhiteSpace(txtObservacionComite.Text))
+            {
+                Error.SetError(txtObservacionComite, "Favor Ingrese la Observación del Comité");
+                return;
+            }
 
-            //        if (rbtnIndividual.Checked == true)
-            //        {
-            //            gestiones.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("INDIVIDUAL", "TIPOCLIENTE").ToString());
-            //        }
-            //        else
-            //        {
-            //            gestiones.objTipoClienteID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("SOFISTICADO", "TIPOCLIENTE").ToString());
-            //        }
+            if (string.IsNullOrWhiteSpace(txtTasaInteresCor.Text))
+            {
+                Error.SetError(txtTasaInteresCor, "Favor Ingrese la Tasa Interés Corriente");
+                return;
+            }
 
-            //        if (txtIdSolicitud.Text != "0")
-            //        {
-            //            if (gestiones.ModificarSolicitud() == true)
-            //            {
-            //                MessageBox.Show("Solicitud Anulada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //                this.Close();
-            //                LimpiarCampos();
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //                return;
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception IO)
-            //{
-            //    RegistroError.Formulario = this.ToString();
-            //    RegistroError.DetalleError = IO.ToString();
-            //    RegistroError.GuardaError();
-            //    FrmError frmError = new FrmError(globales.MsgError, IO.ToString(), globales.MsgErrorFinal);
-            //    this.Cursor = Cursors.Default;
-            //    frmError.ShowDialog();
-            //    return;
-            //}
+            if (string.IsNullOrWhiteSpace(txtTasaInteresMor.Text))
+            {
+                Error.SetError(txtTasaInteresMor, "Favor Ingrese la Tasa Interés Moratoria");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMontoApro.Text))
+            {
+                Error.SetError(txtMontoApro, "Favor Ingrese el Monto Aprobado");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMontoComision.Text))
+            {
+                Error.SetError(txtMontoComision, "Favor Ingrese el Monto Comisión");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtTasaComision.Text))
+            {
+                Error.SetError(txtTasaComision, "Favor Ingrese la Tasa Comisión");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPlazoAprobado.Text))
+            {
+                Error.SetError(txtPlazoAprobado, "Favor Ingrese el Plazo Aprobado");
+                return;
+            }
+
+            if (cbxTipoMoneda.SelectedIndex == -1)
+            {
+                Error.SetError(cbxTipoMoneda, "Favor Seleccione el Tipo de Moneda");
+                return;
+            }
+
+            if (cbxPeriocidadIntApro.SelectedIndex == -1)
+            {
+                Error.SetError(cbxPeriocidadIntApro, "Favor Seleccione la Periocidad de Interes Aprobada");
+                return;
+            }
+
+            if (cbxPeriocidadPrinApro.SelectedIndex == -1)
+            {
+                Error.SetError(cbxPeriocidadPrinApro, "Favor Seleccione la Periocidad Principal Aprobada");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtFechaDesembolso.Text))
+            {
+                Error.SetError(txtFechaDesembolso, "Favor Ingrese la Fecha de Desembolso");
+                return;
+            }
+            #endregion
+
+            try
+            {
+                DialogResult Result = new System.Windows.Forms.DialogResult();
+                Result = MessageBox.Show("¿Seguro que desea Anular esta Solicitud?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (Result == DialogResult.Yes)
+                {
+                    ClsScrSolicitudInversion gestiones = new ClsScrSolicitudInversion();
+                    gestiones.IdSolicitud = int.Parse(txtIdSolicitud.Text);
+                    gestiones.ObservacionComite = txtObservacionComite.Text.ToUpper();
+                    gestiones.TasaInteresCorriente = Decimal.Parse(txtTasaInteresCor.Text);
+                    gestiones.TasaInteresMoratorio = Decimal.Parse(txtTasaInteresMor.Text);
+                    gestiones.MontoAprobado = Decimal.Parse(txtMontoApro.Text);
+                    gestiones.MontoComision = Decimal.Parse(txtMontoComision.Text);
+                    gestiones.TasaComision = Decimal.Parse(txtTasaComision.Text);
+                    gestiones.PlazoAprobado = int.Parse(txtPlazoAprobado.Text);
+                    gestiones.ObjMonedaID = int.Parse(cbxTipoMoneda.SelectedValue.ToString());
+                    gestiones.objPeriocidadInteresAproID = int.Parse(cbxPeriocidadIntApro.SelectedValue.ToString());
+                    gestiones.objPeriocidadPrincipalAproID = int.Parse(cbxPeriocidadPrinApro.SelectedValue.ToString());
+                    gestiones.FechaDesembolso = DateTime.Parse(txtFechaDesembolso.Text);
+                    gestiones.ObjEstadoSolicitudID = int.Parse(generales.IDCatalogoValorXCodigoCatalogo("RECH", "ESTADOSOLICITUDINVERSION").ToString());
+
+                    if (txtIdSolicitud.Text != "0")
+                    {
+                        if (gestiones.GestionarSolicitud() == true)
+                        {
+                            MessageBox.Show("Solicitud Anulada con Éxito!!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show(globales.MsgErrorValidarDatos, "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                }
+            }
+            catch (Exception IO)
+            {
+                RegistroError.Formulario = this.ToString();
+                RegistroError.DetalleError = IO.ToString();
+                RegistroError.GuardaError();
+                FrmError frmError = new FrmError(globales.MsgError, IO.ToString(), globales.MsgErrorFinal);
+                this.Cursor = Cursors.Default;
+                frmError.ShowDialog();
+                return;
+            }
         }
         #endregion
 

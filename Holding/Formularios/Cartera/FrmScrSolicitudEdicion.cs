@@ -83,6 +83,12 @@ namespace Holding
             cbxPaisOrigen.ValueMember = "ID";
             cbxPaisOrigen.SelectedIndex = -1;
 
+            //Carga Datos de Departamento
+            cbxDepartamento.DataSource = generales.TipodeUbicacionXUbicacionGeografica("DEP");
+            cbxDepartamento.DisplayMember = "Nombre";
+            cbxDepartamento.ValueMember = "ID";
+            cbxDepartamento.SelectedIndex = -1;
+
             //Carga Datos de Periocidad Interes
             cbxPeriocidadInteres.DataSource = generales.TodosCatalogoValorXCatalogoActivos("FRECUENCIAPAGO");
             cbxPeriocidadInteres.DisplayMember = "Valor";
@@ -132,6 +138,8 @@ namespace Holding
                     txtObservacion.Text = solicitudes.Observacion;
                     txtUbicacionLat.Text = solicitudes.UbicacionLat.ToString();
                     txtUbicacionLon.Text = solicitudes.UbicacionLon.ToString();
+                    cbxDepartamento.SelectedValue = solicitudes.objDepartamentoID;
+                    cbxMunicipio.SelectedValue = solicitudes.objMunicipioID;
                     txtIdObligacion.Text = solicitudes.IdObligacion.ToString();
                     txtPropietario.Text = solicitudes.Propietario;
                     cbxSector.SelectedValue = solicitudes.ObjSectorID;
@@ -162,6 +170,19 @@ namespace Holding
 
                     txtNumeroSolicitud.ReadOnly = true;
                 }
+            }
+        }
+        #endregion
+
+        #region "Carga de Municipio x Departamento"
+        private void cbxDepartamento_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cbxDepartamento.SelectedValue.ToString() != null)
+            {
+                cbxMunicipio.DataSource = generales.DepartamentoXMunicipio(int.Parse(cbxDepartamento.SelectedValue.ToString()));
+                cbxMunicipio.DisplayMember = "Nombre";
+                cbxMunicipio.ValueMember = "ID";
+                cbxMunicipio.SelectedIndex = -1;
             }
         }
         #endregion
@@ -354,6 +375,18 @@ namespace Holding
                 return;
             }
 
+            if (cbxDepartamento.SelectedIndex == -1)
+            {
+                Error.SetError(cbxDepartamento, "Favor Seleccione el Departamento");
+                return;
+            }
+
+            if (cbxMunicipio.SelectedIndex == -1)
+            {
+                Error.SetError(cbxMunicipio, "Favor Seleccione el Municipio");
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtIdObligacion.Text))
             {
                 Error.SetError(txtIdObligacion, "Favor Ingrese el Id de Obligación");
@@ -420,7 +453,6 @@ namespace Holding
                 solicitudes.IdSolicitud = int.Parse(txtIdSolicitud.Text);
                 solicitudes.Nombre1 = txtPrimerNombre.Text.ToUpper();
                 solicitudes.Nombre2 = txtSegundoNombre.Text.ToUpper();
-
                 solicitudes.Apellido1 = txtPrimerApellido.Text.ToUpper();
                 solicitudes.Apellido2 = txtSegundoApellido.Text.ToUpper();
                 solicitudes.FechaNacimiento = DateTime.Parse(txtFechaNacimiento.Text);
@@ -438,6 +470,8 @@ namespace Holding
                 solicitudes.Observacion = txtObservacion.Text.ToUpper();
                 solicitudes.UbicacionLat = double.Parse(txtUbicacionLat.Text);
                 solicitudes.UbicacionLon = double.Parse(txtUbicacionLon.Text);
+                solicitudes.objDepartamentoID = int.Parse(cbxDepartamento.SelectedValue.ToString());
+                solicitudes.objMunicipioID = int.Parse(cbxMunicipio.SelectedValue.ToString());
                 solicitudes.IdObligacion = int.Parse(txtIdObligacion.Text);
                 solicitudes.Propietario = txtPropietario.Text.ToUpper();
                 solicitudes.ObjSectorID = int.Parse(cbxSector.SelectedValue.ToString());
@@ -550,5 +584,6 @@ namespace Holding
             oWatcher.Start();
         }
         #endregion
+
     }
 }

@@ -29,31 +29,34 @@ namespace Holding
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScrSolicitudAprobacion));
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtObservacion = new MaterialSkin.Controls.MaterialTextBox();
+            this.btnFechaNacimiento = new System.Windows.Forms.Button();
+            this.txtFechaDesembolso = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtPropietario = new MaterialSkin.Controls.MaterialTextBox();
+            this.cbxPeriocidadIntApro = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbxTipoMoneda = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbxPeriocidadPrinApro = new MaterialSkin.Controls.MaterialComboBox();
+            this.txtPlazoAprobado = new MaterialSkin.Controls.MaterialTextBox();
+            this.chbxVencimiento = new MaterialSkin.Controls.MaterialCheckbox();
+            this.txtMontoComision = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtTasaComision = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtMontoApro = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtTasaInteresMor = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtTasaInteresCor = new MaterialSkin.Controls.MaterialTextBox();
+            this.txtObservacionComite = new MaterialSkin.Controls.MaterialTextBox();
             this.txtNumeroSolicitud = new MaterialSkin.Controls.MaterialTextBox();
             this.txtNombreCliente = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtPropietario = new MaterialSkin.Controls.MaterialTextBox();
-            this.cbxTipoMoneda = new MaterialSkin.Controls.MaterialComboBox();
             this.txtMontoSolicitado = new MaterialSkin.Controls.MaterialTextBox();
             this.txtIdSolicitud = new MaterialSkin.Controls.MaterialTextBox();
             this.cbxEstadoSolicitud = new MaterialSkin.Controls.MaterialComboBox();
             this.btnAprobar = new System.Windows.Forms.Button();
             this.btnAnular = new System.Windows.Forms.Button();
-            this.txtTasaInteresCor = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtTasaInteresMor = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtMontoApro = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtTasaComision = new MaterialSkin.Controls.MaterialTextBox();
-            this.txtMontoComision = new MaterialSkin.Controls.MaterialTextBox();
-            this.chbxVencimiento = new MaterialSkin.Controls.MaterialCheckbox();
-            this.txtPlazoAprobado = new MaterialSkin.Controls.MaterialTextBox();
-            this.cbxPeriocidadPrinApro = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbxPeriocidadIntApro = new MaterialSkin.Controls.MaterialComboBox();
-            this.txtFechaDesembolso = new MaterialSkin.Controls.MaterialTextBox();
-            this.btnFechaNacimiento = new System.Windows.Forms.Button();
+            this.Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -82,7 +85,7 @@ namespace Holding
             this.groupBox2.Controls.Add(this.txtMontoApro);
             this.groupBox2.Controls.Add(this.txtTasaInteresMor);
             this.groupBox2.Controls.Add(this.txtTasaInteresCor);
-            this.groupBox2.Controls.Add(this.txtObservacion);
+            this.groupBox2.Controls.Add(this.txtObservacionComite);
             this.groupBox2.Controls.Add(this.txtNumeroSolicitud);
             this.groupBox2.Controls.Add(this.txtNombreCliente);
             this.groupBox2.Controls.Add(this.txtMontoSolicitado);
@@ -96,21 +99,254 @@ namespace Holding
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Solicitud";
             // 
-            // txtObservacion
+            // btnFechaNacimiento
             // 
-            this.txtObservacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtObservacion.Depth = 0;
-            this.txtObservacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtObservacion.Hint = "Observación Comité";
-            this.txtObservacion.LeadingIcon = null;
-            this.txtObservacion.Location = new System.Drawing.Point(822, 33);
-            this.txtObservacion.MaxLength = 50;
-            this.txtObservacion.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(236, 50);
-            this.txtObservacion.TabIndex = 26;
-            this.txtObservacion.Text = "";
-            this.txtObservacion.TrailingIcon = null;
+            this.btnFechaNacimiento.FlatAppearance.BorderSize = 0;
+            this.btnFechaNacimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechaNacimiento.Image = global::Holding.Properties.Resources.Calendario;
+            this.btnFechaNacimiento.Location = new System.Drawing.Point(894, 291);
+            this.btnFechaNacimiento.Name = "btnFechaNacimiento";
+            this.btnFechaNacimiento.Size = new System.Drawing.Size(48, 50);
+            this.btnFechaNacimiento.TabIndex = 46;
+            this.btnFechaNacimiento.UseVisualStyleBackColor = true;
+            this.btnFechaNacimiento.Click += new System.EventHandler(this.btnFechaNacimiento_Click);
+            // 
+            // txtFechaDesembolso
+            // 
+            this.txtFechaDesembolso.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFechaDesembolso.Depth = 0;
+            this.txtFechaDesembolso.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFechaDesembolso.Hint = "Fecha Desembolso";
+            this.txtFechaDesembolso.LeadingIcon = null;
+            this.txtFechaDesembolso.Location = new System.Drawing.Point(652, 291);
+            this.txtFechaDesembolso.MaxLength = 50;
+            this.txtFechaDesembolso.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtFechaDesembolso.Multiline = false;
+            this.txtFechaDesembolso.Name = "txtFechaDesembolso";
+            this.txtFechaDesembolso.Size = new System.Drawing.Size(236, 50);
+            this.txtFechaDesembolso.TabIndex = 45;
+            this.txtFechaDesembolso.Text = "";
+            this.txtFechaDesembolso.TrailingIcon = null;
+            // 
+            // txtPropietario
+            // 
+            this.txtPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPropietario.Depth = 0;
+            this.txtPropietario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPropietario.Hint = "Propietario";
+            this.txtPropietario.LeadingIcon = null;
+            this.txtPropietario.Location = new System.Drawing.Point(21, 384);
+            this.txtPropietario.MaxLength = 50;
+            this.txtPropietario.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPropietario.Multiline = false;
+            this.txtPropietario.Name = "txtPropietario";
+            this.txtPropietario.Size = new System.Drawing.Size(236, 50);
+            this.txtPropietario.TabIndex = 44;
+            this.txtPropietario.Text = "";
+            this.txtPropietario.TrailingIcon = null;
+            // 
+            // cbxPeriocidadIntApro
+            // 
+            this.cbxPeriocidadIntApro.AutoResize = false;
+            this.cbxPeriocidadIntApro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxPeriocidadIntApro.Depth = 0;
+            this.cbxPeriocidadIntApro.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxPeriocidadIntApro.DropDownHeight = 174;
+            this.cbxPeriocidadIntApro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPeriocidadIntApro.DropDownWidth = 121;
+            this.cbxPeriocidadIntApro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxPeriocidadIntApro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxPeriocidadIntApro.FormattingEnabled = true;
+            this.cbxPeriocidadIntApro.Hint = "Periocidad Interés Aprobado";
+            this.cbxPeriocidadIntApro.IntegralHeight = false;
+            this.cbxPeriocidadIntApro.ItemHeight = 43;
+            this.cbxPeriocidadIntApro.Location = new System.Drawing.Point(340, 291);
+            this.cbxPeriocidadIntApro.MaxDropDownItems = 4;
+            this.cbxPeriocidadIntApro.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxPeriocidadIntApro.Name = "cbxPeriocidadIntApro";
+            this.cbxPeriocidadIntApro.Size = new System.Drawing.Size(272, 49);
+            this.cbxPeriocidadIntApro.StartIndex = 0;
+            this.cbxPeriocidadIntApro.TabIndex = 44;
+            // 
+            // cbxTipoMoneda
+            // 
+            this.cbxTipoMoneda.AutoResize = false;
+            this.cbxTipoMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxTipoMoneda.Depth = 0;
+            this.cbxTipoMoneda.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxTipoMoneda.DropDownHeight = 174;
+            this.cbxTipoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoMoneda.DropDownWidth = 121;
+            this.cbxTipoMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxTipoMoneda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxTipoMoneda.FormattingEnabled = true;
+            this.cbxTipoMoneda.Hint = "Tipo de Moneda";
+            this.cbxTipoMoneda.IntegralHeight = false;
+            this.cbxTipoMoneda.ItemHeight = 43;
+            this.cbxTipoMoneda.Location = new System.Drawing.Point(822, 207);
+            this.cbxTipoMoneda.MaxDropDownItems = 4;
+            this.cbxTipoMoneda.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxTipoMoneda.Name = "cbxTipoMoneda";
+            this.cbxTipoMoneda.Size = new System.Drawing.Size(236, 49);
+            this.cbxTipoMoneda.StartIndex = 0;
+            this.cbxTipoMoneda.TabIndex = 40;
+            // 
+            // cbxPeriocidadPrinApro
+            // 
+            this.cbxPeriocidadPrinApro.AutoResize = false;
+            this.cbxPeriocidadPrinApro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxPeriocidadPrinApro.Depth = 0;
+            this.cbxPeriocidadPrinApro.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxPeriocidadPrinApro.DropDownHeight = 174;
+            this.cbxPeriocidadPrinApro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPeriocidadPrinApro.DropDownWidth = 121;
+            this.cbxPeriocidadPrinApro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxPeriocidadPrinApro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxPeriocidadPrinApro.FormattingEnabled = true;
+            this.cbxPeriocidadPrinApro.Hint = "Periocidad Principal Aprobado";
+            this.cbxPeriocidadPrinApro.IntegralHeight = false;
+            this.cbxPeriocidadPrinApro.ItemHeight = 43;
+            this.cbxPeriocidadPrinApro.Location = new System.Drawing.Point(21, 291);
+            this.cbxPeriocidadPrinApro.MaxDropDownItems = 4;
+            this.cbxPeriocidadPrinApro.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxPeriocidadPrinApro.Name = "cbxPeriocidadPrinApro";
+            this.cbxPeriocidadPrinApro.Size = new System.Drawing.Size(272, 49);
+            this.cbxPeriocidadPrinApro.StartIndex = 0;
+            this.cbxPeriocidadPrinApro.TabIndex = 43;
+            // 
+            // txtPlazoAprobado
+            // 
+            this.txtPlazoAprobado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPlazoAprobado.Depth = 0;
+            this.txtPlazoAprobado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPlazoAprobado.Hint = "Plazo Aprobado";
+            this.txtPlazoAprobado.LeadingIcon = null;
+            this.txtPlazoAprobado.Location = new System.Drawing.Point(556, 209);
+            this.txtPlazoAprobado.MaxLength = 50;
+            this.txtPlazoAprobado.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPlazoAprobado.Multiline = false;
+            this.txtPlazoAprobado.Name = "txtPlazoAprobado";
+            this.txtPlazoAprobado.Size = new System.Drawing.Size(236, 50);
+            this.txtPlazoAprobado.TabIndex = 33;
+            this.txtPlazoAprobado.Text = "";
+            this.txtPlazoAprobado.TrailingIcon = null;
+            // 
+            // chbxVencimiento
+            // 
+            this.chbxVencimiento.AutoSize = true;
+            this.chbxVencimiento.Depth = 0;
+            this.chbxVencimiento.Location = new System.Drawing.Point(308, 397);
+            this.chbxVencimiento.Margin = new System.Windows.Forms.Padding(0);
+            this.chbxVencimiento.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.chbxVencimiento.MouseState = MaterialSkin.MouseState.HOVER;
+            this.chbxVencimiento.Name = "chbxVencimiento";
+            this.chbxVencimiento.Ripple = true;
+            this.chbxVencimiento.Size = new System.Drawing.Size(141, 37);
+            this.chbxVencimiento.TabIndex = 32;
+            this.chbxVencimiento.Text = "Al Vencimiento";
+            this.chbxVencimiento.UseVisualStyleBackColor = true;
+            // 
+            // txtMontoComision
+            // 
+            this.txtMontoComision.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMontoComision.Depth = 0;
+            this.txtMontoComision.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMontoComision.Hint = "Monto Comisión";
+            this.txtMontoComision.LeadingIcon = null;
+            this.txtMontoComision.Location = new System.Drawing.Point(21, 209);
+            this.txtMontoComision.MaxLength = 50;
+            this.txtMontoComision.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMontoComision.Multiline = false;
+            this.txtMontoComision.Name = "txtMontoComision";
+            this.txtMontoComision.Size = new System.Drawing.Size(236, 50);
+            this.txtMontoComision.TabIndex = 31;
+            this.txtMontoComision.Text = "";
+            this.txtMontoComision.TrailingIcon = null;
+            // 
+            // txtTasaComision
+            // 
+            this.txtTasaComision.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTasaComision.Depth = 0;
+            this.txtTasaComision.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTasaComision.Hint = "Tasa Comisión %";
+            this.txtTasaComision.LeadingIcon = null;
+            this.txtTasaComision.Location = new System.Drawing.Point(284, 209);
+            this.txtTasaComision.MaxLength = 50;
+            this.txtTasaComision.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTasaComision.Multiline = false;
+            this.txtTasaComision.Name = "txtTasaComision";
+            this.txtTasaComision.Size = new System.Drawing.Size(236, 50);
+            this.txtTasaComision.TabIndex = 30;
+            this.txtTasaComision.Text = "";
+            this.txtTasaComision.TrailingIcon = null;
+            // 
+            // txtMontoApro
+            // 
+            this.txtMontoApro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMontoApro.Depth = 0;
+            this.txtMontoApro.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMontoApro.Hint = "Monto Aprobado";
+            this.txtMontoApro.LeadingIcon = null;
+            this.txtMontoApro.Location = new System.Drawing.Point(822, 120);
+            this.txtMontoApro.MaxLength = 50;
+            this.txtMontoApro.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtMontoApro.Multiline = false;
+            this.txtMontoApro.Name = "txtMontoApro";
+            this.txtMontoApro.Size = new System.Drawing.Size(236, 50);
+            this.txtMontoApro.TabIndex = 29;
+            this.txtMontoApro.Text = "";
+            this.txtMontoApro.TrailingIcon = null;
+            // 
+            // txtTasaInteresMor
+            // 
+            this.txtTasaInteresMor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTasaInteresMor.Depth = 0;
+            this.txtTasaInteresMor.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTasaInteresMor.Hint = "Tasa Interés Moratorio";
+            this.txtTasaInteresMor.LeadingIcon = null;
+            this.txtTasaInteresMor.Location = new System.Drawing.Point(284, 120);
+            this.txtTasaInteresMor.MaxLength = 50;
+            this.txtTasaInteresMor.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTasaInteresMor.Multiline = false;
+            this.txtTasaInteresMor.Name = "txtTasaInteresMor";
+            this.txtTasaInteresMor.Size = new System.Drawing.Size(236, 50);
+            this.txtTasaInteresMor.TabIndex = 28;
+            this.txtTasaInteresMor.Text = "";
+            this.txtTasaInteresMor.TrailingIcon = null;
+            // 
+            // txtTasaInteresCor
+            // 
+            this.txtTasaInteresCor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTasaInteresCor.Depth = 0;
+            this.txtTasaInteresCor.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTasaInteresCor.Hint = "Tasa Interés Corriente";
+            this.txtTasaInteresCor.LeadingIcon = null;
+            this.txtTasaInteresCor.Location = new System.Drawing.Point(21, 120);
+            this.txtTasaInteresCor.MaxLength = 50;
+            this.txtTasaInteresCor.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTasaInteresCor.Multiline = false;
+            this.txtTasaInteresCor.Name = "txtTasaInteresCor";
+            this.txtTasaInteresCor.Size = new System.Drawing.Size(236, 50);
+            this.txtTasaInteresCor.TabIndex = 27;
+            this.txtTasaInteresCor.Text = "";
+            this.txtTasaInteresCor.TrailingIcon = null;
+            // 
+            // txtObservacionComite
+            // 
+            this.txtObservacionComite.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtObservacionComite.Depth = 0;
+            this.txtObservacionComite.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtObservacionComite.Hint = "Observación Comité";
+            this.txtObservacionComite.LeadingIcon = null;
+            this.txtObservacionComite.Location = new System.Drawing.Point(822, 33);
+            this.txtObservacionComite.MaxLength = 50;
+            this.txtObservacionComite.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtObservacionComite.Multiline = false;
+            this.txtObservacionComite.Name = "txtObservacionComite";
+            this.txtObservacionComite.Size = new System.Drawing.Size(236, 50);
+            this.txtObservacionComite.TabIndex = 26;
+            this.txtObservacionComite.Text = "";
+            this.txtObservacionComite.TrailingIcon = null;
             // 
             // txtNumeroSolicitud
             // 
@@ -146,46 +382,6 @@ namespace Holding
             this.txtNombreCliente.TabIndex = 5;
             this.txtNombreCliente.Text = "";
             this.txtNombreCliente.TrailingIcon = null;
-            // 
-            // txtPropietario
-            // 
-            this.txtPropietario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPropietario.Depth = 0;
-            this.txtPropietario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPropietario.Hint = "Propietario";
-            this.txtPropietario.LeadingIcon = null;
-            this.txtPropietario.Location = new System.Drawing.Point(21, 384);
-            this.txtPropietario.MaxLength = 50;
-            this.txtPropietario.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPropietario.Multiline = false;
-            this.txtPropietario.Name = "txtPropietario";
-            this.txtPropietario.Size = new System.Drawing.Size(236, 50);
-            this.txtPropietario.TabIndex = 44;
-            this.txtPropietario.Text = "";
-            this.txtPropietario.TrailingIcon = null;
-            // 
-            // cbxTipoMoneda
-            // 
-            this.cbxTipoMoneda.AutoResize = false;
-            this.cbxTipoMoneda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxTipoMoneda.Depth = 0;
-            this.cbxTipoMoneda.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxTipoMoneda.DropDownHeight = 174;
-            this.cbxTipoMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoMoneda.DropDownWidth = 121;
-            this.cbxTipoMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbxTipoMoneda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbxTipoMoneda.FormattingEnabled = true;
-            this.cbxTipoMoneda.Hint = "Tipo de Moneda";
-            this.cbxTipoMoneda.IntegralHeight = false;
-            this.cbxTipoMoneda.ItemHeight = 43;
-            this.cbxTipoMoneda.Location = new System.Drawing.Point(822, 207);
-            this.cbxTipoMoneda.MaxDropDownItems = 4;
-            this.cbxTipoMoneda.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbxTipoMoneda.Name = "cbxTipoMoneda";
-            this.cbxTipoMoneda.Size = new System.Drawing.Size(236, 49);
-            this.cbxTipoMoneda.StartIndex = 0;
-            this.cbxTipoMoneda.TabIndex = 40;
             // 
             // txtMontoSolicitado
             // 
@@ -283,203 +479,9 @@ namespace Holding
             this.btnAnular.UseVisualStyleBackColor = false;
             this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
             // 
-            // txtTasaInteresCor
+            // Error
             // 
-            this.txtTasaInteresCor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTasaInteresCor.Depth = 0;
-            this.txtTasaInteresCor.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTasaInteresCor.Hint = "Tasa Interés Corriente";
-            this.txtTasaInteresCor.LeadingIcon = null;
-            this.txtTasaInteresCor.Location = new System.Drawing.Point(21, 120);
-            this.txtTasaInteresCor.MaxLength = 50;
-            this.txtTasaInteresCor.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtTasaInteresCor.Multiline = false;
-            this.txtTasaInteresCor.Name = "txtTasaInteresCor";
-            this.txtTasaInteresCor.ReadOnly = true;
-            this.txtTasaInteresCor.Size = new System.Drawing.Size(236, 50);
-            this.txtTasaInteresCor.TabIndex = 27;
-            this.txtTasaInteresCor.Text = "";
-            this.txtTasaInteresCor.TrailingIcon = null;
-            // 
-            // txtTasaInteresMor
-            // 
-            this.txtTasaInteresMor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTasaInteresMor.Depth = 0;
-            this.txtTasaInteresMor.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTasaInteresMor.Hint = "Tasa Interés Moratorio";
-            this.txtTasaInteresMor.LeadingIcon = null;
-            this.txtTasaInteresMor.Location = new System.Drawing.Point(284, 120);
-            this.txtTasaInteresMor.MaxLength = 50;
-            this.txtTasaInteresMor.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtTasaInteresMor.Multiline = false;
-            this.txtTasaInteresMor.Name = "txtTasaInteresMor";
-            this.txtTasaInteresMor.ReadOnly = true;
-            this.txtTasaInteresMor.Size = new System.Drawing.Size(236, 50);
-            this.txtTasaInteresMor.TabIndex = 28;
-            this.txtTasaInteresMor.Text = "";
-            this.txtTasaInteresMor.TrailingIcon = null;
-            // 
-            // txtMontoApro
-            // 
-            this.txtMontoApro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMontoApro.Depth = 0;
-            this.txtMontoApro.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMontoApro.Hint = "Monto Aprobado";
-            this.txtMontoApro.LeadingIcon = null;
-            this.txtMontoApro.Location = new System.Drawing.Point(822, 120);
-            this.txtMontoApro.MaxLength = 50;
-            this.txtMontoApro.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtMontoApro.Multiline = false;
-            this.txtMontoApro.Name = "txtMontoApro";
-            this.txtMontoApro.ReadOnly = true;
-            this.txtMontoApro.Size = new System.Drawing.Size(236, 50);
-            this.txtMontoApro.TabIndex = 29;
-            this.txtMontoApro.Text = "";
-            this.txtMontoApro.TrailingIcon = null;
-            // 
-            // txtTasaComision
-            // 
-            this.txtTasaComision.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTasaComision.Depth = 0;
-            this.txtTasaComision.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTasaComision.Hint = "Tasa Comisión %";
-            this.txtTasaComision.LeadingIcon = null;
-            this.txtTasaComision.Location = new System.Drawing.Point(284, 209);
-            this.txtTasaComision.MaxLength = 50;
-            this.txtTasaComision.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtTasaComision.Multiline = false;
-            this.txtTasaComision.Name = "txtTasaComision";
-            this.txtTasaComision.ReadOnly = true;
-            this.txtTasaComision.Size = new System.Drawing.Size(236, 50);
-            this.txtTasaComision.TabIndex = 30;
-            this.txtTasaComision.Text = "";
-            this.txtTasaComision.TrailingIcon = null;
-            // 
-            // txtMontoComision
-            // 
-            this.txtMontoComision.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMontoComision.Depth = 0;
-            this.txtMontoComision.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMontoComision.Hint = "Monto Comisión";
-            this.txtMontoComision.LeadingIcon = null;
-            this.txtMontoComision.Location = new System.Drawing.Point(21, 209);
-            this.txtMontoComision.MaxLength = 50;
-            this.txtMontoComision.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtMontoComision.Multiline = false;
-            this.txtMontoComision.Name = "txtMontoComision";
-            this.txtMontoComision.ReadOnly = true;
-            this.txtMontoComision.Size = new System.Drawing.Size(236, 50);
-            this.txtMontoComision.TabIndex = 31;
-            this.txtMontoComision.Text = "";
-            this.txtMontoComision.TrailingIcon = null;
-            // 
-            // chbxVencimiento
-            // 
-            this.chbxVencimiento.AutoSize = true;
-            this.chbxVencimiento.Depth = 0;
-            this.chbxVencimiento.Location = new System.Drawing.Point(308, 397);
-            this.chbxVencimiento.Margin = new System.Windows.Forms.Padding(0);
-            this.chbxVencimiento.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.chbxVencimiento.MouseState = MaterialSkin.MouseState.HOVER;
-            this.chbxVencimiento.Name = "chbxVencimiento";
-            this.chbxVencimiento.Ripple = true;
-            this.chbxVencimiento.Size = new System.Drawing.Size(141, 37);
-            this.chbxVencimiento.TabIndex = 32;
-            this.chbxVencimiento.Text = "Al Vencimiento";
-            this.chbxVencimiento.UseVisualStyleBackColor = true;
-            // 
-            // txtPlazoAprobado
-            // 
-            this.txtPlazoAprobado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPlazoAprobado.Depth = 0;
-            this.txtPlazoAprobado.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPlazoAprobado.Hint = "Plazo Aprobado";
-            this.txtPlazoAprobado.LeadingIcon = null;
-            this.txtPlazoAprobado.Location = new System.Drawing.Point(556, 209);
-            this.txtPlazoAprobado.MaxLength = 50;
-            this.txtPlazoAprobado.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPlazoAprobado.Multiline = false;
-            this.txtPlazoAprobado.Name = "txtPlazoAprobado";
-            this.txtPlazoAprobado.ReadOnly = true;
-            this.txtPlazoAprobado.Size = new System.Drawing.Size(236, 50);
-            this.txtPlazoAprobado.TabIndex = 33;
-            this.txtPlazoAprobado.Text = "";
-            this.txtPlazoAprobado.TrailingIcon = null;
-            // 
-            // cbxPeriocidadPrinApro
-            // 
-            this.cbxPeriocidadPrinApro.AutoResize = false;
-            this.cbxPeriocidadPrinApro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxPeriocidadPrinApro.Depth = 0;
-            this.cbxPeriocidadPrinApro.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxPeriocidadPrinApro.DropDownHeight = 174;
-            this.cbxPeriocidadPrinApro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPeriocidadPrinApro.DropDownWidth = 121;
-            this.cbxPeriocidadPrinApro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbxPeriocidadPrinApro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbxPeriocidadPrinApro.FormattingEnabled = true;
-            this.cbxPeriocidadPrinApro.Hint = "Periocidad Principal Aprobado";
-            this.cbxPeriocidadPrinApro.IntegralHeight = false;
-            this.cbxPeriocidadPrinApro.ItemHeight = 43;
-            this.cbxPeriocidadPrinApro.Location = new System.Drawing.Point(21, 291);
-            this.cbxPeriocidadPrinApro.MaxDropDownItems = 4;
-            this.cbxPeriocidadPrinApro.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbxPeriocidadPrinApro.Name = "cbxPeriocidadPrinApro";
-            this.cbxPeriocidadPrinApro.Size = new System.Drawing.Size(272, 49);
-            this.cbxPeriocidadPrinApro.StartIndex = 0;
-            this.cbxPeriocidadPrinApro.TabIndex = 43;
-            // 
-            // cbxPeriocidadIntApro
-            // 
-            this.cbxPeriocidadIntApro.AutoResize = false;
-            this.cbxPeriocidadIntApro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxPeriocidadIntApro.Depth = 0;
-            this.cbxPeriocidadIntApro.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxPeriocidadIntApro.DropDownHeight = 174;
-            this.cbxPeriocidadIntApro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPeriocidadIntApro.DropDownWidth = 121;
-            this.cbxPeriocidadIntApro.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbxPeriocidadIntApro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbxPeriocidadIntApro.FormattingEnabled = true;
-            this.cbxPeriocidadIntApro.Hint = "Periocidad Interés Aprobado";
-            this.cbxPeriocidadIntApro.IntegralHeight = false;
-            this.cbxPeriocidadIntApro.ItemHeight = 43;
-            this.cbxPeriocidadIntApro.Location = new System.Drawing.Point(340, 291);
-            this.cbxPeriocidadIntApro.MaxDropDownItems = 4;
-            this.cbxPeriocidadIntApro.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbxPeriocidadIntApro.Name = "cbxPeriocidadIntApro";
-            this.cbxPeriocidadIntApro.Size = new System.Drawing.Size(272, 49);
-            this.cbxPeriocidadIntApro.StartIndex = 0;
-            this.cbxPeriocidadIntApro.TabIndex = 44;
-            // 
-            // txtFechaDesembolso
-            // 
-            this.txtFechaDesembolso.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFechaDesembolso.Depth = 0;
-            this.txtFechaDesembolso.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtFechaDesembolso.Hint = "Fecha Desembolso";
-            this.txtFechaDesembolso.LeadingIcon = null;
-            this.txtFechaDesembolso.Location = new System.Drawing.Point(652, 291);
-            this.txtFechaDesembolso.MaxLength = 50;
-            this.txtFechaDesembolso.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtFechaDesembolso.Multiline = false;
-            this.txtFechaDesembolso.Name = "txtFechaDesembolso";
-            this.txtFechaDesembolso.Size = new System.Drawing.Size(236, 50);
-            this.txtFechaDesembolso.TabIndex = 45;
-            this.txtFechaDesembolso.Text = "";
-            this.txtFechaDesembolso.TrailingIcon = null;
-            // 
-            // btnFechaNacimiento
-            // 
-            this.btnFechaNacimiento.FlatAppearance.BorderSize = 0;
-            this.btnFechaNacimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechaNacimiento.Image = global::Holding.Properties.Resources.Calendario;
-            this.btnFechaNacimiento.Location = new System.Drawing.Point(894, 291);
-            this.btnFechaNacimiento.Name = "btnFechaNacimiento";
-            this.btnFechaNacimiento.Size = new System.Drawing.Size(48, 50);
-            this.btnFechaNacimiento.TabIndex = 46;
-            this.btnFechaNacimiento.UseVisualStyleBackColor = true;
-            this.btnFechaNacimiento.Click += new System.EventHandler(this.btnFechaNacimiento_Click);
+            this.Error.ContainerControl = this;
             // 
             // FrmScrSolicitudAprobacion
             // 
@@ -501,6 +503,7 @@ namespace Holding
             this.Load += new System.EventHandler(this.FrmScrSolicitudAprobacion_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,7 +512,7 @@ namespace Holding
         #endregion
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MaterialSkin.Controls.MaterialTextBox txtObservacion;
+        private MaterialSkin.Controls.MaterialTextBox txtObservacionComite;
         private MaterialSkin.Controls.MaterialTextBox txtNumeroSolicitud;
         private MaterialSkin.Controls.MaterialTextBox txtNombreCliente;
         private MaterialSkin.Controls.MaterialTextBox txtPropietario;
@@ -530,5 +533,6 @@ namespace Holding
         private MaterialSkin.Controls.MaterialTextBox txtTasaComision;
         private MaterialSkin.Controls.MaterialTextBox txtMontoApro;
         private System.Windows.Forms.Button btnFechaNacimiento;
+        private System.Windows.Forms.ErrorProvider Error;
     }
 }

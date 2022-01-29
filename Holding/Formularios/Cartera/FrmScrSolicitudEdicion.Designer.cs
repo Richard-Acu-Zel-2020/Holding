@@ -54,6 +54,8 @@
             this.txtTelefono1 = new MaterialSkin.Controls.MaterialTextBox();
             this.txtTelefono2 = new MaterialSkin.Controls.MaterialTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbxMunicipio = new MaterialSkin.Controls.MaterialComboBox();
+            this.cbxDepartamento = new MaterialSkin.Controls.MaterialComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtUbicacionLon = new MaterialSkin.Controls.MaterialTextBox();
             this.cbxEstadoCivil = new MaterialSkin.Controls.MaterialComboBox();
@@ -302,7 +304,7 @@
             this.txtObservacion.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtObservacion.Hint = "Observación";
             this.txtObservacion.LeadingIcon = null;
-            this.txtObservacion.Location = new System.Drawing.Point(561, 266);
+            this.txtObservacion.Location = new System.Drawing.Point(561, 264);
             this.txtObservacion.MaxLength = 50;
             this.txtObservacion.MouseState = MaterialSkin.MouseState.OUT;
             this.txtObservacion.Multiline = false;
@@ -447,6 +449,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbxMunicipio);
+            this.groupBox2.Controls.Add(this.cbxDepartamento);
             this.groupBox2.Controls.Add(this.groupBox1);
             this.groupBox2.Controls.Add(this.cbxEstadoCivil);
             this.groupBox2.Controls.Add(this.cbxSexo);
@@ -471,12 +475,59 @@
             this.groupBox2.Controls.Add(this.txtPrimerApellido);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(12, 66);
+            this.groupBox2.Location = new System.Drawing.Point(12, 63);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1355, 355);
+            this.groupBox2.Size = new System.Drawing.Size(1355, 432);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de Solicitud";
+            // 
+            // cbxMunicipio
+            // 
+            this.cbxMunicipio.AutoResize = false;
+            this.cbxMunicipio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxMunicipio.Depth = 0;
+            this.cbxMunicipio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxMunicipio.DropDownHeight = 174;
+            this.cbxMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMunicipio.DropDownWidth = 121;
+            this.cbxMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxMunicipio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxMunicipio.FormattingEnabled = true;
+            this.cbxMunicipio.Hint = "Municipio";
+            this.cbxMunicipio.IntegralHeight = false;
+            this.cbxMunicipio.ItemHeight = 43;
+            this.cbxMunicipio.Location = new System.Drawing.Point(1100, 264);
+            this.cbxMunicipio.MaxDropDownItems = 4;
+            this.cbxMunicipio.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxMunicipio.Name = "cbxMunicipio";
+            this.cbxMunicipio.Size = new System.Drawing.Size(236, 49);
+            this.cbxMunicipio.StartIndex = 0;
+            this.cbxMunicipio.TabIndex = 42;
+            // 
+            // cbxDepartamento
+            // 
+            this.cbxDepartamento.AutoResize = false;
+            this.cbxDepartamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxDepartamento.Depth = 0;
+            this.cbxDepartamento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxDepartamento.DropDownHeight = 174;
+            this.cbxDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDepartamento.DropDownWidth = 121;
+            this.cbxDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxDepartamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxDepartamento.FormattingEnabled = true;
+            this.cbxDepartamento.Hint = "Departamento";
+            this.cbxDepartamento.IntegralHeight = false;
+            this.cbxDepartamento.ItemHeight = 43;
+            this.cbxDepartamento.Location = new System.Drawing.Point(832, 264);
+            this.cbxDepartamento.MaxDropDownItems = 4;
+            this.cbxDepartamento.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxDepartamento.Name = "cbxDepartamento";
+            this.cbxDepartamento.Size = new System.Drawing.Size(236, 49);
+            this.cbxDepartamento.StartIndex = 0;
+            this.cbxDepartamento.TabIndex = 41;
+            this.cbxDepartamento.SelectionChangeCommitted += new System.EventHandler(this.cbxDepartamento_SelectionChangeCommitted);
             // 
             // groupBox1
             // 
@@ -485,7 +536,7 @@
             this.groupBox1.Controls.Add(this.btnUbicacion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(825, 256);
+            this.groupBox1.Location = new System.Drawing.Point(21, 336);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(517, 81);
             this.groupBox1.TabIndex = 14;
@@ -636,9 +687,9 @@
             this.groupBox3.Controls.Add(this.txtIdObligacion);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(12, 427);
+            this.groupBox3.Location = new System.Drawing.Point(12, 501);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1355, 224);
+            this.groupBox3.Size = new System.Drawing.Size(1355, 207);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de Inversión";
@@ -773,7 +824,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Image = global::Holding.Properties.Resources.Guardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(1221, 684);
+            this.btnGuardar.Location = new System.Drawing.Point(1215, 738);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(133, 58);
             this.btnGuardar.TabIndex = 12;
@@ -791,7 +842,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = global::Holding.Properties.Resources.Cancel;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(1032, 684);
+            this.btnCancelar.Location = new System.Drawing.Point(1043, 738);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(136, 58);
             this.btnCancelar.TabIndex = 13;
@@ -852,7 +903,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.ClientSize = new System.Drawing.Size(1381, 760);
+            this.ClientSize = new System.Drawing.Size(1380, 817);
             this.Controls.Add(this.cbxEstadoSolicitud);
             this.Controls.Add(this.txtIdSolicitud);
             this.Controls.Add(this.btnCancelar);
@@ -923,5 +974,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialTextBox txtIdSolicitud;
         private MaterialSkin.Controls.MaterialComboBox cbxEstadoSolicitud;
+        private MaterialSkin.Controls.MaterialComboBox cbxMunicipio;
+        private MaterialSkin.Controls.MaterialComboBox cbxDepartamento;
     }
 }

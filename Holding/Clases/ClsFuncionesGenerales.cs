@@ -67,6 +67,20 @@ namespace Holding
             return tabla;
         }
 
+        public DataTable DepartamentoXMunicipio(int dept)
+        {
+            ClsConexion con = new ClsConexion();
+            DataTable tabla = new DataTable();
+            tabla.Clear();
+            SqlConnection Conne = new SqlConnection(con.Conexion);
+            SqlDataAdapter result = new SqlDataAdapter("SELECT StbUbicacionGeografica.* FROM StbUbicacionGeografica WHERE StbUbicacionGeografica.objUbicacionGeograficaAnteriorID = " + dept + " ", Conne);
+            result.Fill(tabla);
+            result.Dispose();
+            Conne.Dispose();
+            Conne.Close();
+            return tabla;
+        }
+
         public DataTable TodosCatalogoValorXCatalogoActivosCasaMatriz(String Nombre)
         {
             ClsConexion con = new ClsConexion();
