@@ -67,7 +67,7 @@ namespace Holding
             return tabla;
         }
 
-        public DataTable DepartamentoXMunicipio(int dept)
+        public DataTable MunicipioXDepartamento(int dept)
         {
             ClsConexion con = new ClsConexion();
             DataTable tabla = new DataTable();

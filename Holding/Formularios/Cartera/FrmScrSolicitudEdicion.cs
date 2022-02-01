@@ -116,6 +116,13 @@ namespace Holding
 
                 if (solicitudes != null)
                 {
+
+                    //Carga Datos de Municipio
+                    cbxMunicipio.DataSource = generales.MunicipioXDepartamento(solicitudes.objDepartamentoID);
+                    cbxMunicipio.DisplayMember = "Nombre";
+                    cbxMunicipio.ValueMember = "ID";
+                    cbxMunicipio.SelectedIndex = -1;
+
                     this.Text = "Modificar Solicitudes de Inversión";
                     txtIdSolicitud.Text = solicitudes.IdSolicitud.ToString();
                     txtNumeroSolicitud.Text = solicitudes.NumSolicitud.ToString();
@@ -126,8 +133,8 @@ namespace Holding
                     txtFechaNacimiento.Text = solicitudes.FechaNacimiento.ToShortDateString();
                     cbxTipoDocumentoDNI.SelectedValue = solicitudes.ObjTipoDocumentoID;
                     txtDNI.Text = solicitudes.DNI;
-                    txtFechaEmisionDNI.Text = solicitudes.FechaNacimiento.ToShortDateString();
-                    txtFechaVencimientoDNI.Text = solicitudes.FechaNacimiento.ToShortDateString();
+                    txtFechaEmisionDNI.Text = solicitudes.FechaEmision.ToShortDateString();
+                    txtFechaVencimientoDNI.Text = solicitudes.FechaVencimiento.ToShortDateString();
                     cbxTipoPersona.SelectedValue = solicitudes.ObjTipoPersonaID;
                     cbxPaisOrigen.SelectedValue = solicitudes.ObjPaisOrigenID;
                     cbxSexo.SelectedValue = solicitudes.ObjSexoID;
@@ -170,6 +177,14 @@ namespace Holding
 
                     txtNumeroSolicitud.ReadOnly = true;
                 }
+                else 
+                {
+                    //Carga Datos de Municipio
+                    cbxMunicipio.DataSource = generales.TipodeUbicacionXUbicacionGeografica("MUN");
+                    cbxMunicipio.DisplayMember = "Nombre";
+                    cbxMunicipio.ValueMember = "ID";
+                    cbxMunicipio.SelectedIndex = -1;
+                }
             }
         }
         #endregion
@@ -179,7 +194,7 @@ namespace Holding
         {
             if (cbxDepartamento.SelectedValue.ToString() != null)
             {
-                cbxMunicipio.DataSource = generales.DepartamentoXMunicipio(int.Parse(cbxDepartamento.SelectedValue.ToString()));
+                cbxMunicipio.DataSource = generales.MunicipioXDepartamento(int.Parse(cbxDepartamento.SelectedValue.ToString()));
                 cbxMunicipio.DisplayMember = "Nombre";
                 cbxMunicipio.ValueMember = "ID";
                 cbxMunicipio.SelectedIndex = -1;
