@@ -403,6 +403,7 @@ namespace Holding
             this.txtMonto.TabIndex = 16;
             this.txtMonto.Text = "";
             this.txtMonto.TrailingIcon = null;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // txtNumRecibo
             // 

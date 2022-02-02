@@ -230,6 +230,7 @@ namespace Holding
             this.txtPlazoAprobado.TabIndex = 33;
             this.txtPlazoAprobado.Text = "";
             this.txtPlazoAprobado.TrailingIcon = null;
+            this.txtPlazoAprobado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlazoAprobado_KeyPress);
             // 
             // chbxVencimiento
             // 
@@ -262,6 +263,7 @@ namespace Holding
             this.txtMontoComision.TabIndex = 31;
             this.txtMontoComision.Text = "";
             this.txtMontoComision.TrailingIcon = null;
+            this.txtMontoComision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoComision_KeyPress);
             // 
             // txtTasaComision
             // 
@@ -279,6 +281,7 @@ namespace Holding
             this.txtTasaComision.TabIndex = 30;
             this.txtTasaComision.Text = "";
             this.txtTasaComision.TrailingIcon = null;
+            this.txtTasaComision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTasaComision_KeyPress);
             // 
             // txtMontoApro
             // 
@@ -296,6 +299,7 @@ namespace Holding
             this.txtMontoApro.TabIndex = 29;
             this.txtMontoApro.Text = "";
             this.txtMontoApro.TrailingIcon = null;
+            this.txtMontoApro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoApro_KeyPress);
             // 
             // txtTasaInteresMor
             // 
@@ -313,6 +317,7 @@ namespace Holding
             this.txtTasaInteresMor.TabIndex = 28;
             this.txtTasaInteresMor.Text = "";
             this.txtTasaInteresMor.TrailingIcon = null;
+            this.txtTasaInteresMor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTasaInteresMor_KeyPress);
             // 
             // txtTasaInteresCor
             // 
@@ -330,6 +335,7 @@ namespace Holding
             this.txtTasaInteresCor.TabIndex = 27;
             this.txtTasaInteresCor.Text = "";
             this.txtTasaInteresCor.TrailingIcon = null;
+            this.txtTasaInteresCor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTasaInteresCor_KeyPress);
             // 
             // txtObservacionComite
             // 

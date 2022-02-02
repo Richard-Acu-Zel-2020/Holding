@@ -94,6 +94,7 @@
             this.txtUbicacionLat.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUbicacionLat.Multiline = false;
             this.txtUbicacionLat.Name = "txtUbicacionLat";
+            this.txtUbicacionLat.ReadOnly = true;
             this.txtUbicacionLat.Size = new System.Drawing.Size(182, 50);
             this.txtUbicacionLat.TabIndex = 25;
             this.txtUbicacionLat.Text = "";
@@ -235,6 +236,7 @@
             this.txtMontoInversion.TabIndex = 1;
             this.txtMontoInversion.Text = "";
             this.txtMontoInversion.TrailingIcon = null;
+            this.txtMontoInversion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoInversion_KeyPress);
             // 
             // txtIdObligacion
             // 
@@ -252,6 +254,7 @@
             this.txtIdObligacion.TabIndex = 23;
             this.txtIdObligacion.Text = "";
             this.txtIdObligacion.TrailingIcon = null;
+            this.txtIdObligacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdObligacion_KeyPress);
             // 
             // rbtnSofisticado
             // 
@@ -374,6 +377,7 @@
             this.txtFechaNacimiento.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFechaNacimiento.Multiline = false;
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.ReadOnly = true;
             this.txtFechaNacimiento.Size = new System.Drawing.Size(182, 50);
             this.txtFechaNacimiento.TabIndex = 31;
             this.txtFechaNacimiento.Text = "";
@@ -391,6 +395,7 @@
             this.txtFechaVencimientoDNI.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFechaVencimientoDNI.Multiline = false;
             this.txtFechaVencimientoDNI.Name = "txtFechaVencimientoDNI";
+            this.txtFechaVencimientoDNI.ReadOnly = true;
             this.txtFechaVencimientoDNI.Size = new System.Drawing.Size(182, 50);
             this.txtFechaVencimientoDNI.TabIndex = 32;
             this.txtFechaVencimientoDNI.Text = "";
@@ -408,6 +413,7 @@
             this.txtFechaEmisionDNI.MouseState = MaterialSkin.MouseState.OUT;
             this.txtFechaEmisionDNI.Multiline = false;
             this.txtFechaEmisionDNI.Name = "txtFechaEmisionDNI";
+            this.txtFechaEmisionDNI.ReadOnly = true;
             this.txtFechaEmisionDNI.Size = new System.Drawing.Size(182, 50);
             this.txtFechaEmisionDNI.TabIndex = 33;
             this.txtFechaEmisionDNI.Text = "";
@@ -429,6 +435,7 @@
             this.txtTelefono1.TabIndex = 34;
             this.txtTelefono1.Text = "";
             this.txtTelefono1.TrailingIcon = null;
+            this.txtTelefono1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono1_KeyPress);
             // 
             // txtTelefono2
             // 
@@ -446,6 +453,7 @@
             this.txtTelefono2.TabIndex = 35;
             this.txtTelefono2.Text = "";
             this.txtTelefono2.TrailingIcon = null;
+            this.txtTelefono2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono2_KeyPress);
             // 
             // groupBox2
             // 
@@ -555,6 +563,7 @@
             this.txtUbicacionLon.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUbicacionLon.Multiline = false;
             this.txtUbicacionLon.Name = "txtUbicacionLon";
+            this.txtUbicacionLon.ReadOnly = true;
             this.txtUbicacionLon.Size = new System.Drawing.Size(182, 50);
             this.txtUbicacionLon.TabIndex = 41;
             this.txtUbicacionLon.Text = "";
